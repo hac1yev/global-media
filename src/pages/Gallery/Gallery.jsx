@@ -24,6 +24,7 @@ const Media = () => {
               href="/" >
               <div className="gallery-img">
                 <img src={galleryCard} alt="" />
+                <p className="time-p">22-07-2022</p>
               </div>
               <p className="gallery-info">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -39,6 +40,7 @@ const Media = () => {
               href="/" >
               <div className="gallery-img">
                 <img src={galleryCard} alt="" />
+                <p className="time-p">22-07-2022</p>
               </div>
               <p className="gallery-info">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -53,6 +55,7 @@ const Media = () => {
               href="/" >
               <div className="gallery-img">
                 <img src={galleryCard} alt="" />
+                <p className="time-p">22-07-2022</p>
               </div>
               <p className="gallery-info">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -67,6 +70,7 @@ const Media = () => {
               href="/" >
               <div className="gallery-img">
                 <img src={galleryCard} alt="" />
+                <p className="time-p">22-07-2022</p>
               </div>
               <p className="gallery-info">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -81,6 +85,7 @@ const Media = () => {
               href="/" >
               <div className="gallery-img">
                 <img src={galleryCard} alt="" />
+                <p className="time-p">22-07-2022</p>
               </div>
               <p className="gallery-info">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -95,6 +100,7 @@ const Media = () => {
               href="/" >
               <div className="gallery-img">
                 <img src={galleryCard} alt="" />
+                <p className="time-p">22-07-2022</p>
               </div>
               <p className="gallery-info">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
