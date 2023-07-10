@@ -134,6 +134,10 @@
     width: 100%;
     max-height: 295px!important;
     padding: 10px 0!important;
+    gap: 10px!important;
+    display: flex;
+    flex-direction: column;
+    gap: 5px!important;
 }
 
 
@@ -198,6 +202,7 @@
     .session-card .card-text {
         font-size: 18px;
         line-height: 24px;
+        text-align: left;
     }
 
     .session-button button {
@@ -265,7 +270,7 @@
 
     .session-overflow-p,
     .session-card .card-text {
-        font-size: 16px;
+        font-size: 18px;
         line-height: 22px;
     }
 
@@ -327,7 +332,7 @@
     .session-main-title h2,
     .session-cards-content,
     .session-card .card-title {
-        font-size: 21px!important;
+        font-size: 26px!important;
         gap: 15px!important;
         padding-left: 0!important;
         line-height: 25px!important;
@@ -335,7 +340,7 @@
 
     .session-overflow-p,
     .session-card .card-text {
-        font-size: 14px;
+        font-size: 18px;
         line-height: 18px;
     }
 

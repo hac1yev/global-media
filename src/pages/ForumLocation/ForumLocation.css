@@ -80,6 +80,16 @@
       height: 40px;
       font-size: 16px;
     }
+
+    .loc-h3 h3{
+      font-size: 28px;
+      line-height: 28px;
+    }
+
+    .loc-p p {
+      font-size: 18px;
+      line-height: 18px;
+    }
   }
 
   @media screen and (max-width: 375px) {
@@ -106,8 +116,5 @@
     margin-bottom: 30px;
   }
 
-  .loc-h3 h3{
-    font-size: 28px;
-    line-height: 28px;
-  }
+  
 }

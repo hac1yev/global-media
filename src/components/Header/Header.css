@@ -46,7 +46,7 @@
 .navbar-toggler .bar {
   width: 30px;
   height: 4px;
-  margin-bottom: 7px;
+  margin-bottom: 7px!important;
   background: #000;
   border-radius: 10%;
   transition: 0.4s;
@@ -310,6 +310,7 @@ input {
 
   .header-container .navbar-toggler .bar:nth-child(3) {
     transform: rotate(-45deg);
+    margin-top: 0!important;
   }
 
   .header-container ul {
