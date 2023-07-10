@@ -96,6 +96,11 @@
     align-items: center;
     justify-content: center;
     color: #fff;
+    transition: all 0.2s ease-in-out;
+}
+
+.news-social-icon:hover {
+    opacity: 0.8;
 }
 
 .social-icon {
