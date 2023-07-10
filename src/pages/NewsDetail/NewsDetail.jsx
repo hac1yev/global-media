@@ -145,21 +145,21 @@ const NewsDetail = () => {
                 <div className='news-share-info'>
                     <span>Məlumatı paylaş</span>
                     <div className='news-social-icons'>
-                        <div className='news-social-icon'>
+                        <a href='https://www.facebook.com/' target='_blank' rel="noreferrer" className='news-social-icon'>
                             <FaFacebookF className='social-icon' />
-                        </div>
-                        <div className='news-social-icon'>
+                        </a>
+                        <a href='https://twitter.com/' target='_blank' rel="noreferrer" className='news-social-icon'>
                             <FaTwitter className='social-icon' />
-                        </div>
-                        <div className='news-social-icon'>
+                        </a>
+                        <a href='https://www.linkedin.com/' target='_blank' rel="noreferrer" className='news-social-icon'>
                             <FaLinkedinIn className='social-icon' />
-                        </div>
-                        <div className='news-social-icon'>
+                        </a>
+                        <a href='https://web.telegram.org/a/' target='_blank' rel="noreferrer" className='news-social-icon'>
                            <FaTelegramPlane className='social-icon' />
-                        </div>
-                        <div className='news-social-icon'>
+                        </a>
+                        <a href='https://web.whatsapp.com/' target='_blank' rel="noreferrer" className='news-social-icon'>
                             <FaWhatsapp className='social-icon' />
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
