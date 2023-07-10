@@ -68,6 +68,10 @@ footer {
     margin-top: 35px!important;
 }
 
+.footer-copyright span {
+    color: #fff;
+}
+
 .footer-privacy {
     font-family: 'CodecPro-Regular';
     font-style: normal;
@@ -80,6 +84,10 @@ footer {
     justify-content: flex-end;
     gap: 45px;
     margin-top: 35px!important;
+}
+
+.footer-privacy span {
+    color: #fff;
 }
 
 #footer-logo{
