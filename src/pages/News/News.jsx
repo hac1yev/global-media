@@ -43,6 +43,10 @@ const newsData = [
 ];
 
 const News = () => {
+  const handleClick = () => {
+    window.scrollTo(0,0);    
+  };
+
   return (
     <div className="media-section latest-section">
     <div className="media-left-div" data-aos="zoom-in" data-aos-duration="700"></div>
@@ -54,7 +58,7 @@ const News = () => {
       </div>
       <div className="gallery-con">
         {newsData.map((item) => (
-          <Link to={`/news/${item.id}`} key={item.id} className="gallery-card" data-aos="zoom-in" data-aos-duration="700">
+          <Link onClick={handleClick} to={`/news/${item.id}`} key={item.id} className="gallery-card" data-aos="zoom-in" data-aos-duration="700">
             <div className="gallery-img">
               <img src={item.img} alt={item.id} />
               <p className="time-p">{item.time}</p>
