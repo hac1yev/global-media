@@ -1,0 +1,389 @@
+.session-container {
+    position: relative;
+}
+
+.nav-item:has(.active) {
+    z-index: 10!important;
+}
+
+.session-ətraflı-content {
+    padding: 0 75px;
+}
+
+.session-content {
+    position: relative;
+    background: #FFF;
+    top: 0;
+    z-index: 5;
+    padding: 57px 27px 24px;
+}
+
+.session-content .tab-pane {
+    display: flex!important;
+    align-items: center;
+}
+
+.session-content .tab-pane h2 {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    color: #22333B;
+    font-size: 34px;
+    font-weight: 300;
+    line-height: 35px;
+}
+
+.session-overflow-p {
+    text-align: justify;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 28px;
+    height: 342px;
+    padding: 10px 0;
+    overflow: hidden;    
+    margin-top: 10px;
+    background: linear-gradient(
+         180deg,
+         #808080 42.67%,
+         rgba(128, 128, 128, 0) 109.91%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+}
+
+.session-etrafli-p {
+    height: auto;
+    background: transparent!important;
+    -webkit-background-clip: text!important;
+        -webkit-text-fill-color: #000!important;
+}
+
+.session-content .tab-pane h2 span {
+    display: block;
+    min-width: 36px;
+    min-height: 36px;
+    border-radius: 36px;
+    background: #DE2926;
+}
+
+.session-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.session-button button {
+    color: #22333B;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 10px 63px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-top: 18px;
+}
+
+.session-card {
+    border: none!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* cursor: pointer; */
+    transition: all .2s ease-in-out;
+}
+
+.session-cards-content {
+    margin-top: 65px!important;
+}   
+
+.session-cards-title {
+    margin-top: 82px!important;
+    max-width: 295px!important;
+    width: 100%!important;
+}
+
+.session-card p {
+    height: auto!important;
+    color: #22333B;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 24px;
+}
+
+.session-card h3 {
+    color: #22333B;
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.card-img-top {
+    max-width: 295px!important;
+    max-height: 295px!important;
+    min-height: 295px !important;
+    object-fit: cover;
+    transition: all .5s ease-in-out;
+    filter: grayscale(100%);
+    /* cursor: pointer; */
+}
+
+.session-card:hover .card-img-top{
+    filter: initial;
+}
+
+.card-body {
+    max-width: 295px!important;
+    width: 100%;
+    max-height: 295px!important;
+    padding: 10px 0!important;
+}
+
+
+.session-cards-wrapper {
+    padding-left: 0!important;
+}
+
+.session-main-title {
+    margin-bottom: 64px;
+}
+
+.session-nav-pills {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    top: 200px;
+    z-index: 11;
+}
+
+.session-nav-pills .nav-item .nav-link {
+    color: #ABABAB;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 25px;
+    padding: 0!important;
+    margin-right: auto;
+}
+
+.session-nav-pills .nav-item .nav-link.active {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #DE2926;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 25px;
+    text-decoration-line: underline;
+}
+
+.tab-pane:not(.active) {
+    display: none!important;
+}
+
+@media screen and (max-width: 992px) {
+    .session-nav-pills .nav-item .nav-link {
+        color: #ABABAB;
+        font-size: 28px!important;
+        font-weight: 500;
+        line-height: 25px;
+        padding: 0!important;
+        margin: 0 auto;
+    }
+
+    .session-main-title h2,
+    .session-cards-content,
+    .session-card .card-title {
+        font-size: 30px!important;
+    }
+
+    .session-overflow-p,
+    .session-card .card-text {
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    .session-button button {
+        font-size: 22px;
+        padding: 8px 53px;
+    }
+
+    .session-card h3 {
+        font-size: 24px;
+    }
+
+    .session-card p {
+        font-size: 16px;
+    }
+
+    .session-content .tab-pane h2 {
+        font-size: 32px;
+        line-height: 32px;
+    }
+}
+
+@media screen and (max-width: 767.5px) {
+    .session-nav-pills {
+        width: 100%!important;
+        display: flex!important;
+        flex-wrap: initial!important;
+        justify-content: center!important;
+        flex-direction: row;
+        position: static;
+        gap: 30px;   
+    }
+
+    .session-nav-pills .nav-item .nav-link {
+        color: #ABABAB;
+        font-size: 24px!important;
+        font-weight: 500;
+        line-height: 25px;
+        padding: 0!important;
+        margin: 0 auto;
+    }
+
+    .session-content {
+        padding: 40px 20px 20px;
+    }
+
+    .session-main-title {
+        margin-top: 10px!important;
+        margin-bottom: 20px!important;
+    }
+
+    .session-cards-title {
+        margin-top: 35px!important;
+        font-size: 30px!important;
+    }
+
+    .session-cards-content {
+        margin-top: 35px!important;
+    }
+
+    .session-main-title h2,
+    .session-cards-content,
+    .session-card .card-title {
+        font-size: 26px!important;
+    }
+
+    .session-overflow-p,
+    .session-card .card-text {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .session-button {
+        justify-content: center;
+    }
+
+    .session-button button {
+        font-size: 20px;
+        padding: 6px 43px;
+    }   
+
+    .session-ətraflı-content {
+        padding: 0 45px;
+    }
+
+    .spiker-title {
+        font-size: 18px!important;
+        line-height: 20px!important;
+    }
+
+    .session-card h3 {
+        font-size: 22px;
+    }
+
+    .session-card p {
+        font-size: 15px;
+    }
+
+    .session-content .tab-pane h2 {
+        font-size: 30px;
+        line-height: 30px;
+    }
+}
+
+.spiker-title {
+    color: #000;
+    text-align: justify;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 25px;
+    margin-top: 40px;
+}
+
+@media screen and (max-width: 500px) {
+    .session-nav-pills {
+        gap: 20px;
+    }
+
+    .session-nav-pills .nav-item .nav-link {
+        font-size: 18px!important;
+    }
+
+    .session-content {
+        padding: 20px 15px 20px;
+    }
+
+    .session-main-title h2,
+    .session-cards-content,
+    .session-card .card-title {
+        font-size: 21px!important;
+        gap: 15px!important;
+        padding-left: 0!important;
+        line-height: 25px!important;
+    }
+
+    .session-overflow-p,
+    .session-card .card-text {
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .session-button button {
+        font-size: 18px;
+        padding: 5px 33px;
+    }
+
+    .session-ətraflı-content {
+        padding: 0 25px;
+    }
+
+    .session-card h3 {
+        font-size: 20px;
+    }
+
+    .session-card p {
+        font-size: 14px;
+    }
+
+    .session-content .tab-pane h2 {
+        font-size: 28px;
+        line-height: 28px;
+    }
+
+    .card-img-top,
+    .session-cards-title,
+    .card-body {
+        max-width: none!important;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .session-nav-pills {
+        gap: 15px;
+    }
+
+    .session-button button {
+        font-size: 16px;
+        padding: 4px 23px;
+    }
+
+    .session-ətraflı-content {
+        padding: 0 0px;
+    }
+
+    .session-content .tab-pane h2 {
+        font-size: 26px;
+        line-height: 26px;
+    }
+}

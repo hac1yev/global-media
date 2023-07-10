@@ -1,0 +1,194 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'CodecPro-Regular';
+}
+
+
+/* ---------------- GENERAL STYLES ---------------- */
+
+.container {
+  max-width: 1150px!important;
+  width: 100%;
+}
+
+.container-xl {
+  max-width: 1350px!important;
+  width: 100%;
+}
+
+ul {
+  list-style: none!important;
+}
+
+a {
+  text-decoration: none!important;
+}
+
+p,h1,h2,h3,h4,h5,h6,span,li {
+  margin-bottom: 0!important;
+  color: #22333b;
+}
+
+/* ---------------- FONTS FAMILY ---------------- */
+
+@font-face {
+	font-family: 'CodecPro-Regular';
+	src: local("CodecPro-Regular"), 
+  url(./assets/fonts/CodecPro-Regular.ttf) format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'CodecPro-Bold';
+	src: local("CodecPro-Bold"), 
+  url(./assets/fonts/CodecPro-Bold.ttf) format('truetype');
+	font-weight: 800;
+	font-style: normal;
+}
+
+/* @font-face {
+	font-family: 'Gilroy';
+	src: local("Gilroy"), 
+  url(./assets/fonts/Gilroy-UltraLightItalic.ttf) format('truetype');
+	font-weight: 200;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Gilroy';
+	src: local("Gilroy"), 
+  url(./assets/fonts/Gilroy-BoldItalic.ttf) format('truetype');
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Gilroy';
+	src: local("Gilroy"), 
+  url(./assets/fonts/Gilroy-SemiBold.ttf) format('truetype');
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Gilroy';
+	src: local("Gilroy"), 
+  url(./assets/fonts/Gilroy-BlackItalic.ttf) format('truetype');
+	font-weight: 900;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Gilroy';
+	src: local("Gilroy"), 
+  url(./assets/fonts/Gilroy-ThinItalic.ttf) format('truetype');
+	font-weight: 100;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Gilroy';
+	src: local("Gilroy"), 
+  url(./assets/fonts/Gilroy-ExtraBoldItalic.ttf) format('truetype');
+	font-weight: 800;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Gilroy';
+	src: local("Gilroy"), 
+  url(./assets/fonts/Gilroy-Black.ttf) format('truetype');
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Gilroy';
+	src: local("Gilroy"), 
+  url(./assets/fonts/Gilroy-HeavyItalic.ttf) format('truetype');
+	font-weight: 900;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Gilroy';
+	src: local("Gilroy"), 
+  url(./assets/fonts/Gilroy-Regular.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Gilroy';
+	src: local("Gilroy"), 
+  url(./assets/fonts/Gilroy-SemiBoldItalic.ttf) format('truetype');
+	font-weight: 600;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Gilroy';
+	src: local("Gilroy"), 
+  url(./assets/fonts/Gilroy-Medium.ttf) format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Gilroy';
+	src: local("Gilroy"), 
+  url(./assets/fonts/Gilroy-MediumItalic.ttf) format('truetype');
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Gilroy';
+	src: local("Gilroy"), 
+  url(./assets/fonts/Gilroy-RegularItalic.ttf) format('truetype');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Gilroy';
+	src: local("Gilroy"), 
+  url(./assets/fonts/Gilroy-Light.ttf) format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Gilroy';
+	src: local("Gilroy"), 
+  url(./assets/fonts/Gilroy-LightItalic.ttf) format('truetype');
+	font-weight: 300;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Gilroy';
+	src: local("Gilroy"), 
+  url(./assets/fonts/Gilroy-Heavy.ttf) format('truetype');
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Gilroy';
+	src: local("Gilroy"), 
+  url(./assets/fonts/Gilroy-MediumItalic.ttf) format('truetype');
+	font-weight: 500;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Gilroy';
+	src: local("Gilroy"), 
+  url(./assets/fonts/Gilroy-Thin.ttf) format('truetype');
+	font-weight: 100;
+	font-style: normal;
+} */

@@ -1,0 +1,21 @@
+.hero-section {
+    width: 100%;
+    height: 90vh;
+    margin-top: 20px;
+}
+
+.hero-section video {
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover; */
+}
+
+@media screen and (max-width: 768px) {
+    .hero-section video {
+        height: 80%;
+    }
+
+    .hero-section {
+        height: 80vh;
+    }
+}

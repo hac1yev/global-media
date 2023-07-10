@@ -1,0 +1,166 @@
+.information-section {
+  width: 100%;
+  display: flex;
+  padding-top: 132px;
+  position: relative;
+  margin-bottom: 35px;
+}
+
+.container {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.info-left-div {
+  flex: 1;
+  border-bottom: 1px solid #000;
+  border-right: 1px solid #000;
+}
+
+.info-right-div {
+  flex: 1;
+}
+
+.info-content {
+  display: flex;
+  align-items: flex-start;
+}
+
+.info-content-div {
+  width: 15%;
+  height: 1px;
+  background-color: #000;
+}
+
+.info-red-circle {
+  min-width: 36px;
+  min-height: 36px;
+  background-color: rgba(222, 41, 38, 1);
+  border-radius: 50%;
+  margin-top: -18px;
+}
+
+.info-content h3 {
+  width: 100%;
+  margin-top: -18px;
+  padding-left: 32px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 28px;
+  color: #000000;
+  text-align: justify;
+}
+
+.info-img {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 15px;
+}
+
+.info-img img {
+  width: 72.5%;
+  height: 300px;
+  /* object-fit: cover; */
+}
+
+.info-right-banner {
+  height: 100%;
+  position: absolute;
+  width: 35px;
+  top: 0;
+  right: 0;
+}
+
+.info-content-img {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.info-content-img img {
+  width: 80%;
+  align-self: center;
+  margin-top: 15px;
+}
+
+
+
+@media screen and (max-width: 992px) {
+  .info-content-div,
+  .info-left-div,
+  .info-red-circle,
+  .info-right-banner {
+    display: none;
+  }
+
+  .info-content h3 {
+    width: 100%;
+    padding-left: 0px;
+    text-align: center;
+    font-size:18px;
+    line-height: 24px;
+    word-break: keep-all;
+  }
+
+  .info-img {
+    justify-content: center;
+  }
+
+  .container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  .info-img {
+    padding-top: 30px;
+  }
+
+  /* .info-img img {
+    height: 300px;
+  } */
+
+  .info-content-img {
+    width: 100%;
+  }
+
+  .info-content-img img {
+    width: 100%;
+    margin-top: 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .info-content h3 {
+    font-size: 40px;
+    line-height: 35px;
+  }
+
+  .info-content h3 {
+    width: 100%;
+    padding-left: 0px;
+    text-align: center;
+    font-size:17px;
+    line-height: 22px;
+    word-break: keep-all;
+  }
+
+  .information-section {
+    padding-top: 50px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .info-img img {
+    /* height: 180px; */
+    height: auto;
+    width: 100%;
+  }
+
+  .info-content h3 {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}

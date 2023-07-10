@@ -1,0 +1,266 @@
+.media-section {
+  width: 100%;
+  display: flex;
+  padding-top: 80px;
+  position: relative;
+}
+
+.container {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.media-section .container{
+   max-width: 1340px !important;
+}
+
+.media-left-div {
+  flex: 0.4;
+  border-bottom: 1px solid #000;
+  border-right: 1px solid #000;
+  max-height: 432px;
+}
+
+.media-right-div {
+  flex: 1;
+}
+
+.media-content {
+  display: flex;
+  align-items: flex-start;
+}
+
+.media-content-div {
+  width: 149px;
+  height: 1px;
+  background-color: #000;
+}
+
+.media-red-circle {
+  min-width: 36px;
+  min-height: 36px;
+  background-color: rgba(222, 41, 38, 1);
+  border-radius: 50%;
+  margin-top: -18px;
+}
+
+.media-content h3 {
+  width: 77%;
+  margin-top: -18px;
+  padding-left: 32px;
+  color: #1e1e1e;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 40px;
+}
+
+.media-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 113px;
+}
+
+.media-img img {
+  max-width: 100%;
+  height: 443px;
+  object-fit: cover;
+}
+
+.media-right-banner {
+  height: 100%;
+  position: absolute;
+  width: 35px;
+  top: 0;
+  right: 0;
+}
+
+.gallery-con {
+  margin-left: 12.5%;
+  max-width: 1200px;
+  width: 100%;
+  flex-wrap: wrap;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.gallery-card {
+  max-width: 350px;
+  width: 100%;
+}
+
+.gallery-card img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.gallery-more-div {
+  display: flex;
+  justify-content: center;
+}
+
+.gallery-more {
+  width: 93px;
+  height: 29px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #000;
+  color: #000;
+  font-size: 10px;
+  font-style: normal;
+  font-family: "Noto Sans";
+  font-weight: 700;
+  line-height: normal;
+  background: transparent;
+  margin-left: 12.5%;
+  margin-bottom: 40px;
+  transition: all 0.2s ease;
+}
+
+.gallery-more:hover {
+  background-color: #DE2926;
+  color:#fff;
+  border: 1px solid #DE2926;
+}
+
+.gallery-info {
+  color: #1e1e1e;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 17px;
+  margin-top: 10px;
+}
+
+.gallery-img {
+  position: relative;
+}
+
+.time-p {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  width: 100px;
+  height: 22px;
+  border-radius: 5px;
+  border: 1px solid #e9d3d3;
+  color: #fff;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.media-section hr {
+  margin-left: 19%;
+  margin-top: 27px;
+}
+
+.latest-section{
+    margin-bottom: 50px;
+}
+
+@media screen and (max-width: 1024px) {
+    .gallery-con {
+        margin-left: 3%;
+        justify-content: center;
+      }
+
+      .media-section hr{
+        margin-left: initial;
+      }
+
+      .media-content h3{
+        width: 65%;
+      }
+}
+
+@media screen and (max-width: 992px) {
+  .media-content-div,
+  .media-left-div,
+  .media-red-circle,
+  .media-right-banner {
+    display: none;
+  }
+
+  .gallery-con{
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  .media-content h3 {
+    width: initial;
+    padding-left: 0px;
+    text-align: center;
+    font-size: 46px;
+    line-height: 46px;
+    word-break: keep-all;
+    margin-top: initial;
+  }
+
+  .container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  .media-img {
+    padding-top: 30px;
+  }
+
+  .media-img img {
+    height: 300px;
+  }
+
+  .media-content{
+    justify-content: space-around;
+  }
+
+  .gallery-more {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .media-content h3 {
+    font-size: 40px;
+    line-height: 35px;
+    font-weight: bold;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .media-img img {
+    height: 180px;
+  }
+
+  .media-content h3 {
+    font-size: 22px;
+    line-height: 20px;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .media-section{
+    padding-top: 30px;
+  }
+}
+
+
+@media screen and (max-width: 375px) {
+    .media-section .container{
+        padding-left: 10px !important;
+    }
+
+    .gallery-more{
+      margin-bottom: 0;
+    }
+
+    .media-content{
+      margin-bottom: 10%;
+    }
+}
