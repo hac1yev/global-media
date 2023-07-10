@@ -14,7 +14,7 @@ const Media = () => {
           <div className="media-content">
             <div className="media-content-div" data-aos="zoom-in" data-aos-duration="700"></div>
             <span className="media-red-circle"></span>
-            <h3 className="mb-3">Qalereya</h3>
+            <h3>Qalereya</h3>
           
           </div>
           <div className="gallery-con">
@@ -104,6 +104,11 @@ const Media = () => {
             </a>
           </div>
           <hr />
+          <div className="gallery-more-div">
+            <button className="gallery-more">
+              Daha Çox
+            </button>
+          </div>
         </div>
         <div className="media-right-div"></div>
       </div>
@@ -115,10 +120,6 @@ const Media = () => {
             <div className="media-content-div" data-aos="zoom-in" data-aos-duration="700"></div>
             <span className="media-red-circle"></span>
             <h3>Sitatlar</h3>
-            <button className="gallery-more">
-              {" "}
-              <img src={more} alt="" /> &nbsp; Daha Çox
-            </button>
           </div>
           <div className="gallery-con">
             <Link to={''} className="gallery-card" data-aos="zoom-in" data-aos-duration="700">
