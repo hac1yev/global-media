@@ -119,11 +119,11 @@ const Header = () => {
 
           <li className="nav-item lang-item2">
                 <div className="lang-option" onMouseEnter={handleLangEnter} onMouseLeave={handleLangLeave}>
-                  {!lang && <span className={!lang ? 'active-sp' : ''}>AZE</span>}
-                  {lang && <span className={lang ? 'active-sp' : ''}>ENG</span>}
+                  {!lang && <button className={!lang ? 'active-sp' : ''}>AZE</button>}
+                  {lang && <button className={lang ? 'active-sp' : ''}>ENG</button>}
                   {isDropOpen && <div className="lang-dropdown">
-                    {lang && <span onClick={getChangeLang}>AZE</span>}
-                    {!lang && <span onClick={getChangeLang}>ENG</span>}
+                    {lang && <button onClick={getChangeLang}>AZE</button>}
+                    {!lang && <button onClick={getChangeLang}>ENG</button>}
                   </div>}
                 </div>
             </li>

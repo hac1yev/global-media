@@ -79,6 +79,10 @@ input {
   position: relative;
 }
 
+.forum-nav > div {
+  cursor: pointer;
+}
+
 .nav-forum-dropdown {
   position: absolute;
   top: 70px;
@@ -125,7 +129,9 @@ input {
 }
 
 
-.lang-option span{
+.lang-option button{
+  border: none;
+  outline: none;
   padding: 5px 10px;
 }
 
@@ -142,8 +148,8 @@ input {
 
 }
 
-.lang-item span,
-.lang-item2 span {
+.lang-item button,
+.lang-item2 button {
   color: #22333b;
   font-size: 20px;
   cursor: pointer;
@@ -160,8 +166,8 @@ input {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.lang-item span.active-sp,
-.lang-item2 span.active-sp {
+.lang-item button.active-sp,
+.lang-item2 button.active-sp {
   color: #de2926;
   font-size: 20px;
   font-style: normal;
