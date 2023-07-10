@@ -3,6 +3,45 @@ import newsCard from "../../assets/News/thumb.jpg";
 import { Link } from "react-router-dom";
 import '../../pages/Media/Media.css'
 
+const newsData = [
+  {
+    id: 'n1',
+    img: newsCard,
+    title: 'Şuşada Beynəlxalq Media Forumun açılış mərasimi keçirilib',
+    time: '22-07-2022', 
+  },
+  {
+    id: 'n2',
+    img: newsCard,
+    title: 'Şuşada Beynəlxalq Media Forumun açılış mərasimi keçirilib',
+    time: '22-07-2022', 
+  },
+  {
+    id: 'n3',
+    img: newsCard,
+    title: 'Şuşada Beynəlxalq Media Forumun açılış mərasimi keçirilib',
+    time: '22-07-2022', 
+  },
+  {
+    id: 'n4',
+    img: newsCard,
+    title: 'Şuşada Beynəlxalq Media Forumun açılış mərasimi keçirilib',
+    time: '22-07-2022', 
+  },
+  {
+    id: 'n5',
+    img: newsCard,
+    title: 'Şuşada Beynəlxalq Media Forumun açılış mərasimi keçirilib',
+    time: '22-07-2022', 
+  },
+  {
+    id: 'n6',
+    img: newsCard,
+    title: 'Şuşada Beynəlxalq Media Forumun açılış mərasimi keçirilib',
+    time: '22-07-2022', 
+  },
+];
+
 const News = () => {
   return (
     <div className="media-section latest-section">
@@ -14,65 +53,17 @@ const News = () => {
         <h3 className='mb-3'>Xəbərlər</h3>
       </div>
       <div className="gallery-con">
-        <Link to={''} className="gallery-card" data-aos="zoom-in" data-aos-duration="700">
-          <div className="gallery-img">
-            <img src={newsCard} alt="" />
-            <p className="time-p">22-07-2022</p>
-          </div>
-          <p className="gallery-info">
-            Şuşada Beynəlxalq Media Forumun açılış mərasimi keçirilib
-          </p>
-        </Link>
-
-        <Link to={''} className="gallery-card" data-aos="zoom-in" data-aos-duration="700">
-          <div className="gallery-img">
-            <img src={newsCard} alt="" />
-            <p className="time-p">22-07-2022</p>
-          </div>
-          <p className="gallery-info">
-            Şuşada Beynəlxalq Media Forumun açılış mərasimi keçirilib
-          </p>
-        </Link>
-
-        <Link to={''} className="gallery-card" data-aos="zoom-in" data-aos-duration="700">
-          <div className="gallery-img">
-            <img src={newsCard} alt="" />
-            <p className="time-p">22-07-2022</p>
-          </div>
-          <p className="gallery-info">
-            Şuşada Beynəlxalq Media Forumun açılış mərasimi keçirilib
-          </p>
-        </Link>
-
-        <Link to={''} className="gallery-card" data-aos="zoom-in" data-aos-duration="700">
-          <div className="gallery-img">
-            <img src={newsCard} alt="" />
-            <p className="time-p">22-07-2022</p>
-          </div>
-          <p className="gallery-info">
-            Şuşada Beynəlxalq Media Forumun açılış mərasimi keçirilib
-          </p>
-        </Link>
-
-        <Link to={''} className="gallery-card" data-aos="zoom-in" data-aos-duration="700">
-          <div className="gallery-img">
-            <img src={newsCard} alt="" />
-            <p className="time-p">22-07-2022</p>
-          </div>
-          <p className="gallery-info">
-            Şuşada Beynəlxalq Media Forumun açılış mərasimi keçirilib
-          </p>
-        </Link>
-
-        <Link to={''} className="gallery-card" data-aos="zoom-in" data-aos-duration="700">
-          <div className="gallery-img">
-            <img src={newsCard} alt="" />
-            <p className="time-p">22-07-2022</p>
-          </div>
-          <p className="gallery-info">
-            Şuşada Beynəlxalq Media Forumun açılış mərasimi keçirilib
-          </p>
-        </Link>
+        {newsData.map((item) => (
+          <Link to={`/news/${item.id}`} key={item.id} className="gallery-card" data-aos="zoom-in" data-aos-duration="700">
+            <div className="gallery-img">
+              <img src={item.img} alt={item.id} />
+              <p className="time-p">{item.time}</p>
+            </div>
+            <p className="gallery-info">
+              {item.title}
+            </p>
+          </Link>
+        ))}
       </div>
       <hr />
       <div className='gallery-more-div'>

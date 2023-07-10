@@ -155,6 +155,7 @@
     flex-direction: column;
     gap: 50px;
     top: 200px;
+    left: 65px;
     z-index: 11;
 }
 
@@ -183,6 +184,10 @@
 }
 
 @media screen and (max-width: 992px) {
+    .session-nav-pills {
+        left: 20px;
+    }
+
     .session-nav-pills .nav-item .nav-link {
         color: #ABABAB;
         font-size: 28px!important;
