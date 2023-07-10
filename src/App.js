@@ -7,20 +7,22 @@ import AgendaSpiker from './pages/AgendaSpiker/AgendaSpiker.jsx';
 import ForumLocation from './pages/ForumLocation/ForumLocation.jsx';
 import AboutForum from './pages/AboutForum/AboutForum.jsx';
 import News from '../src/pages/News/News.jsx';
+import NewsDetail from '../src/pages/NewsDetail/NewsDetail.jsx';
 import Gallery from '../src/pages/Gallery/Gallery.jsx';
 
 function App() {
   return (
     <>
       <Header />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/agenda-spiker' element={<AgendaSpiker />} />
-        <Route path='/forum-location' element={<ForumLocation />} />
-        <Route path='/about-forum' element={<AboutForum />} />
-        <Route path='/gallery' element={<Gallery />} />
-        <Route path='/news' element={<News />} />
-      </Routes>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/agenda-spiker' element={<AgendaSpiker />} />
+          <Route path='/forum-location' element={<ForumLocation />} />
+          <Route path='/about-forum' element={<AboutForum />} />
+          <Route path='/gallery' element={<Gallery />} />
+          <Route path='/news' element={<News />} />
+          <Route path='/news/:newsId' element={<NewsDetail />} />
+        </Routes>
       <Footer />
     </>
   );
