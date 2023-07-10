@@ -1,7 +1,7 @@
 import React from 'react';
 import './AboutForum.css';
 import '../../components/AgendaSpiker/SessionOfForum';
-import about_forum_img from "../../assets/Home/info-img.png";
+import about_forum_img from "../../assets/Home/aboutForum.jpeg";
 
 const AboutForum = () => {
 
