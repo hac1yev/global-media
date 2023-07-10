@@ -3,7 +3,6 @@ import '../../pages/Media/Media.css'
 import galleryCard from "../../assets/Home/gallerycard.png";
 import sitatCard from "../../assets/Home/sitat.png";
 import { Link } from "react-router-dom";
-import more from '../../assets/Home/more.svg'
 
 const Media = () => {
   return (
