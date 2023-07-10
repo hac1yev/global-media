@@ -22,7 +22,7 @@ const Footer = () => {
             <div className="footer-links">
               <span>Naviqasiya</span>
               <Link to="/about-forum" onClick={() => window.scrollTo(0,0)}>Ümumi məlumat</Link>
-              <Link to="/discover-forum" onClick={() => window.scrollTo(0,0)}>Forum məkanı</Link>
+              <Link to="/forum-location" onClick={() => window.scrollTo(0,0)}>Forum məkanı</Link>
               <Link to="/agenda-spiker" onClick={() => window.scrollTo(0,0)}>Sessiya və Spikerlər</Link>
               <Link to="/gallery" onClick={() => window.scrollTo(0,0)}>Qalereya</Link>
               <Link to="/news" onClick={() => window.scrollTo(0,0)}>Xəbərlər</Link>

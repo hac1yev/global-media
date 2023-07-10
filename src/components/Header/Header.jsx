@@ -117,6 +117,17 @@ const Header = () => {
             <img src={logo} alt="" />
           </Link>
 
+          <li className="nav-item lang-item2">
+                <div className="lang-option" onMouseEnter={handleLangEnter} onMouseLeave={handleLangLeave}>
+                  {!lang && <span className={!lang ? 'active-sp' : ''}>AZE</span>}
+                  {lang && <span className={lang ? 'active-sp' : ''}>ENG</span>}
+                  {isDropOpen && <div className="lang-dropdown">
+                    {lang && <span onClick={getChangeLang}>AZE</span>}
+                    {!lang && <span onClick={getChangeLang}>ENG</span>}
+                  </div>}
+                </div>
+            </li>
+
           <label
             for="toggle"
             className="navbar-toggler"
@@ -142,7 +153,7 @@ const Header = () => {
                       <AiFillCaretRight className="arrow-right" />
                       {!lang ? 'Ümumi məlumat' : 'Overall Info' }
                     </Link>
-                    <Link to="/discover-forum" onClick={handleCloseMenu}>
+                    <Link to="/forum-location" onClick={handleCloseMenu}>
                       <AiFillCaretRight className="arrow-right" />
                       {!lang ? 'Forum məkanı' : 'Forum Location'}
                     </Link>

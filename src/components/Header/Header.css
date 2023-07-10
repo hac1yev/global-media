@@ -133,12 +133,17 @@ input {
   align-items: flex-start;
 }
 
+.lang-item2 {
+  display: none;
+}
+
 .lang-option {
   margin-top: 35px;
 
 }
 
-.lang-item span {
+.lang-item span,
+.lang-item2 span {
   color: #22333b;
   font-size: 20px;
   cursor: pointer;
@@ -155,7 +160,8 @@ input {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.lang-item span.active-sp {
+.lang-item span.active-sp,
+.lang-item2 span.active-sp {
   color: #de2926;
   font-size: 20px;
   font-style: normal;
@@ -337,9 +343,17 @@ input {
   }
 
   .lang-item {
-    width: 100%;
+    width: max-content!important;
+    display: none;
     /* justify-content: center!important; */
     font-size: 16px!important;
+  }
+
+  .lang-item2 {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 20%;
   }
 }
 
