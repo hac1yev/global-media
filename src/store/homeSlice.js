@@ -1,11 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialHomeState = {
-    about: [],
+    about: {},
+    aboutImg: {},
     banners: [],
     videos: [],
     highlight: [],
-    speakers: [],
+    agendas: [],
+    agenda_info: {},
     statics: []
 };
 
@@ -14,7 +16,10 @@ const homeSlice = createSlice({
     initialState: initialHomeState,
     reducers: {
         getAbout(state, action) {
-            state.about = [...action.payload]
+            state.about = {...action.payload}
+        },
+        getAboutImg(state, action) {
+            state.aboutImg = {...action.payload}
         },
         getBanners(state, action) {
             state.banners = [...action.payload]
@@ -25,8 +30,11 @@ const homeSlice = createSlice({
         getHighlight(state, action) {
             state.highlight = [...action.payload]
         },
-        getSpeakers(state, action) {
-            state.speakers = [...action.payload]
+        getAgendas(state, action) {
+            state.highlight = [...action.payload]
+        },
+        getAgendaInfo(state, action) {
+            state.agenda_info = {...action.payload}
         },
         getStatics(state, action) {
             state.statics = [...action.payload]

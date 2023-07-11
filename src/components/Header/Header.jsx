@@ -151,11 +151,11 @@ const Header = () => {
                   <div className="nav-forum-dropdown">
                     <Link to="/about-forum" onClick={handleCloseMenu}>
                       <AiFillCaretRight className="arrow-right" />
-                      {!lang ? 'Ümumi məlumat' : 'Overall Info' }
+                      {!lang ? 'Ümumi məlumat' : 'Overall info' }
                     </Link>
                     <Link to="/forum-location" onClick={handleCloseMenu}>
                       <AiFillCaretRight className="arrow-right" />
-                      {!lang ? 'Forum məkanı' : 'Forum Location'}
+                      {!lang ? 'Forum məkanı' : 'Forum location'}
                     </Link>
                   </div>
                 )}
@@ -183,11 +183,11 @@ const Header = () => {
                   <div className="nav-forum-dropdown">
                     <Link to="/" onClick={handleCloseMenu}>
                       <AiFillCaretRight className="arrow-right" />
-                      Proqram
+                      {!lang ? 'Proqram' : 'Program'}
                     </Link>
                     <Link to="/" onClick={handleCloseMenu}>
                       <AiFillCaretRight className="arrow-right" />
-                      Konsepsiya sənədi
+                      {!lang ? 'Konsepsiya sənədi' : 'Concept paper'}
                     </Link>
                   </div>
                 )}
