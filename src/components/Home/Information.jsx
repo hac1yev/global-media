@@ -9,22 +9,23 @@ import { homeSliceAction } from "../../store/homeSlice";
 
 
 const Information = () => {
+  const lang = useSelector(state => state.langReducer.lang);
   const about = useSelector((state) => state.homeReducer.about);
   const aboutImg = useSelector((state) => state.homeReducer.aboutImg);
   console.log("About Data" , about)
   const dispatch = useDispatch();
 
   useEffect(() => {
-    fetchData(`home`).then((data) => (
+    fetchData(!lang ? `az/home` : `en/home`).then((data) => (
       dispatch(homeSliceAction.getAbout(data.Məlumat))
     ));
-  }, [dispatch]);
+  }, [dispatch,lang]);
 
   useEffect(() => {
-    fetchData(`home`).then((data) => (
+    fetchData(!lang ? `az/home` : `en/home`).then((data) => (
       dispatch(homeSliceAction.getAboutImg(data.Məlumat_Şəkli))
     ));
-  }, [dispatch]);
+  }, [dispatch,lang]);
 
   useEffect(() => {
     AOS.init({ disable: 'mobile' });

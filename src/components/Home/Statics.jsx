@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./Static.css";
 import bottompic from "../../assets/Home/bottom.png";
 import { useSpring, animated } from "react-spring";
+import { useDispatch,useSelector } from "react-redux";
+import { fetchData } from "../../api/fetchData";
+import { homeSliceAction } from "../../store/homeSlice";
 
 function Number({ n }) {
   const { number } = useSpring({
@@ -14,8 +17,18 @@ function Number({ n }) {
 }
 
 const Statics = () => {
-
+  const lang = useSelector(state => state.langReducer.lang);
+  const statistics = useSelector(state => state.homeReducer.statics);
+  const dispatch = useDispatch();
   const [scrollNav, setScrollNav] = useState(false);
+
+  useEffect(() => {
+    fetchData(!lang ? 'az/home' : 'en/home').then((data) => (
+      dispatch(homeSliceAction.getStatics(data.Statistics))
+    ))
+  },[dispatch,lang])
+
+  console.log(scrollNav);
 
   const changeNav = () => {
     if (window.innerWidth >= 768) {
@@ -36,31 +49,19 @@ const Statics = () => {
   useEffect(() => {
     window.addEventListener('scroll', changeNav);
   }, [scrollNav]);
+
   return (
     <div className="static-container">
       <div className="container static-inner">
-        {scrollNav ? (<>
+        {scrollNav ? statistics.map((item,i) => (
           <div className="static1" data-aos="zoom-in"
-            data-aos-duration="700">
+            data-aos-duration="700" key={i}>
             <h1>
-              <Number n={30} />
+              <Number n={item?.Number} />
             </h1>
-            <p>İştirak edən ölkələrin sayı</p>
+            <p>{item?.Name_AZ}</p>
           </div>
-          <div className="static1" data-aos="zoom-in"
-            data-aos-duration="700">
-            <h1>
-              <Number n={250} />
-            </h1>
-            <p>İştirakçı sayı</p>
-          </div>
-          <div className="static1" data-aos="zoom-in"
-            data-aos-duration="700">
-            <h1>
-              <Number n={62} />
-            </h1>
-            <p>Media subyektlərinin sayı </p>
-          </div></>) : (
+        )) : (
           <>
             <div className="static1" data-aos="zoom-in"
               data-aos-duration="700">
