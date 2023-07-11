@@ -206,11 +206,11 @@ const Header = () => {
                 <div className="nav-forum-dropdown2">
                   <Link to="/news" onClick={handleCloseMenu}>
                     <AiFillCaretRight className="arrow-right" />
-                    Xəbərlər
+                    {!lang ? 'Xəbərlər' : 'News'}
                   </Link>
                   <Link to="/gallery" onClick={handleCloseMenu}>
                     <AiFillCaretRight className="arrow-right" />
-                    Qalereya
+                    {!lang ? 'Qalereya' : 'Gallery'}
                   </Link>
                 </div>
               )}

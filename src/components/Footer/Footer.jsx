@@ -21,11 +21,21 @@ const Footer = () => {
           <div className="col-lg-3 col-md-6 col-sm-6 col-xs-6 footer-col-lg-3 footer-links-col1">
             <div className="footer-links">
               <span>Naviqasiya</span>
-              <Link to="/about-forum" onClick={() => window.scrollTo(0,0)}>Ümumi məlumat</Link>
-              <Link to="/forum-location" onClick={() => window.scrollTo(0,0)}>Forum məkanı</Link>
-              <Link to="/agenda-spiker" onClick={() => window.scrollTo(0,0)}>Sessiya və Spikerlər</Link>
-              <Link to="/gallery" onClick={() => window.scrollTo(0,0)}>Qalereya</Link>
-              <Link to="/news" onClick={() => window.scrollTo(0,0)}>Xəbərlər</Link>
+              <Link to="/about-forum" onClick={() => window.scrollTo(0,0)}>
+                {!lang ? 'Ümumi məlumat' : 'Overall Info' }
+              </Link>
+              <Link to="/forum-location" onClick={() => window.scrollTo(0,0)}>
+                {!lang ? 'Forum məkanı' : 'Forum Location'}
+              </Link>
+              <Link to="/agenda-spiker" onClick={() => window.scrollTo(0,0)}>
+                {!lang ? 'Sessiya və Spikerlər' : 'Session and Speakers'}
+              </Link>
+              <Link to="/gallery" onClick={() => window.scrollTo(0,0)}>
+                {!lang ? 'Xəbərlər' : 'News'}
+              </Link>
+              <Link to="/news" onClick={() => window.scrollTo(0,0)}>
+                {!lang ? 'Qalereya' : 'Gallery'}
+              </Link>
             </div>
           </div>
           <div className="col-lg-3 col-md-6 col-sm-6 col-xs-6 footer-col-lg-3 footer-links-col">
