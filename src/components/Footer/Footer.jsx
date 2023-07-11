@@ -5,8 +5,11 @@ import gray from "../../assets/Footer/gray.png";
 import white from "../../assets/Footer/white.png";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Footer = () => {
+  const lang = useSelector((state) => state.langReducer.lang);
+
   return (
     <footer>
       <div className="container">
