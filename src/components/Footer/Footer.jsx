@@ -20,7 +20,7 @@ const Footer = () => {
           </div>
           <div className="col-lg-3 col-md-6 col-sm-6 col-xs-6 footer-col-lg-3 footer-links-col1">
             <div className="footer-links">
-              <span>Naviqasiya</span>
+              <span>{!lang ? 'Naviqasiya' : 'Navigation'}</span>
               <Link to="/about-forum" onClick={() => window.scrollTo(0,0)}>
                 {!lang ? 'Ümumi məlumat' : 'Overall Info' }
               </Link>
@@ -40,7 +40,7 @@ const Footer = () => {
           </div>
           <div className="col-lg-3 col-md-6 col-sm-6 col-xs-6 footer-col-lg-3 footer-links-col">
             <div className="footer-links">
-              <span>Bizi İzləyin</span>
+              <span>{!lang ? 'Bizi İzləyin' : 'Follow Us'}</span>
               <div className="footer-sosial-icons">
                 <a
                   href="https://www.facebook.com/"
@@ -70,7 +70,7 @@ const Footer = () => {
           </div>
           <div className="col-lg-3 col-md-6 col-sm-6 col-xs-6 footer-col-lg-3 footer-links-col1">
             <div className="footer-links">
-              <span>Bizimlə əlaqə</span>
+              <span>{!lang ? 'Bizimlə əlaqə' : 'Contact us'}</span>
               <Link>info@globalmediaforum.az</Link>
             </div>
           </div>
@@ -90,11 +90,11 @@ const Footer = () => {
                   onMouseLeave={(e) => (e.currentTarget.src = `${gray}`)}
                 />
               </a>
-              &nbsp;&nbsp;&nbsp; Bütün hüquqlar qorunur.
+              &nbsp;&nbsp;&nbsp; {!lang ? 'Bütün hüquqlar qorunur.' : 'All rights reserved.'}
             </span>
           </div>
           <div className="col-md-6 footer-privacy">
-            <span>Məxfilik Siyasəti</span>
+            <span>{!lang ? 'Məxfilik Siyasəti' : 'Privacy Policy'}</span>
           </div>
         </div>
       </div>
