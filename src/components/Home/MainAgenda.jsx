@@ -8,13 +8,14 @@ import { homeSliceAction } from "../../store/homeSlice";
 
 const FAQ = () => {
   const agenda_info = useSelector(state => state.homeReducer.agenda_info);
+  const lang = useSelector(state => state.langReducer.lang);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    fetchData('home').then((data) => (
+    fetchData(!lang ? `az/home` : `en/home`).then((data) => (
       dispatch(homeSliceAction.getAgendaInfo(data.Agenda_Məlumat))
     ))
-  }, [dispatch]);
+  }, [dispatch,lang]);
 
   const handleClose = () => {
     window.scrollTo(0, 0);

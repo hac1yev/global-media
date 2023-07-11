@@ -6,17 +6,16 @@ import { fetchData } from "../../api/fetchData";
 import { formLocationSliceAction } from "../../store/formLocation";
 
 const ForumLocation = () => {
-
+  const lang = useSelector(state => state.langReducer.lang);
   const formLocationAll = useSelector((state) => state.formLocationReducer.overAllLocation);
 
-  console.log(formLocationAll)
   const dispatch = useDispatch();
 
   useEffect(() => {
-    fetchData(`location`).then((data) => (
+    fetchData(!lang ? `az/location` : `en/location`).then((data) => (
       dispatch(formLocationSliceAction.getOverAll(data.Forum_Məkanı))
     ));
-  }, [dispatch]);
+  }, [dispatch,lang]);
 
 
   return (
