@@ -1,21 +1,33 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./FAQ.css";
-
+import { useDispatch, useSelector } from "react-redux";
 import union from "../../assets/Home/union.png";
 import { Link } from "react-router-dom";
+import { fetchData } from "../../api/fetchData";
+import { homeSliceAction } from "../../store/homeSlice";
 
 const FAQ = () => {
+  const agenda_info = useSelector(state => state.homeReducer.agenda_info);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    fetchData('home').then((data) => (
+      dispatch(homeSliceAction.getAgendaInfo(data.Agenda_Məlumat))
+    ))
+  }, [dispatch]);
+
   const handleClose = () => {
     window.scrollTo(0, 0);
   };
+
+  console.log(agenda_info)
   return (
     <div className="faq-container row">
       <div className="accord col-lg-6">
         <div data-aos="zoom-in" data-aos-duration="700">
-          <h1>Proqram</h1>
-          <p>
-            Forumun sessiyaları və spikerlər haqqında ətraflı məlumat üçün keçid
-            edə bilərsiniz
+          <h1>{agenda_info.Title}</h1>
+          <p dangerouslySetInnerHTML={{ __html: agenda_info.Information }}>
+           
           </p>
           <div className="session-div">
             <span className="anime-drop">→</span>{" "}

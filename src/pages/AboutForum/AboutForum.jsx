@@ -2,8 +2,10 @@ import React from 'react';
 import './AboutForum.css';
 import '../../components/AgendaSpiker/SessionOfForum';
 import about_forum_img from "../../assets/Home/aboutForum.jpeg";
+import { useSelector } from 'react-redux';
 
 const AboutForum = () => {
+    const lang = useSelector(state => state.langReducer.lang);
 
   return (
     <>
@@ -16,7 +18,7 @@ const AboutForum = () => {
             <div className="container about-forum-container">
                 <div className="row about-forum-row">
                     <div className="col-12">
-                        <h1>Ümumi məlumat</h1>
+                        <h1>{!lang ? 'Ümumi məlumat' : 'Overall info'}</h1>
                     </div>
                     <div className="col-lg-12 px-0 about-forum-9" data-aos="zoom-in" data-aos-duration="700">
                         <p>
@@ -57,7 +59,9 @@ const AboutForum = () => {
             </div>
             <div className="container">
                 <div className='row forum-purpose'>
-                    <h1 className='col-12' data-aos="fade-down" data-aos-duration="700">Forumun məqsədi və istiqamətləri</h1>
+                    <h1 className='col-12' data-aos="fade-down" data-aos-duration="700">
+                        {!lang ? 'Forumun məqsədi və istiqamətləri' : 'Purpose and directions of the forum'}
+                    </h1>
                     <p className='col-12 mt-3' data-aos="zoom-in" data-aos-duration="700">
                         Forum dünyanın müxtəlif ölkələrindən olan rəsmilər, media və vətəndaş cəmiyyəti, dövlət və biznes 
                         nümayəndələri, media azadlığı üzrə müdafiəçilər, beynəlxalq təşkilatların təmsilçiləri, həmçinin 

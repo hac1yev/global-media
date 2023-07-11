@@ -6,6 +6,7 @@ import session1_card3 from '../../assets/AgendaSpiker/sesson1-card3.jpg';
 import session1_card4 from '../../assets/AgendaSpiker/sesson1-card4.png';
 import session1_card5 from '../../assets/AgendaSpiker/sesson1-card5.png';
 import session1_card6 from '../../assets/AgendaSpiker/sesson1-card6.jpg';
+import { useSelector } from 'react-redux';
 
 const dummy_session = [
   {
@@ -47,6 +48,7 @@ const dummy_session = [
 ];
 
 const SessionOfForum = () => {
+  const lang = useSelector(state => state.langReducer.lang);
   const [isEtrafli,setIsEtrafli] = useState(false);
 
   const handleEtrafli = () => {
@@ -101,13 +103,13 @@ const SessionOfForum = () => {
               </p>
             </p>
             <div className='session-button'>
-              {!isEtrafli && <button onClick={handleEtrafli}>Ətraflı</button>}
+              {!isEtrafli && <button onClick={handleEtrafli}>{!lang ? 'Ətraflı' : 'More'}</button>}
             </div>
           </div>
           <div className='session-cards-wrapper row'>
             <div className='col-lg-4 col-md-6 d-flex justify-content-center ps-0'>
               <h2 className='session-cards-title'>
-                Spikerlər
+                {!lang ? 'Spikerlər' : 'Speakers'}
               </h2>
             </div>
             <div className='col-lg-'>
@@ -160,13 +162,13 @@ const SessionOfForum = () => {
               </p>
             </p>
             <div className='session-button'>
-              {!isEtrafli && <button onClick={handleEtrafli}>Ətraflı</button>}
+              {!isEtrafli && <button onClick={handleEtrafli}>{!lang ? 'Ətraflı' : 'More'}</button>}
             </div>
           </div>
           <div className='session-cards-wrapper row'>
             <div className='col-lg-4 col-md-6 d-flex justify-content-center'>
               <h2 className='session-cards-title'>
-                Spikerlər
+                {!lang ? 'Spikerlər' : 'Speakers'}
               </h2>
             </div>
             <div className='col-lg-'>
@@ -215,13 +217,13 @@ const SessionOfForum = () => {
               </p>
             </p>
             <div className='session-button'>
-              {!isEtrafli && <button onClick={handleEtrafli}>Ətraflı</button>}
+              {!isEtrafli && <button onClick={handleEtrafli}>{!lang ? 'Ətraflı' : 'More'}</button>}
             </div>
           </div>
           <div className='session-cards-wrapper row'>
             <div className='col-lg-4 col-md-6 d-flex justify-content-center'>
               <h2 className='session-cards-title'>
-                Spikerlər
+                {!lang ? 'Spikerlər' : 'Speakers'}
               </h2>
             </div>
             <div className='col-lg-'>
