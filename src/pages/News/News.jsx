@@ -2,6 +2,7 @@ import React from 'react'
 import newsCard from "../../assets/News/thumb.jpg";
 import { Link } from "react-router-dom";
 import '../../pages/Media/Media.css'
+import { useSelector } from 'react-redux';
 
 const newsData = [
   {
@@ -47,6 +48,9 @@ const News = () => {
     window.scrollTo(0,0);    
   };
 
+
+  const lang = useSelector((state) => state.langReducer.lang);
+
   return (
     <div className="media-section latest-section">
     <div className="media-left-div" data-aos="zoom-in" data-aos-duration="700"></div>
@@ -54,7 +58,7 @@ const News = () => {
       <div className="media-content">
         <div className="media-content-div" data-aos="zoom-in" data-aos-duration="700"></div>
         <span className="media-red-circle"></span>
-        <h3 className='mb-3'>Xəbərlər</h3>
+        <h3 className='mb-3'>{!lang ? 'Xəbərlər' : 'News'}</h3>
       </div>
       <div className="gallery-con">
         {newsData.map((item) => (
@@ -72,7 +76,7 @@ const News = () => {
       <hr />
       <div className='gallery-more-div'>
         <button className="gallery-more">
-          Daha Çox
+          {!lang ? 'Daha Çox' : 'More'}
         </button>
       </div>
     </div>
