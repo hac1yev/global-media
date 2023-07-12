@@ -26,7 +26,7 @@ const FAQ = () => {
     <div className="faq-container row">
       <div className="accord col-lg-6">
         <div data-aos="zoom-in" data-aos-duration="700">
-          <h1>{agenda_info.Title}</h1>
+          <h1>{!lang ? 'Proqram' : 'Agenda'}</h1>
           <p dangerouslySetInnerHTML={{ __html: agenda_info.Information }}>
            
           </p>
@@ -37,7 +37,7 @@ const FAQ = () => {
               onClick={handleClose}
               to={"/agenda-spiker"}
             >
-              Sessiyalar və spikerlər
+              {!lang ? 'Sessiyalar və spikerlər' : "Sessions and speakers"}
             </Link>
           </div>
         </div>
