@@ -4,7 +4,7 @@ import ImageGallery from 'react-image-gallery';
 import "react-image-gallery/styles/css/image-gallery.css";
 import newsDetailArrow from '../../assets/News/newsDetailArrow.svg';
 import { Link } from 'react-router-dom';
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaTelegramPlane, FaWhatsapp } from "react-icons/fa";
+// import { FaFacebookF, FaTwitter, FaLinkedinIn, FaTelegramPlane, FaWhatsapp } from "react-icons/fa";
 
 const images = [
     {
@@ -142,7 +142,7 @@ const NewsDetail = () => {
                     “Azərbaycan musiqisinin beşiyi” və “Zaqafqaziyanın konservatoriyası” adlandırılmışdır.
                 </p>
                 <ImageGallery className="news-image-gallery" items={images} />
-                <div className='news-share-info'>
+                {/* <div className='news-share-info'>
                     <span>Məlumatı paylaş</span>
                     <div className='news-social-icons'>
                         <a href='https://www.facebook.com/' target='_blank' rel="noreferrer" className='news-social-icon'>
@@ -161,7 +161,7 @@ const NewsDetail = () => {
                             <FaWhatsapp className='social-icon' />
                         </a>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
         <div style={{ flex: 1 }}></div>
