@@ -9,6 +9,7 @@ import AboutForum from './pages/AboutForum/AboutForum.jsx';
 import News from '../src/pages/News/News.jsx';
 import NewsDetail from '../src/pages/NewsDetail/NewsDetail.jsx';
 import Gallery from '../src/pages/Gallery/Gallery.jsx';
+import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy.jsx';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path='/gallery' element={<Gallery />} />
           <Route path='/news' element={<News />} />
           <Route path='/news/:newsId' element={<NewsDetail />} />
+          <Route path='/privacy' element={<PrivacyPolicy />} />
         </Routes>
       <Footer />
     </>

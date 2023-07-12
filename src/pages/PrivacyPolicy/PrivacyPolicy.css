@@ -1,0 +1,20 @@
+.privacy-policy h2{
+    letter-spacing: 0.5px;
+    font-size: 30px;
+}
+
+.privacy-policy h4 {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    font-weight: 600;
+    margin-bottom: 10px!important;
+}
+
+.privacy-policy p span {
+    margin-right: 5px;
+}
+
+.privacy-policy p {
+    line-height: 1.6;
+    margin-bottom: 1rem!important;
+}

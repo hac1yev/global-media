@@ -97,7 +97,7 @@ const Footer = () => {
             </span>
           </div>
           <div className="col-md-6 footer-privacy">
-            <span>{!lang ? 'Məxfilik Siyasəti' : 'Privacy Policy'}</span>
+            <Link to="/privacy" onClick={() => window.scrollTo(0,0)} style={{ color: '#fff' }}>{!lang ? 'Məxfilik Siyasəti' : 'Privacy Policy'}</Link>
           </div>
         </div>
       </div>
