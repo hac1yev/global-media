@@ -3,8 +3,11 @@ import '../../pages/Media/Media.css'
 import galleryCard from "../../assets/Home/gallerycard.png";
 import sitatCard from "../../assets/Home/sitat.png";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Media = () => {
+
+  const lang = useSelector((state) => state.langReducer.lang);
   return (
     <>
       <div className="media-section">
@@ -13,7 +16,7 @@ const Media = () => {
           <div className="media-content">
             <div className="media-content-div" data-aos="zoom-in" data-aos-duration="700"></div>
             <span className="media-red-circle"></span>
-            <h3>Qalereya</h3>
+            <h3>{!lang ? 'Qalereya' : 'Gallery'}</h3>
           
           </div>
           <div className="gallery-con">
@@ -111,7 +114,7 @@ const Media = () => {
           <hr />
           <div className="gallery-more-div">
             <button className="gallery-more">
-              Daha Çox
+             {!lang ? ' Daha Çox' : 'More'}
             </button>
           </div>
         </div>
@@ -124,7 +127,7 @@ const Media = () => {
           <div className="media-content">
             <div className="media-content-div" data-aos="zoom-in" data-aos-duration="700"></div>
             <span className="media-red-circle"></span>
-            <h3>Sitatlar</h3>
+            <h3>{!lang ? 'Sitatlar' : 'Quotes'}</h3>
           </div>
           <div className="gallery-con">
             <Link to={''} className="gallery-card" data-aos="zoom-in" data-aos-duration="700">
@@ -190,7 +193,7 @@ const Media = () => {
           <hr />
           <div className='gallery-more-div mb-3'>
             <button className="gallery-more">
-              Daha Çox
+             {!lang ? ' Daha Çox' : 'More'}
             </button>
           </div>
         </div>
