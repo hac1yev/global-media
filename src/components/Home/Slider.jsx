@@ -57,27 +57,119 @@ const Sliders = () => {
 
   useEffect(() => {
     fetchData(!lang ? 'az/home' : 'en/home')
-      .then(data => dispatch(homeSliceAction.getVideos(data.Videos)))
-  }, [dispatch , lang]);
+      .then(data => dispatch(homeSliceAction.getVideos(data.Videolar)))
+  }, [dispatch]);
 
   return (
     <div className="container slider-container mt-5">
       <Slider {...settings}>
 
-        {/* {
-          sliderData.map(item => 
+        {
+         Object.values(sliderData).map(item => 
             <div className="swiper-content" key={item.Id}>
               <a
                 href={item.Name}
                 data-fancybox="gallery"
                 data-caption="Caption #1"
               >
-                <img alt="thumbnail" src={videoPic} />
+                <img alt="thumbnail" src={item.Image} />
               </a>
             </div>
           )
-        } */}
+        }
 
+
+
+        {/* <div className="swiper-content">
+          <a
+            href="https://www.youtube.com/embed/Fr-CuY0H38A"
+            data-fancybox="gallery"
+            data-caption="Caption #1"
+          >
+            <img alt="thumbnail" src={videoPic} />
+          </a>
+        </div>
+        <div className="swiper-content">
+          <a
+            href="https://www.youtube.com/embed/Fr-CuY0H38A"
+            data-fancybox="gallery"
+            data-caption="Caption #1"
+          >
+            <img alt="thumbnail" src={videoPic} />
+          </a>
+        </div>
+        <div className="swiper-content">
+          <a
+            href="https://www.youtube.com/embed/Fr-CuY0H38A"
+            data-fancybox="gallery"
+            data-caption="Caption #1"
+          >
+            <img alt="thumbnail" src={videoPic} />
+          </a>
+        </div>
+        <div className="swiper-content">
+          <a
+            href="https://www.youtube.com/embed/Fr-CuY0H38A"
+            data-fancybox="gallery"
+            data-caption="Caption #1"
+          >
+            <img alt="thumbnail" src={videoPic} />
+          </a>
+        </div>
+        <div className="swiper-content">
+          <a
+            href="https://www.youtube.com/embed/Fr-CuY0H38A"
+            data-fancybox="gallery"
+            data-caption="Caption #1"
+          >
+            <img alt="thumbnail" src={videoPic} />
+          </a>
+        </div>
+        <div className="swiper-content">
+          <a
+            href="https://www.youtube.com/embed/Fr-CuY0H38A"
+            data-fancybox="gallery"
+            data-caption="Caption #1"
+          >
+            <img alt="thumbnail" src={videoPic} />
+          </a>
+        </div>
+        <div className="swiper-content">
+          <a
+            href="https://www.youtube.com/embed/Fr-CuY0H38A"
+            data-fancybox="gallery"
+            data-caption="Caption #1"
+          >
+            <img alt="thumbnail" src={videoPic} />
+          </a>
+        </div>
+        <div className="swiper-content">
+          <a
+            href="https://www.youtube.com/embed/Fr-CuY0H38A"
+            data-fancybox="gallery"
+            data-caption="Caption #1"
+          >
+            <img alt="thumbnail" src={videoPic} />
+          </a>
+        </div>
+        <div className="swiper-content">
+          <a
+            href="https://www.youtube.com/embed/Fr-CuY0H38A"
+            data-fancybox="gallery"
+            data-caption="Caption #1"
+          >
+            <img alt="thumbnail" src={videoPic} />
+          </a>
+        </div>
+        <div className="swiper-content">
+          <a
+            href="https://www.youtube.com/embed/Fr-CuY0H38A"
+            data-fancybox="gallery"
+            data-caption="Caption #1"
+          >
+            <img alt="" src={videoPic} />
+          </a>
+        </div> */}
       </Slider>
     </div>
   );
