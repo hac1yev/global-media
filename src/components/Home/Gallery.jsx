@@ -14,6 +14,7 @@ import G10 from '../../assets/Home/gallery10.webp';
 import G11 from '../../assets/Home/gallery11.webp';
 import G12 from '../../assets/Home/gallery12.webp';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const DUMMY_IMG = [
   {
@@ -71,6 +72,8 @@ const DUMMY_IMG2 = [
 ];
 
 const Gallery = () => {
+  const lang = useSelector(state => state.langReducer.lang);
+
   const settings1 = {
     dots: true,
     infinite: true,
@@ -140,12 +143,13 @@ const Gallery = () => {
     ]
   };
 
+
   return (
     <div className='gallery-section'>
       <div className='gallery-top'>
         <h3>Qalereya</h3>
         <Link to="/gallery" onClick={() => window.scrollTo(0, 0)} className='gallery-more'>
-          Daha Çox
+        {!lang ? 'Daha Çox' : 'More'}
         </Link>
       </div>
       <Slider {...settings1}>

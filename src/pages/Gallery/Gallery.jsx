@@ -15,7 +15,12 @@ const Media = () => {
 
   useEffect(() => {
     fetchData(!lang ? 'az/media' : 'en/media').then((data) => (
-      dispatch(gallerySliceSction.getAllGallery(data.Galery)),
+      dispatch(gallerySliceSction.getAllGallery(data.Galery))
+    ));
+  }, [dispatch,lang]);
+
+  useEffect(() => {
+    fetchData(!lang ? 'az/media' : 'en/media').then((data) => (
       dispatch(gallerySliceSction.getAllCite(data.Sitatlar))
     ));
   }, [dispatch,lang]);
@@ -28,7 +33,7 @@ const Media = () => {
           <div className="media-content">
             <div className="media-content-div" data-aos="zoom-in" data-aos-duration="700"></div>
             <span className="media-red-circle"></span>
-            <h3>Qalereya</h3>
+            <h3>{!lang ? 'Qalereya' : 'Gallery'}</h3>
           </div>
           <div className="gallery-con">
             {
@@ -50,7 +55,7 @@ const Media = () => {
           <hr />
           <div className="gallery-more-div">
             <button className="gallery-more">
-              Daha Çox
+              {!lang ? 'Daha Çox' : 'More'}
             </button>
           </div>
         </div>
@@ -63,7 +68,7 @@ const Media = () => {
           <div className="media-content">
             <div className="media-content-div" data-aos="zoom-in" data-aos-duration="700"></div>
             <span className="media-red-circle"></span>
-            <h3>Sitatlar</h3>
+            <h3>{!lang ? 'Sitatlar' : 'Quotes'}</h3>
           </div>
           <div className="gallery-con">
 
@@ -83,7 +88,7 @@ const Media = () => {
           <hr />
           <div className='gallery-more-div mb-3'>
             <button className="gallery-more">
-              Daha Çox
+              {!lang ? 'Daha Çox' : 'More'}
             </button>
           </div>
         </div>

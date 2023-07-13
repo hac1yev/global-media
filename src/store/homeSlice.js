@@ -3,8 +3,9 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialHomeState = {
     about: {},
     aboutImg: {},
-    banners: [],
+    banners: {},
     videos: {},
+    map: {},
     highlight: [],
     agendas: [],
     agenda_info: {},
@@ -22,10 +23,13 @@ const homeSlice = createSlice({
             state.aboutImg = {...action.payload}
         },
         getBanners(state, action) {
-            state.banners = [...action.payload]
+            state.banners = {...action.payload}
         },
         getVideos(state, action) {
             state.videos = {...action.payload}
+        },
+        getMap(state, action) {
+            state.map = {...action.payload}
         },
         getHighlight(state, action) {
             state.highlight = [...action.payload]

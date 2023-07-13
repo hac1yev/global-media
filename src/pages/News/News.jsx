@@ -70,7 +70,7 @@ return (
      <div className="media-content">
         <div className="media-content-div" data-aos="zoom-in" data-aos-duration="700"></div>
         <span className="media-red-circle"></span>
-        <h3 className='mb-3'>Xəbərlər</h3>
+        <h3 className='mb-3'>{!lang ? 'Xəbərlər' : 'News'}</h3>
      </div>
      <div className="gallery-con">
         {news.map((item,i) => (
