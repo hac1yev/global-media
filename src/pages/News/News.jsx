@@ -87,7 +87,7 @@ return (
      <hr />
      <div className='gallery-more-div'>
         <button className="gallery-more">
-         Daha Çox
+         {!lang ? 'Daha Çox' : 'More'}
         </button>
      </div>
     </div>

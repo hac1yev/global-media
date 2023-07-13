@@ -91,7 +91,7 @@ const Header = () => {
   const getChangeLang = (e) => {
     dispatch(langSliceAction.replaceLang());
     window.localStorage.setItem("lang", lang ? false : true);
-    window.location.reload();
+    // window.location.reload();
   };
 
   const handleLangEnter = () => {
