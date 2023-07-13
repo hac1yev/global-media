@@ -1,53 +1,53 @@
 import React, { useState,useEffect } from 'react';
 import './SessionOfForum.css';
-import session1_card1 from '../../assets/AgendaSpiker/sesson1-card1.png';
-import session1_card2 from '../../assets/AgendaSpiker/sesson1-card2.jpeg';
-import session1_card3 from '../../assets/AgendaSpiker/sesson1-card3.jpg';
-import session1_card4 from '../../assets/AgendaSpiker/sesson1-card4.png';
-import session1_card5 from '../../assets/AgendaSpiker/sesson1-card5.png';
-import session1_card6 from '../../assets/AgendaSpiker/sesson1-card6.jpg';
+// import session1_card1 from '../../assets/AgendaSpiker/sesson1-card1.png';
+// import session1_card2 from '../../assets/AgendaSpiker/sesson1-card2.jpeg';
+// import session1_card3 from '../../assets/AgendaSpiker/sesson1-card3.jpg';
+// import session1_card4 from '../../assets/AgendaSpiker/sesson1-card4.png';
+// import session1_card5 from '../../assets/AgendaSpiker/sesson1-card5.png';
+// import session1_card6 from '../../assets/AgendaSpiker/sesson1-card6.jpg';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchData } from '../../api/fetchData.js';
 import { sessionSliceAction } from '../../store/sessionSlice.js';
 
-const dummy_session = [
-  {
-    id: 's1',
-    img: session1_card1,
-    title: 'Aleksandru Giboi',
-    description: 'Secretary General, Alliance of European News Agencies',
-  },
-  {
-    id: 's2',
-    img: session1_card2,
-    title: 'Damjan Krnjevic Miskovic',
-    description: 'Director for Policy Research, Analysis, and Publications, ADA University',
-  },
-  {
-    id: 's3',
-    img: session1_card3,
-    title: 'Evgenia Doitcheva Droumeva',
-    description: 'Deputy Director General, “BTA” New Agency',
-  },
-  {
-    id: 's4',
-    img: session1_card4,
-    title: 'Matz Muhy Abdulhamid Obada',
-    description: 'Centre for Strategic Studies of Republic of Iraq',
-  },
-  {
-    id: 's5',
-    img: session1_card5,
-    title: 'Mohammad Talal Abdulkarim',
-    description: ' Manager of Training Department, Aljazeera Media Institute',
-  },
-  {
-    id: 's6',
-    img: session1_card6,
-    title: 'Yusuf Özhan',
-    description: 'Deputy Director General, Editor-in-Chief, Anadolu Agency',
-  },
-];
+// const dummy_session = [
+//   {
+//     id: 's1',
+//     img: session1_card1,
+//     title: 'Aleksandru Giboi',
+//     description: 'Secretary General, Alliance of European News Agencies',
+//   },
+//   {
+//     id: 's2',
+//     img: session1_card2,
+//     title: 'Damjan Krnjevic Miskovic',
+//     description: 'Director for Policy Research, Analysis, and Publications, ADA University',
+//   },
+//   {
+//     id: 's3',
+//     img: session1_card3,
+//     title: 'Evgenia Doitcheva Droumeva',
+//     description: 'Deputy Director General, “BTA” New Agency',
+//   },
+//   {
+//     id: 's4',
+//     img: session1_card4,
+//     title: 'Matz Muhy Abdulhamid Obada',
+//     description: 'Centre for Strategic Studies of Republic of Iraq',
+//   },
+//   {
+//     id: 's5',
+//     img: session1_card5,
+//     title: 'Mohammad Talal Abdulkarim',
+//     description: ' Manager of Training Department, Aljazeera Media Institute',
+//   },
+//   {
+//     id: 's6',
+//     img: session1_card6,
+//     title: 'Yusuf Özhan',
+//     description: 'Deputy Director General, Editor-in-Chief, Anadolu Agency',
+//   },
+// ];
 
 const SessionOfForum = () => {
   const dispatch = useDispatch();
