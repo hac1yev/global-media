@@ -106,7 +106,7 @@ console.log(session1)
             </div>
             <div className='col-lg-'>
             </div>
-            {session1.Spikerlər.map((item) => (
+            {session1?.Spikerlər?.map((item) => (
               <div className="col-lg-4 col-md-6 mt-3 ps-0" data-aos="zoom-in" data-aos-duration="700">
                 <div className='session-card card'>
                     <img className='card-img-top' src={item.img} alt={item.title} />
@@ -143,7 +143,7 @@ console.log(session1)
             </div>
             <div className='col-lg-'>
             </div>
-            {session2.Spikerlər.map((item) => (
+            {session2?.Spikerlər?.map((item) => (
               <div className="col-lg-4 col-md-6 mt-3" data-aos="zoom-in" data-aos-duration="700">
                 <div className='session-card card'>
                     <img className='card-img-top' src={item.img} alt={item.title} />
@@ -180,7 +180,7 @@ console.log(session1)
             </div>
             <div className='col-lg-'>
             </div>
-            {session3.Spikerlər.map((item) => (
+            {session3?.Spikerlər?.map((item) => (
               <div className="col-lg-4 col-md-6 mt-3" data-aos="zoom-in" data-aos-duration="700">
                 <div className='session-card card'>
                     <img className='card-img-top' src={item.img} alt={item.title} />
