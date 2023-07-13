@@ -58,7 +58,7 @@ const Sliders = () => {
   useEffect(() => {
     fetchData(!lang ? 'az/home' : 'en/home')
       .then(data => dispatch(homeSliceAction.getVideos(data.Videolar)))
-  }, [dispatch]);
+  }, [dispatch,lang]);
 
   return (
     <div className="container slider-container mt-5">
