@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Slider.css";
-import videoPic from "../../assets/Home/videoSlider.png";
+// import videoPic from "../../assets/Home/videoSlider.png";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "../../api/fetchData";
 import { homeSliceAction } from "../../store/homeSlice";
