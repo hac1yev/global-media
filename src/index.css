@@ -32,6 +32,10 @@ p,h1,h2,h3,h4,h5,h6,span,li {
   color: #22333b;
 }
 
+strong {
+	font-weight: 600!important;
+}
+
 /* ---------------- FONTS FAMILY ---------------- */
 
 @font-face {

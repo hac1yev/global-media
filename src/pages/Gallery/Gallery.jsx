@@ -41,13 +41,13 @@ const Media = () => {
                 <a className="gallery-card" data-aos="zoom-in" data-aos-duration="700"
                   data-fancybox="gallery"
                   data-src={item?.Image}
-                  data-caption={item.Content_Az}
+                  data-caption={item.Content}
                   href="/" >
                   <div className="gallery-img">
                     <img src={item?.Image} alt="" />
                     <p className="time-p">22-07-2022</p>
                   </div>
-                  <p className="gallery-info" dangerouslySetInnerHTML={{ __html: item.Content_Az }} />
+                  <p className="gallery-info" dangerouslySetInnerHTML={{ __html: item.Content }} />
                 </a>
               )
             }
@@ -75,12 +75,12 @@ const Media = () => {
             {Object.values(citeAll).map((data) => 
               <a data-fancybox="gallery1"
                   data-src={data?.Image}
-                  data-caption={data.Content_Az}
+                  data-caption={data.Content}
                   href="/"  className="gallery-card" data-aos="zoom-in" data-aos-duration="700">
               <div className="gallery-img">
                 <img src={data.Image} alt="" />
               </div>
-              <p className="gallery-info" dangerouslySetInnerHTML={{__html: data.Content_Az}} />
+              <p className="gallery-info" dangerouslySetInnerHTML={{__html: data.Content}} />
             </a>
             )}
 
