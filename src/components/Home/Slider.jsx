@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Slider.css";
-import videoPic from "../../assets/Home/videoSlider.png";
+// import videoPic from "../../assets/Home/videoSlider.png";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "../../api/fetchData";
 import { homeSliceAction } from "../../store/homeSlice";
@@ -52,20 +52,20 @@ const Sliders = () => {
   const lang = useSelector((state) => state.langReducer.lang);
 
 
-  console.log(sliderData)
+
 
 
   useEffect(() => {
     fetchData(!lang ? 'az/home' : 'en/home')
       .then(data => dispatch(homeSliceAction.getVideos(data.Videolar)))
-  }, [dispatch]);
+  }, [dispatch, lang]);
 
   return (
     <div className="container slider-container mt-5">
       <Slider {...settings}>
 
         {
-         Object.values(sliderData).map(item => 
+          Object.values(sliderData).map(item =>
             <div className="swiper-content" key={item.Id}>
               <a
                 href={item.Name}
@@ -77,99 +77,6 @@ const Sliders = () => {
             </div>
           )
         }
-
-
-
-        {/* <div className="swiper-content">
-          <a
-            href="https://www.youtube.com/embed/Fr-CuY0H38A"
-            data-fancybox="gallery"
-            data-caption="Caption #1"
-          >
-            <img alt="thumbnail" src={videoPic} />
-          </a>
-        </div>
-        <div className="swiper-content">
-          <a
-            href="https://www.youtube.com/embed/Fr-CuY0H38A"
-            data-fancybox="gallery"
-            data-caption="Caption #1"
-          >
-            <img alt="thumbnail" src={videoPic} />
-          </a>
-        </div>
-        <div className="swiper-content">
-          <a
-            href="https://www.youtube.com/embed/Fr-CuY0H38A"
-            data-fancybox="gallery"
-            data-caption="Caption #1"
-          >
-            <img alt="thumbnail" src={videoPic} />
-          </a>
-        </div>
-        <div className="swiper-content">
-          <a
-            href="https://www.youtube.com/embed/Fr-CuY0H38A"
-            data-fancybox="gallery"
-            data-caption="Caption #1"
-          >
-            <img alt="thumbnail" src={videoPic} />
-          </a>
-        </div>
-        <div className="swiper-content">
-          <a
-            href="https://www.youtube.com/embed/Fr-CuY0H38A"
-            data-fancybox="gallery"
-            data-caption="Caption #1"
-          >
-            <img alt="thumbnail" src={videoPic} />
-          </a>
-        </div>
-        <div className="swiper-content">
-          <a
-            href="https://www.youtube.com/embed/Fr-CuY0H38A"
-            data-fancybox="gallery"
-            data-caption="Caption #1"
-          >
-            <img alt="thumbnail" src={videoPic} />
-          </a>
-        </div>
-        <div className="swiper-content">
-          <a
-            href="https://www.youtube.com/embed/Fr-CuY0H38A"
-            data-fancybox="gallery"
-            data-caption="Caption #1"
-          >
-            <img alt="thumbnail" src={videoPic} />
-          </a>
-        </div>
-        <div className="swiper-content">
-          <a
-            href="https://www.youtube.com/embed/Fr-CuY0H38A"
-            data-fancybox="gallery"
-            data-caption="Caption #1"
-          >
-            <img alt="thumbnail" src={videoPic} />
-          </a>
-        </div>
-        <div className="swiper-content">
-          <a
-            href="https://www.youtube.com/embed/Fr-CuY0H38A"
-            data-fancybox="gallery"
-            data-caption="Caption #1"
-          >
-            <img alt="thumbnail" src={videoPic} />
-          </a>
-        </div>
-        <div className="swiper-content">
-          <a
-            href="https://www.youtube.com/embed/Fr-CuY0H38A"
-            data-fancybox="gallery"
-            data-caption="Caption #1"
-          >
-            <img alt="" src={videoPic} />
-          </a>
-        </div> */}
       </Slider>
     </div>
   );
