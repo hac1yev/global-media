@@ -15,10 +15,16 @@ const Media = () => {
 
   useEffect(() => {
     fetchData(!lang ? 'az/media' : 'en/media').then((data) => (
-      dispatch(gallerySliceSction.getAllGallery(data.Galery)),
+      dispatch(gallerySliceSction.getAllGallery(data.Galery))
+    ));
+  }, [dispatch, lang]);
+
+
+  useEffect(() => {
+    fetchData(!lang ? 'az/media' : 'en/media').then((data) => (
       dispatch(gallerySliceSction.getAllCite(data.Sitatlar))
     ));
-  }, [dispatch,lang]);
+  }, [dispatch, lang]);
 
   return (
     <>
@@ -67,16 +73,16 @@ const Media = () => {
           </div>
           <div className="gallery-con">
 
-            {Object.values(citeAll).map((data) => 
+            {Object.values(citeAll).map((data) =>
               <a data-fancybox="gallery1"
-                  data-src={data?.Image}
-                  data-caption={data.Content_Az}
-                  href="/"  className="gallery-card" data-aos="zoom-in" data-aos-duration="700">
-              <div className="gallery-img">
-                <img src={data.Image} alt="" />
-              </div>
-              <p className="gallery-info" dangerouslySetInnerHTML={{__html: data.Content_Az}} />
-            </a>
+                data-src={data?.Image}
+                data-caption={data.Content_Az}
+                href="/" className="gallery-card" data-aos="zoom-in" data-aos-duration="700">
+                <div className="gallery-img">
+                  <img src={data.Image} alt="" />
+                </div>
+                <p className="gallery-info" dangerouslySetInnerHTML={{ __html: data.Content_Az }} />
+              </a>
             )}
 
           </div>
