@@ -12,9 +12,9 @@
   object-fit: cover;
 }
 
-.slick-track {
+/* .slick-track {
   width: 100%!important;
-}
+} */
 
 .slider-container .slick-slide {
   padding: 0 6px;

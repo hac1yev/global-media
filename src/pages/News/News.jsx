@@ -74,7 +74,7 @@ return (
      </div>
      <div className="gallery-con">
         {news.map((item,i) => (
-         <Link onClick={handleClick} to={`/news/${item.id}`} key={i} className="gallery-card" data-aos="zoom-in" data-aos-duration="700">
+         <Link onClick={handleClick} to={`/news/${item.Id}`} key={i} className="gallery-card" data-aos="zoom-in" data-aos-duration="700">
             <div className="gallery-img">
              <img src={item.Image} alt={item.Content_Az} />
              <p className="time-p">{item.time}</p>
