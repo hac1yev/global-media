@@ -128,7 +128,7 @@ const NewsDetail = () => {
         <div className="container news-detail-container">
             <div className='image-gallery-wrapper'>
                 <span>04 İyul, 2023</span>
-                <h2>Medianın gələcəyi: Rəqəmsal dövrdə jurnalistika</h2>
+                <h2>Şuşada Beynəlxalq Media Forumun açılış mərasimi keçirilib</h2>
                 <p>
                     Təməli 1752-ci ildə Qarabağ xanı Pənahəli xan tərəfindən qoyulan Şuşa şəhəri zəngin inkişaf 
                     yolu keçmiş, Azərbaycanın və bütün Cənubi Qafqazın mədəni və ictimai-siyasi həyatında müstəsna 

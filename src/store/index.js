@@ -5,7 +5,7 @@ import formAboutSlice from "./forumAbout";
 import formLocationSlice from "./formLocation";
 import gallerySlice from "./gallerySlice";
 import newsSlice from "./newsSlice";
-
+import sessionSlice from "./sessionSlice";
 
 export const store = configureStore({
     reducer: {
@@ -14,6 +14,7 @@ export const store = configureStore({
         formpurpReducer: formAboutSlice.reducer,
         formLocationReducer: formLocationSlice.reducer,
         galleryReducer: gallerySlice.reducer,
-        newsReducer: newsSlice.reducer
-    }
+        newsReducer: newsSlice.reducer,
+        sessionReducer: sessionSlice.reducer,
+    },
 });
