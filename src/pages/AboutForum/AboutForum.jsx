@@ -46,7 +46,7 @@ const AboutForum = () => {
                 <div className="container about-forum-container">
                     <div className="row about-forum-row">
                         <div className="col-12">
-                            <h1>{formOverAll.Title}</h1>
+                            <h1>{!lang ? 'Ümumi məlumat' : 'Overall Information'}</h1>
                         </div>
                         <div className="col-lg-12 px-0 about-forum-9" data-aos="zoom-in" data-aos-duration="700">
                             <div dangerouslySetInnerHTML={{__html: formOverAll.Information}} />
@@ -77,7 +77,7 @@ const AboutForum = () => {
                 </div>
                 <div className="container">
                     <div className='row forum-purpose'>
-                        <h1 className='col-12' data-aos="fade-down" data-aos-duration="700">{formPurp.Title}</h1>
+                        <h1 className='col-12' data-aos="fade-down" data-aos-duration="700">{!lang ? 'Forumun məqsədi və istiqamətləri' : "Forum's purpose and directions"}</h1>
                         <p className='col-12 mt-3' data-aos="zoom-in" data-aos-duration="700" dangerouslySetInnerHTML={{__html: formPurp.Information}} />
                         <br />
                     </div>

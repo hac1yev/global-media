@@ -60,6 +60,7 @@ const Sliders = () => {
       .then(data => dispatch(homeSliceAction.getVideos(data.Videolar)))
   }, [dispatch, lang]);
 
+
   return (
     <div className="container slider-container mt-5">
       <Slider {...settings}>

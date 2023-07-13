@@ -34,7 +34,7 @@ const Media = () => {
           <div className="media-content">
             <div className="media-content-div" data-aos="zoom-in" data-aos-duration="700"></div>
             <span className="media-red-circle"></span>
-            <h3>Qalereya</h3>
+            <h3>{!lang ? 'Qalereya' : 'Gallery'}</h3>
           </div>
           <div className="gallery-con">
             {
@@ -42,13 +42,13 @@ const Media = () => {
                 <a className="gallery-card" data-aos="zoom-in" data-aos-duration="700"
                   data-fancybox="gallery"
                   data-src={item?.Image}
-                  data-caption={item.Content_Az}
+                  data-caption={item.Content}
                   href="/" >
                   <div className="gallery-img">
                     <img src={item?.Image} alt="" />
                     <p className="time-p">22-07-2022</p>
                   </div>
-                  <p className="gallery-info" dangerouslySetInnerHTML={{ __html: item.Content_Az }} />
+                  <p className="gallery-info" dangerouslySetInnerHTML={{ __html: item.Content }} />
                 </a>
               )
             }
@@ -56,7 +56,7 @@ const Media = () => {
           <hr />
           <div className="gallery-more-div">
             <button className="gallery-more">
-              Daha Çox
+              {!lang ? 'Daha Çox' : 'More'}
             </button>
           </div>
         </div>
@@ -69,27 +69,27 @@ const Media = () => {
           <div className="media-content">
             <div className="media-content-div" data-aos="zoom-in" data-aos-duration="700"></div>
             <span className="media-red-circle"></span>
-            <h3>Sitatlar</h3>
+            <h3>{!lang ? 'Sitatlar' : 'Quotes'}</h3>
           </div>
           <div className="gallery-con">
 
             {Object.values(citeAll).map((data) =>
               <a data-fancybox="gallery1"
-                data-src={data?.Image}
-                data-caption={data.Content_Az}
-                href="/" className="gallery-card" data-aos="zoom-in" data-aos-duration="700">
-                <div className="gallery-img">
-                  <img src={data.Image} alt="" />
-                </div>
-                <p className="gallery-info" dangerouslySetInnerHTML={{ __html: data.Content_Az }} />
-              </a>
+                  data-src={data?.Image}
+                  data-caption={data.Content_Az}
+                  href="/"  className="gallery-card" data-aos="zoom-in" data-aos-duration="700">
+              <div className="gallery-img">
+                <img src={data.Image} alt="" />
+              </div>
+              <p className="gallery-info" dangerouslySetInnerHTML={{__html: data.Content_Az}} />
+            </a>
             )}
 
           </div>
           <hr />
           <div className='gallery-more-div mb-3'>
             <button className="gallery-more">
-              Daha Çox
+              {!lang ? 'Daha Çox' : 'More'}
             </button>
           </div>
         </div>

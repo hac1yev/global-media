@@ -1,53 +1,53 @@
 import React, { useState,useEffect } from 'react';
 import './SessionOfForum.css';
-import session1_card1 from '../../assets/AgendaSpiker/sesson1-card1.png';
-import session1_card2 from '../../assets/AgendaSpiker/sesson1-card2.jpeg';
-import session1_card3 from '../../assets/AgendaSpiker/sesson1-card3.jpg';
-import session1_card4 from '../../assets/AgendaSpiker/sesson1-card4.png';
-import session1_card5 from '../../assets/AgendaSpiker/sesson1-card5.png';
-import session1_card6 from '../../assets/AgendaSpiker/sesson1-card6.jpg';
+// import session1_card1 from '../../assets/AgendaSpiker/sesson1-card1.png';
+// import session1_card2 from '../../assets/AgendaSpiker/sesson1-card2.jpeg';
+// import session1_card3 from '../../assets/AgendaSpiker/sesson1-card3.jpg';
+// import session1_card4 from '../../assets/AgendaSpiker/sesson1-card4.png';
+// import session1_card5 from '../../assets/AgendaSpiker/sesson1-card5.png';
+// import session1_card6 from '../../assets/AgendaSpiker/sesson1-card6.jpg';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchData } from '../../api/fetchData.js';
 import { sessionSliceAction } from '../../store/sessionSlice.js';
 
-const dummy_session = [
-  {
-    id: 's1',
-    img: session1_card1,
-    title: 'Aleksandru Giboi',
-    description: 'Secretary General, Alliance of European News Agencies',
-  },
-  {
-    id: 's2',
-    img: session1_card2,
-    title: 'Damjan Krnjevic Miskovic',
-    description: 'Director for Policy Research, Analysis, and Publications, ADA University',
-  },
-  {
-    id: 's3',
-    img: session1_card3,
-    title: 'Evgenia Doitcheva Droumeva',
-    description: 'Deputy Director General, “BTA” New Agency',
-  },
-  {
-    id: 's4',
-    img: session1_card4,
-    title: 'Matz Muhy Abdulhamid Obada',
-    description: 'Centre for Strategic Studies of Republic of Iraq',
-  },
-  {
-    id: 's5',
-    img: session1_card5,
-    title: 'Mohammad Talal Abdulkarim',
-    description: ' Manager of Training Department, Aljazeera Media Institute',
-  },
-  {
-    id: 's6',
-    img: session1_card6,
-    title: 'Yusuf Özhan',
-    description: 'Deputy Director General, Editor-in-Chief, Anadolu Agency',
-  },
-];
+// const dummy_session = [
+//   {
+//     id: 's1',
+//     img: session1_card1,
+//     title: 'Aleksandru Giboi',
+//     description: 'Secretary General, Alliance of European News Agencies',
+//   },
+//   {
+//     id: 's2',
+//     img: session1_card2,
+//     title: 'Damjan Krnjevic Miskovic',
+//     description: 'Director for Policy Research, Analysis, and Publications, ADA University',
+//   },
+//   {
+//     id: 's3',
+//     img: session1_card3,
+//     title: 'Evgenia Doitcheva Droumeva',
+//     description: 'Deputy Director General, “BTA” New Agency',
+//   },
+//   {
+//     id: 's4',
+//     img: session1_card4,
+//     title: 'Matz Muhy Abdulhamid Obada',
+//     description: 'Centre for Strategic Studies of Republic of Iraq',
+//   },
+//   {
+//     id: 's5',
+//     img: session1_card5,
+//     title: 'Mohammad Talal Abdulkarim',
+//     description: ' Manager of Training Department, Aljazeera Media Institute',
+//   },
+//   {
+//     id: 's6',
+//     img: session1_card6,
+//     title: 'Yusuf Özhan',
+//     description: 'Deputy Director General, Editor-in-Chief, Anadolu Agency',
+//   },
+// ];
 
 const SessionOfForum = () => {
   const dispatch = useDispatch();
@@ -84,12 +84,11 @@ console.log(session1)
         </ul>
         <div className="tab-pane fade row justify-content-end show active session1-tab" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
           <div className='session-ətraflı-content col-md-9'>
-            <h2 className='text-start col-md-10' data-aos="fade-down" data-aos-duration="700">
-              {session1?.Sessiya?.Title_Az}
+            <h2 className='text-start col-md-10' data-aos="fade-down" data-aos-duration="700" dangerouslySetInnerHTML={{ __html: session1?.Sessiya?.Title }}>
             </h2>
             <p 
               className={ isEtrafli ? 'session-overflow-p session-etrafli-p' : 'session-overflow-p' }
-              dangerouslySetInnerHTML={{ __html: session1?.Sessiya?.Information_Az }}
+              dangerouslySetInnerHTML={{ __html: session1?.Sessiya?.Information }}
             >
             </p>
             <div className='session-button'>
@@ -107,12 +106,12 @@ console.log(session1)
             <div className='col-lg-'>
             </div>
             {session1?.Spikerlər?.map((item) => (
-              <div className="col-lg-4 col-md-6 mt-3 ps-0" data-aos="zoom-in" data-aos-duration="700">
+              <div className="col-lg-4 col-md-6 mt-3 ps-0" data-aos="zoom-in" data-aos-duration="700" key={item.Id}>
                 <div className='session-card card'>
-                    <img className='card-img-top' src={item.img} alt={item.title} />
+                    <img className='card-img-top' src={item.Image} alt={item.Fullname} />
                     <div class="card-body">
-                      <h3 class="card-title">{item.title}</h3>
-                      <p class="card-text">{item.description}</p>
+                      <h3 class="card-title">{item.Fullname}</h3>
+                      <p class="card-text" dangerouslySetInnerHTML={{ __html: item.Information }}></p>
                     </div>
                 </div>
               </div>
@@ -121,12 +120,11 @@ console.log(session1)
         </div>
         <div className="tab-pane fade row justify-content-end session2-tab" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
           <div className='session-ətraflı-content col-md-9'>
-            <h2 className='text-start col-md-10' data-aos="fade-down" data-aos-duration="700">
-              {session1?.Sessiya?.Title_Az}
+            <h2 className='text-start col-md-10' data-aos="fade-down" data-aos-duration="700" dangerouslySetInnerHTML={{ __html: session2?.Sessiya?.Title }}>
             </h2>
             <p 
               className={ isEtrafli ? 'session-overflow-p session-etrafli-p' : 'session-overflow-p' }
-              dangerouslySetInnerHTML={{ __html: session2?.Sessiya?.Information_Az }}
+              dangerouslySetInnerHTML={{ __html: session2?.Sessiya?.Information }}
             >
             </p>
             <div className='session-button'>
@@ -146,10 +144,10 @@ console.log(session1)
             {session2?.Spikerlər?.map((item) => (
               <div className="col-lg-4 col-md-6 mt-3" data-aos="zoom-in" data-aos-duration="700">
                 <div className='session-card card'>
-                    <img className='card-img-top' src={item.img} alt={item.title} />
+                    <img className='card-img-top' src={item.Image} alt={item.Fullname} />
                     <div class="card-body">
-                      <h3 class="card-title">{item.title}</h3>
-                      <p class="card-text">{item.description}</p>
+                      <h3 class="card-title">{item.Fullname}</h3>
+                      <p class="card-text" dangerouslySetInnerHTML={{ __html: item.Information }}></p>
                     </div>
                 </div>
               </div>
@@ -158,12 +156,11 @@ console.log(session1)
         </div>
         <div className="tab-pane fade row justify-content-end session3-tab" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
           <div className='session-ətraflı-content col-md-9'>
-              <h2 className='text-start col-md-10' data-aos="fade-down" data-aos-duration="700">
-                {session3?.Sessiya?.Title_Az}
+              <h2 className='text-start col-md-10' data-aos="fade-down" data-aos-duration="700" dangerouslySetInnerHTML={{ __html: session3?.Sessiya?.Title }}>
               </h2>
             <p 
               className={ isEtrafli ? 'session-overflow-p session-etrafli-p' : 'session-overflow-p' }
-              dangerouslySetInnerHTML={{ __html: session3?.Sessiya?.Information_Az }}
+              dangerouslySetInnerHTML={{ __html: session3?.Sessiya?.Information }}
             >
             </p>
             <div className='session-button'>
@@ -183,10 +180,10 @@ console.log(session1)
             {session3?.Spikerlər?.map((item) => (
               <div className="col-lg-4 col-md-6 mt-3" data-aos="zoom-in" data-aos-duration="700">
                 <div className='session-card card'>
-                    <img className='card-img-top' src={item.img} alt={item.title} />
+                    <img className='card-img-top' src={item.Image} alt={item.Fullname} />
                     <div class="card-body">
-                      <h3 class="card-title">{item.title}</h3>
-                      <p class="card-text">{item.description}</p>
+                      <h3 class="card-title">{item.FullName}</h3>
+                      <p class="card-text" dangerouslySetInnerHTML={{ __html: item.Information }}></p>
                     </div>
                 </div>
               </div>

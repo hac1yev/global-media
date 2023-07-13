@@ -59,7 +59,7 @@ const Statics = () => {
             <h1>
               <Number n={item?.Number} />
             </h1>
-            <p>{item?.Name_AZ}</p>
+            <p>{item?.Name}</p>
           </div>
         )) : (
           <>
