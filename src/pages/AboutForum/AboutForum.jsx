@@ -12,7 +12,7 @@ const AboutForum = () => {
     const formOverAll = useSelector((state) => state.formpurpReducer.overall);
     const formPurp = useSelector((state) => state.formpurpReducer.formPurp);
     const formImg = useSelector((state) => state.formpurpReducer.formImg);
-    console.log(formOverAll, formPurp, formImg)
+   
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -33,7 +33,7 @@ const AboutForum = () => {
             ));
     }, [dispatch,lang]);
 
-    console.log(formOverAll)
+
     
     return (
         <>

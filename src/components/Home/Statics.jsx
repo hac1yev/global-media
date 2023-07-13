@@ -28,7 +28,7 @@ const Statics = () => {
     ))
   },[dispatch,lang])
 
-  console.log(scrollNav);
+
 
   const changeNav = () => {
     if (window.innerWidth >= 768) {

@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Slider.css";
 import videoPic from "../../assets/Home/videoSlider.png";
-// import { useDispatch, useSelector } from "react-redux";
-// import { fetchData } from "../../api/fetchData";
-// import { homeSliceAction } from "../../store/homeSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchData } from "../../api/fetchData";
+import { homeSliceAction } from "../../store/homeSlice";
 
 const Sliders = () => {
   var settings = {
@@ -47,16 +47,18 @@ const Sliders = () => {
     ],
   };
 
-  // const sliderData = useSelector(state => state.homeReducer.videos);
-  // const dispatch = useDispatch();
+  const sliderData = useSelector(state => state.homeReducer.videos);
+  const dispatch = useDispatch();
+  const lang = useSelector((state) => state.langReducer.lang);
 
-  // console.log(sliderData)
+
+  console.log(sliderData)
 
 
-  // useEffect(() => {
-  //   fetchData(`home`)
-  //     .then(data => dispatch(homeSliceAction.getVideos(data.Videos)))
-  // }, [dispatch]);
+  useEffect(() => {
+    fetchData(!lang ? 'az/home' : 'en/home')
+      .then(data => dispatch(homeSliceAction.getVideos(data.Videos)))
+  }, [dispatch , lang]);
 
   return (
     <div className="container slider-container mt-5">
@@ -76,98 +78,6 @@ const Sliders = () => {
           )
         } */}
 
-
-
-        <div className="swiper-content">
-          <a
-            href="https://www.youtube.com/embed/Fr-CuY0H38A"
-            data-fancybox="gallery"
-            data-caption="Caption #1"
-          >
-            <img alt="thumbnail" src={videoPic} />
-          </a>
-        </div>
-        <div className="swiper-content">
-          <a
-            href="https://www.youtube.com/embed/Fr-CuY0H38A"
-            data-fancybox="gallery"
-            data-caption="Caption #1"
-          >
-            <img alt="thumbnail" src={videoPic} />
-          </a>
-        </div>
-        <div className="swiper-content">
-          <a
-            href="https://www.youtube.com/embed/Fr-CuY0H38A"
-            data-fancybox="gallery"
-            data-caption="Caption #1"
-          >
-            <img alt="thumbnail" src={videoPic} />
-          </a>
-        </div>
-        <div className="swiper-content">
-          <a
-            href="https://www.youtube.com/embed/Fr-CuY0H38A"
-            data-fancybox="gallery"
-            data-caption="Caption #1"
-          >
-            <img alt="thumbnail" src={videoPic} />
-          </a>
-        </div>
-        <div className="swiper-content">
-          <a
-            href="https://www.youtube.com/embed/Fr-CuY0H38A"
-            data-fancybox="gallery"
-            data-caption="Caption #1"
-          >
-            <img alt="thumbnail" src={videoPic} />
-          </a>
-        </div>
-        <div className="swiper-content">
-          <a
-            href="https://www.youtube.com/embed/Fr-CuY0H38A"
-            data-fancybox="gallery"
-            data-caption="Caption #1"
-          >
-            <img alt="thumbnail" src={videoPic} />
-          </a>
-        </div>
-        <div className="swiper-content">
-          <a
-            href="https://www.youtube.com/embed/Fr-CuY0H38A"
-            data-fancybox="gallery"
-            data-caption="Caption #1"
-          >
-            <img alt="thumbnail" src={videoPic} />
-          </a>
-        </div>
-        <div className="swiper-content">
-          <a
-            href="https://www.youtube.com/embed/Fr-CuY0H38A"
-            data-fancybox="gallery"
-            data-caption="Caption #1"
-          >
-            <img alt="thumbnail" src={videoPic} />
-          </a>
-        </div>
-        <div className="swiper-content">
-          <a
-            href="https://www.youtube.com/embed/Fr-CuY0H38A"
-            data-fancybox="gallery"
-            data-caption="Caption #1"
-          >
-            <img alt="thumbnail" src={videoPic} />
-          </a>
-        </div>
-        <div className="swiper-content">
-          <a
-            href="https://www.youtube.com/embed/Fr-CuY0H38A"
-            data-fancybox="gallery"
-            data-caption="Caption #1"
-          >
-            <img alt="" src={videoPic} />
-          </a>
-        </div>
       </Slider>
     </div>
   );

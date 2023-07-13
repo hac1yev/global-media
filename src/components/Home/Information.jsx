@@ -12,7 +12,7 @@ const Information = () => {
   const lang = useSelector(state => state.langReducer.lang);
   const about = useSelector((state) => state.homeReducer.about);
   const aboutImg = useSelector((state) => state.homeReducer.aboutImg);
-  console.log("About Data" , about)
+
   const dispatch = useDispatch();
 
   useEffect(() => {
