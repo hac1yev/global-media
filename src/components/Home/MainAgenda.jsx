@@ -21,7 +21,6 @@ const FAQ = () => {
     window.scrollTo(0, 0);
   };
 
-  console.log(agenda_info)
   return (
     <div className="faq-container row">
       <div className="accord col-lg-6">
