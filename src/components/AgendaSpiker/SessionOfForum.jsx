@@ -73,13 +73,19 @@ console.log(session1)
       <div className="tab-content session-content" id="pills-tabContent">
         <ul class="nav nav-pills session-nav-pills mb-3 col-3" id="pills-tab" role="tablist">
           <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Sessiya 1</button>
+            <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+              {!lang ? 'Sessiya 1' : 'Session 1'}
+            </button>
           </li>
           <li class="nav-item" role="presentation">
-            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Sessiya 2</button>
+            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
+              {!lang ? 'Sessiya 2' : 'Session 2'}
+            </button>
           </li>
           <li class="nav-item" role="presentation">
-            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Sessiya 3</button>
+            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">
+              {!lang ? 'Sessiya 3' : 'Session 3'}
+            </button>
           </li>
         </ul>
         <div className="tab-pane fade row justify-content-end show active session1-tab" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
