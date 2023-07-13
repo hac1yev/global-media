@@ -4,7 +4,7 @@ const initialHomeState = {
     about: {},
     aboutImg: {},
     banners: {},
-    videos: {},
+    videos: [],
     map: {},
     highlight: [],
     agendas: [],
@@ -26,7 +26,7 @@ const homeSlice = createSlice({
             state.banners = {...action.payload}
         },
         getVideos(state, action) {
-            state.videos = {...action.payload}
+            state.videos = [...action.payload]
         },
         getMap(state, action) {
             state.map = {...action.payload}
