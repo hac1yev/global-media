@@ -18,9 +18,9 @@
 .accord img {
   max-width: 450px;
   /* width: 0%; */
-  position: absolute;
-  left: 0;
-  bottom: 0;
+  /* position: absolute; */
+  /* left: 0;
+  bottom: 0; */
 }
 
 .accord div h1 {
