@@ -24,7 +24,9 @@ const ForumLocation = () => {
         <div style={{ flex: "1" }}></div>
         <div className="container-xl px-0">
           <div className="info-content loc-h3">
-            <h3 className="text-center" data-aos="fade-down" data-aos-duration="700">{formLocationAll.Title}</h3>
+            <h3 className="text-center" data-aos="fade-down" data-aos-duration="700">
+              {!lang ? 'Forum məkanı' : 'Forum location'}
+            </h3>
             <span className="info-red-circle"></span>
             <div className="info-content-div" data-aos="zoom-in" data-aos-duration="700"></div>
           </div>
