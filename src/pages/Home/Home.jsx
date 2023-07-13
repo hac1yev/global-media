@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Home.css';
 import MainAgenda from '../../components/Home/MainAgenda';
 import Information from '../../components/Home/Information';
@@ -9,15 +9,29 @@ import Slider from '../../components/Home/Slider';
 import GlobalMediaMap from '../GlobalMediaMap/GlobalMediaMap';
 
 const Home = () => {
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+  }, []);
   return (
     <div>
-      <Hero />
-      <Information />
-      <Statics />
-      <Gallery />
-      <MainAgenda />
-      <GlobalMediaMap />
-      <Slider />
+      {loading ? <div className="loader-container">
+        <div className="spinner"></div>
+      </div> : <>
+        <Hero />
+        <Information />
+        <Statics />
+        <Gallery />
+        <MainAgenda />
+        <GlobalMediaMap />
+        <Slider />
+      </>
+      }
+
     </div>
   );
 };
