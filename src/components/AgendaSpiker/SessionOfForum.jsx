@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import './SessionOfForum.css';
 import session1_card1 from '../../assets/AgendaSpiker/sesson1-card1.png';
 import session1_card2 from '../../assets/AgendaSpiker/sesson1-card2.jpeg';
@@ -6,7 +6,9 @@ import session1_card3 from '../../assets/AgendaSpiker/sesson1-card3.jpg';
 import session1_card4 from '../../assets/AgendaSpiker/sesson1-card4.png';
 import session1_card5 from '../../assets/AgendaSpiker/sesson1-card5.png';
 import session1_card6 from '../../assets/AgendaSpiker/sesson1-card6.jpg';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchData } from '../../api/fetchData.js';
+import { sessionSliceAction } from '../../store/sessionSlice.js';
 
 const dummy_session = [
   {
@@ -48,6 +50,10 @@ const dummy_session = [
 ];
 
 const SessionOfForum = () => {
+  const dispatch = useDispatch();
+  const session1 = useSelector(state => state.sessionReducer.session1);
+  const session2 = useSelector(state => state.sessionReducer.session2);
+  const session3 = useSelector(state => state.sessionReducer.session3);
   const lang = useSelector(state => state.langReducer.lang);
   const [isEtrafli,setIsEtrafli] = useState(false);
 
@@ -55,6 +61,13 @@ const SessionOfForum = () => {
     setIsEtrafli(true);
   };
 
+  useEffect(() => {
+    fetchData(!lang ? 'az/session' : 'en/session').then((data) => {
+      dispatch(sessionSliceAction.getAllSessions(data))
+    })
+  }, [lang,dispatch]);
+
+console.log(session1)
   return (
     <div className='container session-container mb-4'>
       <div className="tab-content session-content" id="pills-tabContent">
@@ -72,35 +85,12 @@ const SessionOfForum = () => {
         <div className="tab-pane fade row justify-content-end show active session1-tab" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
           <div className='session-ətraflı-content col-md-9'>
             <h2 className='text-start col-md-10' data-aos="fade-down" data-aos-duration="700">
-              Medianın gələcəyi: Rəqəmsal dövrdə jurnalistika və kommunikasiyada yeni alətlər və medianın rolu
+              {session1?.Sessiya?.Title_Az}
             </h2>
-            <p className={ isEtrafli ? 'session-overflow-p session-etrafli-p' : 'session-overflow-p' }>
-              Rəqəmsal kommunikasiya və informasiya texnologiyalarının inkişafı ilə ənənəvi medianın yeni media 
-              növlərinə qarşı rəqabətdə xəbər mənbəyi kimi aktual qalma zərurəti ənənəvi informasiya sənayesinin 
-              rəqəmsal transformasiyasını labüdləşdirir. Eyni zamanda, qlobal informasiya mühitində dezinformasiyanın 
-              və yanlış məlumatların sürətli və geniş yayılması, müxtəlif tərəflərlə düzgün kommunikasiya siyasətinin 
-              qurulması, xüsusən də media subyektlərinin fəaliyyətinin effektivliyinin artırılması dövrün ən aktual 
-              məsələsinə çevrilmişdir. Xüsusilə qlobal miqyasda əhəmiyyətli məsələlərə dair həssas mövzuların müəyyən 
-              edilməsi və bu istiqamətdə mövcud ehtiyaclar əsasında məlumatların effektiv və çevik şəkildə yayılması 
-              bir çox məqamda həlledici təsirə malikdir. Media sahəsində baş verən dəyişikliklər xəbərin hədəf kütləyə 
-              daha uğurlu çatdırılması üçün yeni jurnalistika növlərinin daha çox istifadəsinə, yeni trendlərin 
-              müxtəlif istiqamətlərdə geniş tətbiqinə zərurət yaradır. Müasir dövrdə həm insanların ictimai şüurunda 
-              informasiyanın tutduğu yeri, həm də informasiya-kommunikasiya texnologiyalarının cəmiyyətin həyatında 
-              olan əhəmiyyətli rolunu nəzərə alaraq, bu gün “media” özündə tamamilə yeni məna ehtiva edir, mediada 
-              alətlər, istehsalçı və istehlakçılar, həmçinin, müxtəlif proseslərdə medianın rolu davamlı dəyişir.
-              <br /><br />
-              Forum iştirakçıları tərəfindən bu sessiyada dövlətin effektiv və səmərəli kommunikativ əlaqələrinin 
-              inkişafı, media vasitəsilə çoxtərəfli əlaqələrin qurulması ilə bağlı müzakirələr aparılacaq, ənənəvi 
-              medianın bugünkü rolu və gələcəyi, yeni tendensiyalar fonunda jurnalistikada yaranan çətinliklər və 
-              aktuallaşan yeni istiqamətlər, eləcə də bu sahədə rəqəmsal alətlərin tətbiqinin yaratdığı nəticələr 
-              müzakirə ediləcəkdir.
-              <br /><br />
-              <p style={{ fontWeight: 900 }}>
-                Sessiya çərçivəsində keçiriləcək panel müzakirənin mövzusu:
-              </p>
-              <p>
-              - Medianın gələcəyi: Ənənəvi media üçün növbəti addımlar; Rəqəmsal transformasiya diqqət mərkəzində
-              </p>
+            <p 
+              className={ isEtrafli ? 'session-overflow-p session-etrafli-p' : 'session-overflow-p' }
+              dangerouslySetInnerHTML={{ __html: session1?.Sessiya?.Information_Az }}
+            >
             </p>
             <div className='session-button'>
               {!isEtrafli && <button onClick={handleEtrafli}>{!lang ? 'Ətraflı' : 'More'}</button>}
@@ -116,7 +106,7 @@ const SessionOfForum = () => {
             </div>
             <div className='col-lg-'>
             </div>
-            {dummy_session.map((item) => (
+            {session1.Spikerlər.map((item) => (
               <div className="col-lg-4 col-md-6 mt-3 ps-0" data-aos="zoom-in" data-aos-duration="700">
                 <div className='session-card card'>
                     <img className='card-img-top' src={item.img} alt={item.title} />
@@ -132,34 +122,12 @@ const SessionOfForum = () => {
         <div className="tab-pane fade row justify-content-end session2-tab" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
           <div className='session-ətraflı-content col-md-9'>
             <h2 className='text-start col-md-10' data-aos="fade-down" data-aos-duration="700">
-              Mediada investisiya və istehlak tendensiyaları
+              {session1?.Sessiya?.Title_Az}
             </h2>
-            <p className={ isEtrafli ? 'session-overflow-p session-etrafli-p' : 'session-overflow-p' }>
-              Yeni media mühitində informasiyanın ötürülməsində vasitəçilik fəaliyyəti ənənəvi media subyektlərinin 
-              fəaliyyətindən fərqlənir. Müasir dövrdə audiovizual və çap mediasının ənənəvi media subyektləri kimi 
-              xəbərlərin əsas istehsalçısı olaraq qalmasına baxmayaraq, onlayn media xəbər istehsalına ayrılan kiçik 
-              investisiyalar ilə ənənəvi xəbər sənayesi və media biznes modellərinə meydan oxuyur. Bu vəziyyət mediada 
-              transformasiyanın sürətləndirilməsini şərtləndirir. Rəqəmsal media vasitələrinin intensiv inkişafı çap 
-              mediasının tirajı, çapı, eləcə də digər media növlərinin xərc və gəlir strukturuna, ənənəvi mediada reklam 
-              bazarı və digər məsələlərə ciddi təsir göstərmişdir. Yeni media mühitində qeyri-xətti media istehlakı, 
-              yüksək interaktivlik, mobil qurğulardan istifadə, həmçinin kütləvi məzmunun yaradılmasında sərbəstlik ilə 
-              xarakterizə olunan auditoriya formalaşmışdır. Müasir dövrdə mediadan istifadə ilə bağlı əsaslı qərar qəbul 
-              etmək, mediadan və yeni texnologiyalardan istifadənin etik nəticələrini başa düşmək və ya məlumatları 
-              təhlil etmək bacarıqlarına malik media istehlakçılarının olması həm ictimaiyyətin düzgün məlumatlanmasında, 
-              həm də sağlam media mühitinin formalaşmasında xüsusi rol oynayır. 
-              <br /><br />
-              Forumun sessiyasında iştirakçılar media 
-              məhsullarının istehsalı və istehlakı ilə bağlı dəyişən trendlər, mediada investisiya məsələləri, media 
-              savadlılığının peşəkar medianın inkişafında rolu, yeni mediada dəyər zəncirinin yaradılması və biznes 
-              modellərinin inkişafı ilə bağlı fikir mübadiləsi aparacaqlar.
-              <br /> <br />
-              <p style={{ fontWeight: 900 }}>
-                Sessiya çərçivəsində keçiriləcək panel müzakirənin mövzusu:
-              </p>
-              <p>
-                - Müasir informasiya mühitində media menecmenti və dayanıqlı media biznes modellərinin yaradılması <br />
-                - Yeni mediada istehlak tendensiyaları və media savadlılığı (dezinformasiya və   feyk nyusla mübarizə üsulları)
-              </p>
+            <p 
+              className={ isEtrafli ? 'session-overflow-p session-etrafli-p' : 'session-overflow-p' }
+              dangerouslySetInnerHTML={{ __html: session2?.Sessiya?.Information_Az }}
+            >
             </p>
             <div className='session-button'>
               {!isEtrafli && <button onClick={handleEtrafli}>{!lang ? 'Ətraflı' : 'More'}</button>}
@@ -175,7 +143,7 @@ const SessionOfForum = () => {
             </div>
             <div className='col-lg-'>
             </div>
-            {dummy_session.map((item) => (
+            {session2.Spikerlər.map((item) => (
               <div className="col-lg-4 col-md-6 mt-3" data-aos="zoom-in" data-aos-duration="700">
                 <div className='session-card card'>
                     <img className='card-img-top' src={item.img} alt={item.title} />
@@ -191,30 +159,12 @@ const SessionOfForum = () => {
         <div className="tab-pane fade row justify-content-end session3-tab" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
           <div className='session-ətraflı-content col-md-9'>
               <h2 className='text-start col-md-10' data-aos="fade-down" data-aos-duration="700">
-                Təhlükəsizlik məsələləri
+                {session3?.Sessiya?.Title_Az}
               </h2>
-            <p className={ isEtrafli ? 'session-overflow-p session-etrafli-p' : 'session-overflow-p' }>
-              Böhran vəziyyətlərində, habelə gözlənilməyən və ya proqnozlaşdırılması mürəkkəb olan fors-major hadisələr 
-              zamanı ictimaiyyəti məlumatlandırma mexanizmlərinin mövcudluğu, həmçinin bu məsələdə vacib rol oynayan 
-              jurnalistlərin təhlükəsizliyinin təmin edilməsi son dövrlərin əsas məsələlərindəndir. Jurnalistlər qaynar 
-              nöqtələrdə, münaqişə zonalarında etibarlı məlumat toplamaq və yaymaqla mühüm missiyanı yerinə yetirirlər. 
-              Jurnalistikada önəmli ixtisas istiqamətlərindən biri olan “münaqişə jurnalistikası” ciddi insan hüquqları 
-              pozuntuları, hərbi cinayətlər və digər məsələləri beynəlxalq ictimaiyyətin diqqətinə çatdırmağa xidmət 
-              edir. Bu baxımdan, beynəlxalq humanitar hüququn implementasiyası və onun pozulmasının qarşısının alınması 
-              məqsədilə müxtəlif səviyyələrdə məlumatlandırma mexanizmlərinin və peşəkar jurnalistikanın inkişafı, 
-              media nümayəndələrinin təhlükəsizliyinin qorunması və zəruri avadanlıqlarla təmin edilmələri ciddi 
-              zərurətdir. 
-              <br /> <br />
-              Forumda bu sessiya üzrə iştirakçılar böhran vəziyyətlərinin kommunikasiya mexanizmlərinin 
-              təkmilləşdirilməsi, peşəkar “münaqişə jurnalistikası”nın inkişafı və jurnalistlərin təhlükəsizliyinin 
-              qorunması məsələləri də diqqət mərkəzində olacaqdır.
-              <br /><br />
-              <p style={{ fontWeight: 900 }}>
-                Sessiya çərçivəsində keçiriləcək panel müzakirənin mövzusu:
-              </p>
-              <p>
-              - Jurnalistlərin təhlükəsizliyi
-              </p>
+            <p 
+              className={ isEtrafli ? 'session-overflow-p session-etrafli-p' : 'session-overflow-p' }
+              dangerouslySetInnerHTML={{ __html: session3?.Sessiya?.Information_Az }}
+            >
             </p>
             <div className='session-button'>
               {!isEtrafli && <button onClick={handleEtrafli}>{!lang ? 'Ətraflı' : 'More'}</button>}
@@ -230,7 +180,7 @@ const SessionOfForum = () => {
             </div>
             <div className='col-lg-'>
             </div>
-            {dummy_session.map((item) => (
+            {session3.Spikerlər.map((item) => (
               <div className="col-lg-4 col-md-6 mt-3" data-aos="zoom-in" data-aos-duration="700">
                 <div className='session-card card'>
                     <img className='card-img-top' src={item.img} alt={item.title} />
