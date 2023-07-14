@@ -12,12 +12,26 @@
   object-fit: cover;
 }
 
+.swiper-content a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* .slick-track {
   width: 100%!important;
 } */
 
 .slider-container .slick-slide {
   padding: 0 6px;
+}
+
+.slider-play-button {
+  position: absolute;
+  z-index: 10;
+  width: 150px!important;
+  height: 150px!important;
 }
 
 @media screen and (max-width: 768px) {
@@ -39,13 +53,7 @@
   .swiper-content {
     padding: 0;
   }
+  
 
-  .swiper-content a img{
-    width: 100% !important;
-  }
-
-  .slider-container{
-    padding-left: 0 !important;
-  }
 
 }
