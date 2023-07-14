@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.css";
-import footer_logo from "../../assets/Footer/GMF-footer-logo.png";
+import footer_logo from "../../assets/Footer/logo.svg";
 import gray from "../../assets/Footer/gray.png";
 import white from "../../assets/Footer/white.png";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";

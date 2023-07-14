@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Header.css";
-import logo from "../../assets/Home/logo.png";
+import logo from "../../assets/Home/neww.png";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { langSliceAction } from "../../store/langSlice";
