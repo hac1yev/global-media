@@ -23,7 +23,7 @@ const FAQ = () => {
 
   return (
     <div className="faq-container row">
-      <div className="accord col-lg-6">
+      <div className="accord col-lg-6 d-flex flex-column justify-content-between">
         <div data-aos="zoom-in" data-aos-duration="700">
           <h1>{!lang ? 'Proqram' : 'Agenda'}</h1>
           <p dangerouslySetInnerHTML={{ __html: agenda_info.Information }}>
