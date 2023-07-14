@@ -52,7 +52,7 @@ const Statics = () => {
 
   return (
     <div className="static-container">
-      <h1 className="st-first">Qlobal Media Forum Rəqəmlərdə</h1>
+      <h1 className="st-first">{!lang ? 'Qlobal Media Forum Rəqəmlərdə' : 'Global Media Forum In Numbers'}</h1>
       <div className="container static-inner">
         {scrollNav ? statistics.map((item,i) => (
           <div className="static1" data-aos="zoom-in"
