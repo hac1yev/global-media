@@ -7,6 +7,7 @@ import "./Slider.css";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "../../api/fetchData";
 import { homeSliceAction } from "../../store/homeSlice";
+import playButton from '../../assets/Home/playButton.png';
 
 const Sliders = () => {
   var settings = {
@@ -51,10 +52,6 @@ const Sliders = () => {
   const dispatch = useDispatch();
   const lang = useSelector((state) => state.langReducer.lang);
 
-
-
-
-
   useEffect(() => {
     fetchData(!lang ? 'az/home' : 'en/home')
       .then(data => dispatch(homeSliceAction.getVideos(data.Videolar)))
@@ -74,6 +71,7 @@ const Sliders = () => {
                 data-caption="Caption #1"
               >
                 <img alt="thumbnail" src={item.Image} />
+                <img className="slider-play-button" src={playButton} alt="play-button" />
               </a>
             </div>
           )
