@@ -52,6 +52,7 @@ const Statics = () => {
 
   return (
     <div className="static-container">
+      <h1 className="st-first">Qlobal Media Forum Rəqəmlərdə</h1>
       <div className="container static-inner">
         {scrollNav ? statistics.map((item,i) => (
           <div className="static1" data-aos="zoom-in"
