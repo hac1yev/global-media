@@ -4,8 +4,17 @@
   margin-top: 5px;
   z-index: 5;
   position: relative;
-  display: flex;
-  padding: 150px 0;
+  /* display: flex; */
+  padding: 50px 0 150px 0;
+}
+
+.st-first {
+  text-align: center;
+  color: #22333B;
+  font-size: 64px;
+  font-family: "CodecPro-Regular";
+  font-weight: 500;
+  margin-bottom: 30px !important;
 }
 
 .bottom-img {
@@ -79,6 +88,10 @@
     width: 230px;
     padding: 10px 0;
     gap: 0;
+  }
+
+  .st-first{
+    font-size: 40px;
   }
 
   .static-container {
