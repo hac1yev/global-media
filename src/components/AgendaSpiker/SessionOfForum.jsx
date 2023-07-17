@@ -67,11 +67,10 @@ const SessionOfForum = () => {
     })
   }, [lang,dispatch]);
 
-console.log(session1)
   return (
     <div className='container session-container mb-4'>
       <div className="tab-content session-content" id="pills-tabContent">
-        <ul class="nav nav-pills session-nav-pills mb-3 col-3" id="pills-tab" role="tablist">
+        <ul class="nav nav-pills session-nav-pills mb-3 col-3" id="pills-tab" role="tablist" data-aos="fade-down" data-aos-duration="700">
           <li class="nav-item" role="presentation">
             <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
               {!lang ? 'Sessiya 1' : 'Session 1'}
@@ -103,6 +102,7 @@ console.log(session1)
           </div>
           <div className='session-cards-wrapper row'>
             <div className='col-lg-4 col-md-6 d-flex justify-content-center ps-0'>
+            <h3>{session1?.Sessiya?.Speaker_Title}</h3>
               <h2 className='session-cards-title'>
                 {!lang ? 'Spikerlər' : 'Speakers'}
               </h2>
