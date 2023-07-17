@@ -18,12 +18,12 @@
     padding: 57px 27px 24px;
 }
 
-.session-content .tab-pane {
+.session-content .tab-panes {
     display: flex!important;
     align-items: center;
 }
 
-.session-content .tab-pane h2 {
+.session-content .tab-panes h2 {
     display: flex;
     align-items: center;
     gap: 25px;
@@ -58,7 +58,7 @@
         -webkit-text-fill-color: #000!important;
 }
 
-.session-content .tab-pane h2 span {
+.session-content .tab-panes h2 span {
     display: block;
     min-width: 36px;
     min-height: 36px;
@@ -183,9 +183,9 @@
     text-decoration-line: underline;
 }
 
-.tab-pane:not(.active) {
+/* .tab-panes:not(.active) {
     display: none!important;
-}
+} */
 
 @media screen and (max-width: 992px) {
     .session-nav-pills {
@@ -227,7 +227,7 @@
         font-size: 16px;
     }
 
-    .session-content .tab-pane h2 {
+    .session-content .tab-panes h2 {
         font-size: 32px;
         line-height: 32px;
     }
@@ -309,7 +309,7 @@
         font-size: 15px;
     }
 
-    .session-content .tab-pane h2 {
+    .session-content .tab-panes h2 {
         font-size: 30px;
         line-height: 30px;
     }
@@ -370,7 +370,7 @@
         font-size: 14px;
     }
 
-    .session-content .tab-pane h2 {
+    .session-content .tab-panes h2 {
         font-size: 28px;
         line-height: 28px;
     }
@@ -396,7 +396,7 @@
         padding: 0 0px;
     }
 
-    .session-content .tab-pane h2 {
+    .session-content .tab-panes h2 {
         font-size: 26px;
         line-height: 26px;
     }
