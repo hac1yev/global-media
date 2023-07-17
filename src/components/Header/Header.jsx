@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Header.css";
-import logo from "../../assets/Home/neww.png";
+import logo from "../../assets/Home/gmf_logo_az.svg";
+import logo_en from '../../assets/Home/gmf_logo_en.svg';
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { langSliceAction } from "../../store/langSlice";
@@ -114,7 +115,7 @@ const Header = () => {
         >
           <input type="checkbox" name="" id="toggle" />
           <Link className="navbar-brand" to="/" onClick={handleCloseMenu}>
-            <img src={logo} alt="" />
+            <img src={!lang ? logo : logo_en} alt="" />
           </Link>
 
           <li className="nav-item lang-item2">

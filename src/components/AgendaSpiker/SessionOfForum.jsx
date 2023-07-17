@@ -101,8 +101,8 @@ const SessionOfForum = () => {
             </div>
           </div>
           <div className='session-cards-wrapper row'>
+            <h3 className='col-12 text-start speakers-header mt-5' dangerouslySetInnerHTML={{ __html: session1?.Sessiya?.Speaker_Title }}></h3>
             <div className='col-lg-4 col-md-6 d-flex justify-content-center ps-0'>
-            <h3>{session1?.Sessiya?.Speaker_Title}</h3>
               <h2 className='session-cards-title'>
                 {!lang ? 'Spikerlər' : 'Speakers'}
               </h2>
@@ -138,6 +138,7 @@ const SessionOfForum = () => {
             </div>
           </div>
           <div className='session-cards-wrapper row'>
+            <h3 className='col-12 text-start speakers-header mt-5' dangerouslySetInnerHTML={{ __html: session2?.Sessiya?.Speaker_Title }}></h3>
             <div className='col-lg-4 col-md-6 d-flex justify-content-center'>
               <h2 className='session-cards-title'>
                 {!lang ? 'Spikerlər' : 'Speakers'}
@@ -174,6 +175,7 @@ const SessionOfForum = () => {
             </div>
           </div>
           <div className='session-cards-wrapper row'>
+            <h3 className='col-12 text-start speakers-header mt-5' dangerouslySetInnerHTML={{ __html: session3?.Sessiya?.Speaker_Title }}></h3>
             <div className='col-lg-4 col-md-6 d-flex justify-content-center'>
               <h2 className='session-cards-title'>
                 {!lang ? 'Spikerlər' : 'Speakers'}
