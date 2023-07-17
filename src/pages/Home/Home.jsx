@@ -25,10 +25,10 @@ const Home = () => {
         <Hero />
         <Information />
         <Statics />
-        <Gallery />
         <MainAgenda />
+        <Gallery />
         <GlobalMediaMap />
-        <Slider />
+        {/* <Slider /> */}
       </>
       }
 

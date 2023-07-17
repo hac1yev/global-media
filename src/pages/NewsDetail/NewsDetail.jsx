@@ -143,8 +143,8 @@ const NewsDetail = () => {
         <div className="container news-detail-container">
             <div className='image-gallery-wrapper'>
                 <span>{newsDetail.Time_converted}</span>
-                <h2>{newsDetail.Title}</h2>
-                <p dangerouslySetInnerHTML={{ __html: newsDetail.Content }}>
+                <h2 dangerouslySetInnerHTML={{ __html: newsDetail[0]?.Title }}></h2>
+                <p dangerouslySetInnerHTML={{ __html: newsDetail[0]?.Content }}>
                 </p> 
                 <ImageGallery className="news-image-gallery" items={images} />
                 {/* <div className='news-share-info'>

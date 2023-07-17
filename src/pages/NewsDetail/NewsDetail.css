@@ -58,7 +58,16 @@
     font-style: normal;
     font-weight: 500;
     line-height: 35px;
-    margin-top: 20px;
+    margin-top: 0px;
+}
+
+.image-gallery-wrapper > h2 > p {
+    color: #22333B;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 35px;
+    margin-top: 0px;
 }
 
 .image-gallery-wrapper p {
