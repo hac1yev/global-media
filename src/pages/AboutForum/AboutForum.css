@@ -135,6 +135,10 @@
     margin-top: -18px!important;
 }
 
+.forum-purpose ul li {
+    list-style: disc;
+}
+
 .about-forum-purpose {
     display: flex;
     margin: 0px 0 50px 0;
