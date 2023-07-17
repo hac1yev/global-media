@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './NewsDetail.css';
 import ImageGallery from 'react-image-gallery';
 import "react-image-gallery/styles/css/image-gallery.css";
 import newsDetailArrow from '../../assets/News/newsDetailArrow.svg';
-import { Link } from 'react-router-dom';
-// import { FaFacebookF, FaTwitter, FaLinkedinIn, FaTelegramPlane, FaWhatsapp } from "react-icons/fa";
+import { Link, useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchData } from '../../api/fetchData';
+import { newsSliceAction } from '../../store/newsSlice';
 
 const images = [
     {
@@ -118,6 +120,19 @@ const images = [
 ];
 
 const NewsDetail = () => {
+  const lang = useSelector((state) => state.langReducer.lang);
+  const newsDetail = useSelector(state => state.newsReducer.newsDetail);
+  const { newsId } = useParams();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    fetchData(!lang ? `az/news/${newsId}` : `en/news/${newsId}`).then((data) => {
+     dispatch(newsSliceAction.getNewsDetail(data))
+    });
+  },[lang,newsId,dispatch]);
+
+  console.log(newsDetail);
+
   return (
     <div className='news-detail-wrapper'>  
         <div className='arrow-wrap' style={{ flex: 1 }}>
@@ -127,20 +142,10 @@ const NewsDetail = () => {
         </div>
         <div className="container news-detail-container">
             <div className='image-gallery-wrapper'>
-                <span>04 İyul, 2023</span>
-                <h2>Şuşada Beynəlxalq Media Forumun açılış mərasimi keçirilib</h2>
-                <p>
-                    Təməli 1752-ci ildə Qarabağ xanı Pənahəli xan tərəfindən qoyulan Şuşa şəhəri zəngin inkişaf 
-                    yolu keçmiş, Azərbaycanın və bütün Cənubi Qafqazın mədəni və ictimai-siyasi həyatında müstəsna 
-                    rol oynamışdır.
+                <span>{newsDetail.Time_converted}</span>
+                <h2>{newsDetail.Title}</h2>
+                <p dangerouslySetInnerHTML={{ __html: newsDetail.Content }}>
                 </p> 
-                <p>
-                    Bənzərsiz tarixi görkəmini və formalaşdırdığı özünəməxsus mühiti həmişə qoruyub saxlayan bu 
-                    şəhər yetirdiyi böyük şəxsiyyətləri ilə Azərbaycanın tarixi-mədəni, ictimai-siyasi həyatının 
-                    mühüm mərkəzlərindən biri olmuşdur. XIX əsrin sonu və XX əsrin əvvəllərində Şuşa Qafqazın 
-                    musiqi və mədəniyyət mərkəzinə çevrilmiş, “Kiçik Paris”, “Qafqazın sənət məbədi”, 
-                    “Azərbaycan musiqisinin beşiyi” və “Zaqafqaziyanın konservatoriyası” adlandırılmışdır.
-                </p>
                 <ImageGallery className="news-image-gallery" items={images} />
                 {/* <div className='news-share-info'>
                     <span>Məlumatı paylaş</span>
