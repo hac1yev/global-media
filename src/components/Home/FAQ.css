@@ -163,7 +163,7 @@
 
   .tab-data1 p{
     text-align: center;
-    font-size: 20px;
+    font-size: 18px;
     margin-top: 10px;
   }
 
@@ -172,7 +172,7 @@
   }
 
   .photo{
-    min-height: 650px;
+    min-height: 600px;
   }
 }
 
@@ -184,6 +184,10 @@
   .accord div p {
     font-size: 17px;
     text-align: center;
+  }
+
+  .accord div{
+    margin-top: 15px;
   }
 
   .faq-container {
@@ -201,7 +205,7 @@
     justify-content: center;
     flex-direction: column;
     gap: 0;
-    margin: 30px 0;
+    margin: 20px 0;
   }
 
   .session-div{
@@ -213,7 +217,7 @@
   }
 
   #myTab li button{
-    font-size: 35px;
+    font-size: 28px;
   }
 }
 
