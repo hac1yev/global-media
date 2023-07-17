@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialNewsState = {
-    news: []
+    news: [],
+    newsDetail: {},
 };
 
 const newsSlice = createSlice({
@@ -10,6 +11,9 @@ const newsSlice = createSlice({
     reducers: {
         getAllNews(state,action) {
             state.news = [...action.payload]
+        },
+        getNewsDetail(state,action){
+            state.newsDetail = {...action.payload}
         }
     }
 });

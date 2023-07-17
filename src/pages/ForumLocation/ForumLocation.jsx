@@ -38,7 +38,7 @@ const ForumLocation = () => {
       </div>
       <div className="container mb-4">
         <div className="explore-cont" data-aos="fade-down" data-aos-duration="700">
-          <a target="_blank" rel="noreferrer" href="https://www.virtualkarabakh.az/az/project2-item/39/249/susa-virtual-seyahet.html" className="explore-susha">{!lang ? 'Şuşanı kəşf et' : 'Discover Shusha'}</a>
+          <a target="_blank" rel="noreferrer" href={`https://www.virtualkarabakh.az/${!lang ? `az` : `en`}/project2-item/39/249/susa-virtual-seyahet.html`} className="explore-susha">{!lang ? 'Şuşanı kəşf et' : 'Discover Shusha'}</a>
         </div>
       </div>
       <img style={{ width: '100%' }} src={susha} alt="" />
