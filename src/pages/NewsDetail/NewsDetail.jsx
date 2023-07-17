@@ -122,6 +122,7 @@ const images = [
 const NewsDetail = () => {
   const lang = useSelector((state) => state.langReducer.lang);
   const newsDetail = useSelector(state => state.newsReducer.newsDetail);
+  let sliderImages = [];
   const { newsId } = useParams();
   const dispatch = useDispatch();
 
@@ -131,7 +132,21 @@ const NewsDetail = () => {
     });
   },[lang,newsId,dispatch]);
 
-  console.log(newsDetail);
+  // console.log(newsDetail);
+  sliderImages.push({
+    original: newsDetail[0]?.Image,
+    thumbnail: newsDetail[0]?.Image
+  })
+
+  for(let i=0;i<newsDetail[1]?.length;i++){
+    sliderImages.push({
+      original: newsDetail[1][i].Name,
+      thumbnail: newsDetail[1][i].Name
+    })
+  }
+
+
+  console.log(sliderImages)
 
   return (
     <div className='news-detail-wrapper'>  
@@ -146,7 +161,7 @@ const NewsDetail = () => {
                 <h2 dangerouslySetInnerHTML={{ __html: newsDetail[0]?.Title }}></h2>
                 <p dangerouslySetInnerHTML={{ __html: newsDetail[0]?.Content }}>
                 </p> 
-                <ImageGallery className="news-image-gallery" items={images} />
+                <ImageGallery className="news-image-gallery" items={sliderImages} />
                 {/* <div className='news-share-info'>
                     <span>Məlumatı paylaş</span>
                     <div className='news-social-icons'>
