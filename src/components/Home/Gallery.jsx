@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import Slider from "react-slick";
 import './Gallery.css';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 // import G1 from '../../assets/Home/gallery1.webp';
 // import G2 from '../../assets/Home/gallery2.webp';
 // import G3 from '../../assets/Home/gallery3.webp';
