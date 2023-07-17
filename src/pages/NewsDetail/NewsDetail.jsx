@@ -8,116 +8,116 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchData } from '../../api/fetchData';
 import { newsSliceAction } from '../../store/newsSlice';
 
-const images = [
-    {
-      original: 'https://picsum.photos/id/1018/1000/600/',
-      thumbnail: 'https://picsum.photos/id/1018/250/150/',
-    },
-    {
-      original: 'https://picsum.photos/id/1015/1000/600/',
-      thumbnail: 'https://picsum.photos/id/1015/250/150/',
-    },
-    {
-      original: 'https://picsum.photos/id/1019/1000/600/',
-      thumbnail: 'https://picsum.photos/id/1019/250/150/',
-    },
-    {
-      original: 'https://picsum.photos/id/1018/1000/600/',
-      thumbnail: 'https://picsum.photos/id/1018/250/150/',
-    },
-    {
-      original: 'https://picsum.photos/id/1015/1000/600/',
-      thumbnail: 'https://picsum.photos/id/1015/250/150/',
-    },
-    {
-      original: 'https://picsum.photos/id/1019/1000/600/',
-      thumbnail: 'https://picsum.photos/id/1019/250/150/',
-    },
-    {
-      original: 'https://picsum.photos/id/1018/1000/600/',
-      thumbnail: 'https://picsum.photos/id/1018/250/150/',
-    },
-    {
-      original: 'https://picsum.photos/id/1015/1000/600/',
-      thumbnail: 'https://picsum.photos/id/1015/250/150/',
-    },
-    {
-      original: 'https://picsum.photos/id/1019/1000/600/',
-      thumbnail: 'https://picsum.photos/id/1019/250/150/',
-    },
-    {
-      original: 'https://picsum.photos/id/1018/1000/600/',
-      thumbnail: 'https://picsum.photos/id/1018/250/150/',
-    },
-    {
-      original: 'https://picsum.photos/id/1015/1000/600/',
-      thumbnail: 'https://picsum.photos/id/1015/250/150/',
-    },
-    {
-      original: 'https://picsum.photos/id/1019/1000/600/',
-      thumbnail: 'https://picsum.photos/id/1019/250/150/',
-    },
-    {
-      original: 'https://picsum.photos/id/1018/1000/600/',
-      thumbnail: 'https://picsum.photos/id/1018/250/150/',
-    },
-    {
-      original: 'https://picsum.photos/id/1015/1000/600/',
-      thumbnail: 'https://picsum.photos/id/1015/250/150/',
-    },
-    {
-      original: 'https://picsum.photos/id/1019/1000/600/',
-      thumbnail: 'https://picsum.photos/id/1019/250/150/',
-    },
-    {
-      original: 'https://picsum.photos/id/1018/1000/600/',
-      thumbnail: 'https://picsum.photos/id/1018/250/150/',
-    },
-    {
-      original: 'https://picsum.photos/id/1015/1000/600/',
-      thumbnail: 'https://picsum.photos/id/1015/250/150/',
-    },
-    {
-      original: 'https://picsum.photos/id/1019/1000/600/',
-      thumbnail: 'https://picsum.photos/id/1019/250/150/',
-    },
-    {
-      original: 'https://picsum.photos/id/1018/1000/600/',
-      thumbnail: 'https://picsum.photos/id/1018/250/150/',
-    },
-    {
-      original: 'https://picsum.photos/id/1015/1000/600/',
-      thumbnail: 'https://picsum.photos/id/1015/250/150/',
-    },
-    {
-      original: 'https://picsum.photos/id/1019/1000/600/',
-      thumbnail: 'https://picsum.photos/id/1019/250/150/',
-    },
-    {
-      original: 'https://picsum.photos/id/1018/1000/600/',
-      thumbnail: 'https://picsum.photos/id/1018/250/150/',
-    },
-    {
-      original: 'https://picsum.photos/id/1015/1000/600/',
-      thumbnail: 'https://picsum.photos/id/1015/250/150/',
-    },
-    {
-      original: 'https://picsum.photos/id/1019/1000/600/',
-      thumbnail: 'https://picsum.photos/id/1019/250/150/',
-    },
-    {
-      original: 'https://picsum.photos/id/1018/1000/600/',
-      thumbnail: 'https://picsum.photos/id/1018/250/150/',
-    },
-    {
-      original: 'https://picsum.photos/id/1015/1000/600/',
-      thumbnail: 'https://picsum.photos/id/1015/250/150/',
-    },
-    {
-      original: 'https://picsum.photos/id/1019/1000/600/',
-      thumbnail: 'https://picsum.photos/id/1019/250/150/',
-    },
-];
+// const images = [
+//     {
+//       original: 'https://picsum.photos/id/1018/1000/600/',
+//       thumbnail: 'https://picsum.photos/id/1018/250/150/',
+//     },
+//     {
+//       original: 'https://picsum.photos/id/1015/1000/600/',
+//       thumbnail: 'https://picsum.photos/id/1015/250/150/',
+//     },
+//     {
+//       original: 'https://picsum.photos/id/1019/1000/600/',
+//       thumbnail: 'https://picsum.photos/id/1019/250/150/',
+//     },
+//     {
+//       original: 'https://picsum.photos/id/1018/1000/600/',
+//       thumbnail: 'https://picsum.photos/id/1018/250/150/',
+//     },
+//     {
+//       original: 'https://picsum.photos/id/1015/1000/600/',
+//       thumbnail: 'https://picsum.photos/id/1015/250/150/',
+//     },
+//     {
+//       original: 'https://picsum.photos/id/1019/1000/600/',
+//       thumbnail: 'https://picsum.photos/id/1019/250/150/',
+//     },
+//     {
+//       original: 'https://picsum.photos/id/1018/1000/600/',
+//       thumbnail: 'https://picsum.photos/id/1018/250/150/',
+//     },
+//     {
+//       original: 'https://picsum.photos/id/1015/1000/600/',
+//       thumbnail: 'https://picsum.photos/id/1015/250/150/',
+//     },
+//     {
+//       original: 'https://picsum.photos/id/1019/1000/600/',
+//       thumbnail: 'https://picsum.photos/id/1019/250/150/',
+//     },
+//     {
+//       original: 'https://picsum.photos/id/1018/1000/600/',
+//       thumbnail: 'https://picsum.photos/id/1018/250/150/',
+//     },
+//     {
+//       original: 'https://picsum.photos/id/1015/1000/600/',
+//       thumbnail: 'https://picsum.photos/id/1015/250/150/',
+//     },
+//     {
+//       original: 'https://picsum.photos/id/1019/1000/600/',
+//       thumbnail: 'https://picsum.photos/id/1019/250/150/',
+//     },
+//     {
+//       original: 'https://picsum.photos/id/1018/1000/600/',
+//       thumbnail: 'https://picsum.photos/id/1018/250/150/',
+//     },
+//     {
+//       original: 'https://picsum.photos/id/1015/1000/600/',
+//       thumbnail: 'https://picsum.photos/id/1015/250/150/',
+//     },
+//     {
+//       original: 'https://picsum.photos/id/1019/1000/600/',
+//       thumbnail: 'https://picsum.photos/id/1019/250/150/',
+//     },
+//     {
+//       original: 'https://picsum.photos/id/1018/1000/600/',
+//       thumbnail: 'https://picsum.photos/id/1018/250/150/',
+//     },
+//     {
+//       original: 'https://picsum.photos/id/1015/1000/600/',
+//       thumbnail: 'https://picsum.photos/id/1015/250/150/',
+//     },
+//     {
+//       original: 'https://picsum.photos/id/1019/1000/600/',
+//       thumbnail: 'https://picsum.photos/id/1019/250/150/',
+//     },
+//     {
+//       original: 'https://picsum.photos/id/1018/1000/600/',
+//       thumbnail: 'https://picsum.photos/id/1018/250/150/',
+//     },
+//     {
+//       original: 'https://picsum.photos/id/1015/1000/600/',
+//       thumbnail: 'https://picsum.photos/id/1015/250/150/',
+//     },
+//     {
+//       original: 'https://picsum.photos/id/1019/1000/600/',
+//       thumbnail: 'https://picsum.photos/id/1019/250/150/',
+//     },
+//     {
+//       original: 'https://picsum.photos/id/1018/1000/600/',
+//       thumbnail: 'https://picsum.photos/id/1018/250/150/',
+//     },
+//     {
+//       original: 'https://picsum.photos/id/1015/1000/600/',
+//       thumbnail: 'https://picsum.photos/id/1015/250/150/',
+//     },
+//     {
+//       original: 'https://picsum.photos/id/1019/1000/600/',
+//       thumbnail: 'https://picsum.photos/id/1019/250/150/',
+//     },
+//     {
+//       original: 'https://picsum.photos/id/1018/1000/600/',
+//       thumbnail: 'https://picsum.photos/id/1018/250/150/',
+//     },
+//     {
+//       original: 'https://picsum.photos/id/1015/1000/600/',
+//       thumbnail: 'https://picsum.photos/id/1015/250/150/',
+//     },
+//     {
+//       original: 'https://picsum.photos/id/1019/1000/600/',
+//       thumbnail: 'https://picsum.photos/id/1019/250/150/',
+//     },
+// ];
 
 const NewsDetail = () => {
   const lang = useSelector((state) => state.langReducer.lang);
@@ -144,9 +144,6 @@ const NewsDetail = () => {
       thumbnail: newsDetail[1][i].Name
     })
   }
-
-
-  console.log(sliderImages)
 
   return (
     <div className='news-detail-wrapper'>  
