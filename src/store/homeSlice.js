@@ -40,6 +40,9 @@ const homeSlice = createSlice({
         getAgendaInfo(state, action) {
             state.agenda_info = {...action.payload}
         },
+        getAgendas(state, action) {
+            state.agendas = [...action.payload]
+        },
         getStatics(state, action) {
             state.statics = [...action.payload]
         },

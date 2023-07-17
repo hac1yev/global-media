@@ -8,8 +8,11 @@ import { homeSliceAction } from "../../store/homeSlice";
 
 const FAQ = () => {
   const agenda_info = useSelector(state => state.homeReducer.agenda_info);
+  const agendas = useSelector((state) => state.homeReducer.agendas);
   const lang = useSelector(state => state.langReducer.lang);
   const dispatch = useDispatch();
+  let agenda_day1 = [];
+  let agenda_day2 = [];
 
   useEffect(() => {
     fetchData(!lang ? `az/home` : `en/home`).then((data) => (
@@ -17,9 +20,25 @@ const FAQ = () => {
     ))
   }, [dispatch,lang]);
 
+  useEffect(() => {
+    fetchData(!lang ? `az/home` : `en/home`).then((data) => (
+      dispatch(homeSliceAction.getAgendas(data.Agendas))
+    ))
+  }, [dispatch,lang]);
+
   const handleClose = () => {
     window.scrollTo(0, 0);
   };
+  
+
+  for(let i=0;i<agendas.length;i++){
+    if(agendas[i]?.DayId === 1){
+      agenda_day1.push({...agendas[i]});
+    }else{
+      agenda_day2.push({...agendas[i]});
+    }
+  }
+  console.log(agenda_day1)
 
   return (
     <div className="faq-container row">
@@ -97,40 +116,12 @@ const FAQ = () => {
               data-aos="fade-right"
               data-aos-duration="1000"
             >
-              <div>
-                <p>08:30-09:30</p>
-                <p>Qeydiyyat</p>
-              </div>
-              <div>
-                <p>10:00-13:00</p>
-                <p>Forum iştirakçıları ilə rəsmi görüş</p>
-              </div>
-              <div>
-                <p>13:30-14:45</p>
-                <p>Nahar Fasiləsi</p>
-              </div>
-              <div>
-                <p>15:00-16:00</p>
-                <p>Açılış mərasimi: Rəsmi çıxışlar</p>
-              </div>
-              <div>
-                <p>16:00-16:30</p>
-                <p>Çay və qəhvə fasiləsi</p>
-              </div>
-              <div>
-                <p>16:45-18:00</p>
-                <p>
-                  <p>Panel müzakirə: </p>
-                  <span>
-                    Medianın gələcəyi: Ənənəvi media üçün növbəti addımlar;
-                    Rəqəmsal transformasiya diqqət mərkəzində
-                  </span>
-                </p>
-              </div>
-              <div>
-                <p>19:30-21:00</p>
-                <p>Rəsmi ziyafət və bədii hissə</p>
-              </div>
+              {agenda_day1.map(item => (
+                <div>
+                  <p>{item.Start} - {item.Finish}</p>
+                  <p>{item.Name}</p>
+                </div>
+              ))}
             </div>
           </div>
           <div
@@ -140,72 +131,12 @@ const FAQ = () => {
             aria-labelledby="profile-tab"
           >
             <div className="tab-data1">
-              <div>
-                <p>10:00-11:15</p>
-                <p>
-                  <p>Panel müzakirə: </p>
-                  <span>
-                    {" "}
-                    Müasir informasiya mühitində media menecmenti və dayanıqlı
-                    media biznes modellərinin yaradılması
-                  </span>
-                </p>
-              </div>
-              <div>
-                <p>10:00-10:30</p>
-                <p>
-                  <p>Paralel tədbir</p>
-                  <span>AZƏRTAC imzalanma mərasimi</span>
-                </p>
-              </div>
-
-              <div>
-                <p>11:15-11:45</p>
-                <p>Çay və qəhvə fasiləsi</p>
-              </div>
-
-              <div>
-                <p>11:45-13:00</p>
-                <p>
-                  <p>Panel müzakirə: </p>
-                  <span>
-                    Yeni mediada istehlak tendensiyaları və media savadlılığı
-                    (dezinformasiya və feyk nyusla mübarizə üsulları)
-                  </span>
-                </p>
-              </div>
-              <div>
-                <p>12:00-13:00</p>
-                <p>
-                  <p>Paralel tədbir</p>
-                  <span>
-                    Türk Dövlətləri Təşkilatı: Türkdilli dövlətlərin media
-                    platforması
-                  </span>
-                </p>
-              </div>
-              <div>
-                <p>13:15-14:30</p>
-                <p>Nahar Fasiləsi</p>
-              </div>
-              <div>
-                <p>14:45-16:00</p>
-                <p>
-                  <p>Panel müzakirə: </p>
-                  <span>Jurnalistlərin təhlükəsizliyi</span>
-                </p>
-              </div>
-
-              <div>
-                <p> 15:00-16:00 </p>
-                <p>
-                  <p>Paralel tədbir</p>
-                  <span>
-                    Trend İnformasiya Agentliyi: Central Europe Report və DHA
-                    Press layihələrinin təqdimatı
-                  </span>
-                </p>
-              </div>
+              {agenda_day2.map((item) => (
+                <div>
+                  <p>{item.Start} - {item.Finish}</p>
+                  <p>{item.Name}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
