@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Home from './pages/Home/Home.jsx';
 import Footer from './components/Footer/Footer.jsx';
 import Header from './components/Header/Header.jsx';
@@ -12,6 +12,11 @@ import Gallery from '../src/pages/Gallery/Gallery.jsx';
 import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy.jsx';
 
 function App() {
+  const {pathname} = useLocation();
+  if(pathname === '/admin'){
+    window.location.href = "https://admin.globalmediaforum.com/"
+  }
+
   return (
     <>
       <Header />
