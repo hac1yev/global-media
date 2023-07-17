@@ -77,7 +77,7 @@ return (
          <Link onClick={handleClick} to={`/news/${item.Id}`} key={i} className="gallery-card" data-aos="zoom-in" data-aos-duration="700">
             <div className="gallery-img">
              <img src={item.Image} alt={item.Content_Az} />
-             <p className="time-p">{item.time}</p>
+             <p className="time-p">{item.Time_converted}</p>
             </div>
             <p className="gallery-info" dangerouslySetInnerHTML={{ __html: item.Content_Az }}>
             </p>
