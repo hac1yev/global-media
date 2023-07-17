@@ -1,6 +1,7 @@
 import React from "react";
 import "./Footer.css";
-import footer_logo from "../../assets/Footer/logo.svg";
+import footer_logo from "../../assets/Footer/gmf_logo_az.svg";
+import footer_logo_en from "../../assets/Footer/gmf_logo_en.svg";
 import gray from "../../assets/Footer/gray.png";
 import white from "../../assets/Footer/white.png";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
@@ -17,7 +18,7 @@ const Footer = () => {
           <div className="col-md-3">
             <div className="footer-logo-content">
               <div className="footer-img">
-                <img src={footer_logo} alt="footer-logo" />
+                <img src={!lang ? footer_logo : footer_logo_en} alt="footer-logo" />
               </div>
             </div>
           </div>

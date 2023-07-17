@@ -96,9 +96,13 @@
 }   
 
 .session-cards-title {
-    margin-top: 82px!important;
+    margin-top: 50px!important;
     max-width: 295px!important;
     width: 100%!important;
+}
+
+.speakers-header {
+    font-size: 22px;
 }
 
 .session-card p {
