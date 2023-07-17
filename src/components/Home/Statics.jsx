@@ -69,7 +69,7 @@ const Statics = () => {
               <h1>
                 0
               </h1>
-              <p>İştirak edən ölkələrin sayı</p>
+              <p>Ölkələrin sayı</p>
             </div>
             <div className="static1" data-aos="zoom-in"
               data-aos-duration="700">

@@ -85,7 +85,7 @@ const FAQ = () => {
               aria-controls="home"
               aria-selected="true"
             >
-              Gün 1<p>22.07.2023</p>
+              {!lang ? 'Gün 1' : 'Day 1'}<p>22.07.2023</p>
             </button>
           </li>
           <li class="nav-item" role="presentation">
@@ -99,7 +99,7 @@ const FAQ = () => {
               aria-controls="profile"
               aria-selected="false"
             >
-              Gün 2 <br />
+              {!lang ? 'Gün 2' : 'Day 2'}<br />
               <p>23.07.2023</p>
             </button>
           </li>
