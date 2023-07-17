@@ -170,12 +170,15 @@
   .accord img{
     display: none;
   }
+
+  .photo{
+    min-height: 650px;
+  }
 }
 
 @media screen and (max-width: 600px) {
-  .accord div,
-  .photo {
-    padding: 50px 50px 0 50px;
+  .accord div{
+    padding: 50px 15px 0 50px;
   }
 
   .accord div p {
@@ -203,6 +206,14 @@
 
   .session-div{
     justify-content: center;
+  }
+
+  #myTab li button p{
+    font-size: 20px;
+  }
+
+  #myTab li button{
+    font-size: 35px;
   }
 }
 

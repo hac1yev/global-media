@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './Hero.css';
 // import hero_video from '../../assets/Home/hero_video.mp4';
-import { useDispatch,useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { fetchData } from '../../api/fetchData';
 import { homeSliceAction } from '../../store/homeSlice';
 
@@ -14,12 +14,12 @@ const Hero = () => {
     fetchData(!lang ? 'az/home' : 'en/home').then((data) => (
       dispatch(homeSliceAction.getBanners(data.Hero_Video))
     ))
-  }, [lang,dispatch]);
+  }, [lang, dispatch]);
 
   return (
     <div className='hero-section'>
-        <video preload='auto' src={bannerVideo.Image} type='video/mp4' playsInline loop muted autoPlay>
-        </video>
+      <video preload='auto' src={bannerVideo.Image} type='video/mp4' playsInline='playsinline' loop muted='true' autoPlay='true'>
+      </video>
     </div>
   );
 };
