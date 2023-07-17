@@ -158,7 +158,7 @@ const Gallery = () => {
   return (
     <div className='gallery-section'>
       <div className='gallery-top'>
-        <h3>Qalereya</h3>
+        <h3>{!lang ? 'Spikerlər' : 'Speakers'}</h3>
         <Link to="/gallery" onClick={() => window.scrollTo(0, 0)} className='gallery-more'>
         {!lang ? 'Daha Çox' : 'More'}
         </Link>

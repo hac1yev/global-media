@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialNewsState = {
     news: [],
-    newsDetail: {},
+    newsDetail: [],
+
 };
 
 const newsSlice = createSlice({
@@ -13,7 +14,7 @@ const newsSlice = createSlice({
             state.news = [...action.payload]
         },
         getNewsDetail(state,action){
-            state.newsDetail = {...action.payload}
+            state.newsDetail = [...action.payload]
         }
     }
 });
