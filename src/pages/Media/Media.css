@@ -94,6 +94,7 @@
 
 .gallery-card img{
     width: 100%;
+    height: 200px;
     object-fit: cover;
 }
 
@@ -224,6 +225,10 @@
 
   .gallery-more {
     margin-left: 0;
+  }
+
+  .media-section {
+    padding-top: 35px;
   }
 }
 

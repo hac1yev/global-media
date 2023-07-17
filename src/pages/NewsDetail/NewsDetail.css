@@ -40,7 +40,10 @@
     display: none;
 }
 
-.image-gallery-image {
+.image-gallery-wrapper .image-gallery-image {
+    width: 100%!important;
+    height: 600px!important;
+    object-fit: cover!important;
     max-height: none!important;
 }
 
@@ -135,6 +138,10 @@
         justify-content: flex-start;
         padding: 15px;
     }
+
+    .image-gallery-wrapper .image-gallery-image {
+        height: 500px!important;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -172,5 +179,15 @@
     .image-gallery-wrapper p {
         font-size: 18px;
         text-align: left;
+    }
+
+    .image-gallery-wrapper .image-gallery-image {
+        height: 400px!important;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .image-gallery-wrapper .image-gallery-image {
+        height: 300px!important;
     }
 }
