@@ -1,0 +1,64 @@
+.preloader-section {
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+}
+
+.preloader-header {
+    width: 100%;
+    height: 95.39px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.preloader-ul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.pre-logo {
+    width: 200px;
+    height: 88px;
+    background-color: #f0f0f0;
+}
+
+.pre-logo,
+.preloader-li1,
+.preloader-li2,
+.preloader-li3, 
+.preloader-li4, 
+.preloader-li5 {
+    background-color: #f0f0f0;
+}
+
+.preloader-li1,
+.preloader-li2,
+.preloader-li3, 
+.preloader-li4, 
+.preloader-li5 {
+    height: 40px;
+}
+
+.preloader-li1 {
+    width: 155px;
+}
+.preloader-li2 {
+    width: 169px;
+}
+.preloader-li3 {
+    width: 192px;
+}
+.preloader-li4 {
+    width: 73px;
+}
+.preloader-li5 {
+    width: 58px;
+}
+
+.preloader-middle {
+    width: 100%;
+    background-color: #f0f0f0;
+    height: 50vh;
+}

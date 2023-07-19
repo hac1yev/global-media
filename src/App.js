@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Home from './pages/Home/Home.jsx';
 import Footer from './components/Footer/Footer.jsx';
@@ -10,6 +10,7 @@ import News from '../src/pages/News/News.jsx';
 import NewsDetail from '../src/pages/NewsDetail/NewsDetail.jsx';
 import Gallery from '../src/pages/Gallery/Gallery.jsx';
 import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy.jsx';
+import Preloader from './components/Preloader/Preloader.jsx';
 
 function App() {
   const {pathname} = useLocation();
@@ -17,20 +18,31 @@ function App() {
     window.location.href = "https://admin.globalmediaforum.com/"
   }
 
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    // setTimeout(() => {
+    //   setLoading(false);
+    // }, 3000);
+  }, []);
+
   return (
     <>
-      <Header />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/agenda-spiker' element={<AgendaSpiker />} />
-          <Route path='/forum-location' element={<ForumLocation />} />
-          <Route path='/about-forum' element={<AboutForum />} />
-          <Route path='/gallery' element={<Gallery />} />
-          <Route path='/news' element={<News />} />
-          <Route path='/news/:newsId' element={<NewsDetail />} />
-          <Route path='/privacy' element={<PrivacyPolicy />} />
-        </Routes>
-      <Footer />
+      {loading ? <Preloader/> : <> <Header />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/agenda-spiker' element={<AgendaSpiker />} />
+            <Route path='/forum-location' element={<ForumLocation />} />
+            <Route path='/about-forum' element={<AboutForum />} />
+            <Route path='/gallery' element={<Gallery />} />
+            <Route path='/news' element={<News />} />
+            <Route path='/news/:newsId' element={<NewsDetail />} />
+            <Route path='/privacy' element={<PrivacyPolicy />} />
+          </Routes>
+        <Footer />
+      </>
+      }
     </>
   );
 }
