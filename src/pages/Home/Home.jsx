@@ -7,7 +7,7 @@ import Hero from '../../components/Home/Hero';
 import Statics from '../../components/Home/Statics';
 // import Slider from '../../components/Home/Slider';
 import GlobalMediaMap from '../GlobalMediaMap/GlobalMediaMap';
-import Preloader from '../../components/Preloader/Preloader';
+// import Preloader from '../../components/Preloader/Preloader';
 
 const Home = () => {
   
