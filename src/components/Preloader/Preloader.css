@@ -6,7 +6,7 @@
 
 .preloader-header {
     width: 100%;
-    height: 95px;
+    height: 95.39px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -60,7 +60,7 @@
 .preloader-middle {
     width: 100%;
     background-color: #f0f0f0;
-    height: calc(100vh - 120px);
+    height: calc(100vh - 95.39px);
 }
 
 
