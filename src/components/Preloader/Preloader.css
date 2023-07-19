@@ -6,7 +6,7 @@
 
 .preloader-header {
     width: 100%;
-    height: 95.39px;
+    height: 120px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -60,5 +60,80 @@
 .preloader-middle {
     width: 100%;
     background-color: #f0f0f0;
-    height: 50vh;
+    height: calc(100vh - 120px);
+}
+
+
+.logo-skeleton,
+.li1-skeleton, 
+.li2-skeleton, 
+.li3-skeleton, 
+.li4-skeleton, 
+.li5-skeleton,
+.middle-skeleton {
+    animation: ske-loading 1s linear infinite alternate;
+}
+
+@keyframes ske-loading {
+    0% {
+        background-color: rgb(240,240,240);
+    }
+
+    100% {
+        background-color: rgb(250,250,250);
+    }
+}
+@keyframes li1-skeleton {
+    0% {
+        background-color: rgb(240,240,240);
+    }
+
+    100% {
+        background-color: rgb(250,250,250);
+    }
+}
+@keyframes li2-skeleton {
+    0% {
+        background-color: rgb(240,240,240);
+    }
+
+    100% {
+        background-color: rgb(250,250,250);
+    }
+}
+@keyframes li3-skeleton {
+    0% {
+        background-color: rgb(240,240,240);
+    }
+
+    100% {
+        background-color: rgb(250,250,250);
+    }
+}
+@keyframes li4-skeleton {
+    0% {
+        background-color: rgb(240,240,240);
+    }
+
+    100% {
+        background-color: rgb(250,250,250);
+    }
+}
+@keyframes li5-skeleton {
+    0% {
+        background-color: rgb(240,240,240);
+    }
+
+    100% {
+        background-color: rgb(250,250,250);
+    }
+}
+@keyframes middle-skeleton {
+    0% {
+        background-color: rgb(240,240,240);
+    }
+
+    100% {
+        background-color: rgb(250,250,250);
+    }
 }
