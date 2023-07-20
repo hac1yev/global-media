@@ -6,6 +6,7 @@ import formLocationSlice from "./formLocation";
 import gallerySlice from "./gallerySlice";
 import newsSlice from "./newsSlice";
 import sessionSlice from "./sessionSlice";
+import navPdfSlice from "./navPdf";
 
 export const store = configureStore({
     reducer: {
@@ -16,5 +17,6 @@ export const store = configureStore({
         galleryReducer: gallerySlice.reducer,
         newsReducer: newsSlice.reducer,
         sessionReducer: sessionSlice.reducer,
+        pdfReducer: navPdfSlice.reducer,
     },
 });
