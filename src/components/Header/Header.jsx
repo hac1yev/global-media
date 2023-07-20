@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Header.css";
 import logo from "../../assets/Home/gmf_logo_az.svg";
 import logo_en from '../../assets/Home/gmf_logo_en.svg';
@@ -9,6 +9,8 @@ import { AiFillCaretRight } from 'react-icons/ai';
 import right from '../../assets/Home/right.png'
 import down from '../../assets/Home/down.png'
 import { HashLink } from "react-router-hash-link";
+import { fetchData } from "../../api/fetchData";
+import { navPdfSliceAction } from "../../store/navPdf";
 
 const Header = () => {
   const [isForumHover, setIsForumHover] = useState(false);
@@ -18,6 +20,15 @@ const Header = () => {
   const [isDropOpen,setIsDropOpen] = useState(false);
   const lang = useSelector((state) => state.langReducer.lang);
   const dispatch = useDispatch();
+
+  const navPdf = useSelector(state => state.pdfReducer.navPdf);
+
+  console.log(navPdf.Information)
+  useEffect(() => {
+    fetchData(!lang ? 'az/nav' : 'en/nav').then((data) => (
+      dispatch(navPdfSliceAction.getNavPdf(data.Məlumat))
+    ))
+  },[dispatch,lang])
 
   const handleHoverForum = () => {
     setIsForumHover(true);
@@ -187,7 +198,7 @@ const Header = () => {
                       <AiFillCaretRight className="arrow-right" />
                       {!lang ? 'Proqram' : 'Program'}
                     </HashLink>
-                    <Link to="/" onClick={handleCloseMenu}>
+                    <Link to={navPdf.Information} onClick={handleCloseMenu}>
                       <AiFillCaretRight className="arrow-right" />
                       {!lang ? 'Konsepsiya sənədi' : 'Concept paper'}
                     </Link>
