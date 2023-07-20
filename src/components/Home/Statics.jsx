@@ -88,7 +88,7 @@ const Statics = () => {
           </>
         )}
       </div>
-      <img className="bottom-img" src={bottompic} alt="" />
+      <img id="form" className="bottom-img" src={bottompic} alt="" />
     </div>
   );
 };
