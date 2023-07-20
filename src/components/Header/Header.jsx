@@ -8,6 +8,7 @@ import { langSliceAction } from "../../store/langSlice";
 import { AiFillCaretRight } from 'react-icons/ai';
 import right from '../../assets/Home/right.png'
 import down from '../../assets/Home/down.png'
+import { HashLink } from "react-router-hash-link";
 
 const Header = () => {
   const [isForumHover, setIsForumHover] = useState(false);
@@ -182,10 +183,10 @@ const Header = () => {
               <span> {!lang ? 'Forumun materialları' : 'Forum materials'} </span>
                 {isMaterialHover && (
                   <div className="nav-forum-dropdown">
-                    <a href="#form" onClick={handleCloseMenu}>
+                    <HashLink smooth to="/#form" onClick={handleCloseMenu}>
                       <AiFillCaretRight className="arrow-right" />
                       {!lang ? 'Proqram' : 'Program'}
-                    </a>
+                    </HashLink>
                     <Link to="/" onClick={handleCloseMenu}>
                       <AiFillCaretRight className="arrow-right" />
                       {!lang ? 'Konsepsiya sənədi' : 'Concept paper'}
