@@ -160,7 +160,7 @@ const SessionOfForum = () => {
                   <div className='session-card card'>
                     <img className='card-img-top' src={item.Image} alt={item.Fullname} />
                     <div class="card-body">
-                      <h3 class="card-title">{item.FullName}</h3>
+                      <h3 class="card-title">{item.Fullname}</h3>
                       <p class="card-text" dangerouslySetInnerHTML={{ __html: item.Information }}></p>
                     </div>
                   </div>
