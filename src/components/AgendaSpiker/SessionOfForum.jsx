@@ -4,8 +4,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchData } from '../../api/fetchData.js';
 import { sessionSliceAction } from '../../store/sessionSlice.js';
 
-
-
 const SessionOfForum = () => {
   const dispatch = useDispatch();
   const session1 = useSelector(state => state.sessionReducer.session1);
@@ -115,15 +113,18 @@ const SessionOfForum = () => {
               <div className='col-lg-'>
               </div>
               {session2?.Spikerlər?.map((item) => (
-                <div className="col-lg-4 col-md-6 mt-3" data-aos="zoom-in" data-aos-duration="700">
-                  <div className='session-card card'>
-                    <img className='card-img-top' src={item.Image} alt={item.Fullname} />
-                    <div class="card-body">
-                      <h3 class="card-title">{item.Fullname}</h3>
-                      <p class="card-text" dangerouslySetInnerHTML={{ __html: item.Information }}></p>
+                <>
+                  <h4 className='col-12 spiker-panel-title text-center my-3'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero, nulla.</h4>
+                  <div className="col-lg-4 col-md-6 mt-3" data-aos="zoom-in" data-aos-duration="700">
+                    <div className='session-card card'>
+                      <img className='card-img-top' src={item.Image} alt={item.Fullname} />
+                      <div class="card-body">
+                        <h3 class="card-title">{item.Fullname}</h3>
+                        <p class="card-text" dangerouslySetInnerHTML={{ __html: item.Information }}></p>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </>
               ))}
             </div>
           </div>
