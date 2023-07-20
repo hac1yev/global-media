@@ -73,7 +73,7 @@ const SessionOfForum = () => {
               <div className='col-lg-'>
               </div>
               {session1?.Spikerlər?.map((item) => (
-                <div className="col-lg-4 col-md-6 mt-3 ps-0" data-aos="zoom-in" data-aos-duration="700" key={item.Id}>
+                <div className="col-lg-4 col-md-6 mt-3" data-aos="zoom-in" data-aos-duration="700">
                   <div className='session-card card'>
                     <img className='card-img-top' src={item.Image} alt={item.Fullname} />
                     <div class="card-body">
@@ -112,19 +112,33 @@ const SessionOfForum = () => {
               </div>
               <div className='col-lg-'>
               </div>
-              {session2?.Spikerlər?.map((item) => (
-                <>
-                  <h4 className='col-12 spiker-panel-title text-center my-3'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero, nulla.</h4>
-                  <div className="col-lg-4 col-md-6 mt-3" data-aos="zoom-in" data-aos-duration="700">
-                    <div className='session-card card'>
-                      <img className='card-img-top' src={item.Image} alt={item.Fullname} />
-                      <div class="card-body">
-                        <h3 class="card-title">{item.Fullname}</h3>
-                        <p class="card-text" dangerouslySetInnerHTML={{ __html: item.Information }}></p>
-                      </div>
+              <h4 className='col-12 spiker-panel-title text-center my-3'>
+                {session2?.Panel1?.Name}
+              </h4>
+              {session2?.Spikerlər1?.map((item) => (
+                <div className="col-lg-4 col-md-6 mt-3" data-aos="zoom-in" data-aos-duration="700">
+                  <div className='session-card card'>
+                    <img className='card-img-top' src={item.Image} alt={item.Fullname} />
+                    <div class="card-body">
+                      <h3 class="card-title">{item.Fullname}</h3>
+                      <p class="card-text" dangerouslySetInnerHTML={{ __html: item.Information }}></p>
                     </div>
                   </div>
-                </>
+                </div>
+              ))}
+              <h4 className='col-12 spiker-panel-title text-center my-3'>
+                {session2?.Panel2?.Name}
+              </h4>
+              {session2?.Spikerlər2?.map((item) => (
+                <div className="col-lg-4 col-md-6 mt-3" data-aos="zoom-in" data-aos-duration="700">
+                  <div className='session-card card'>
+                    <img className='card-img-top' src={item.Image} alt={item.Fullname} />
+                    <div class="card-body">
+                      <h3 class="card-title">{item.Fullname}</h3>
+                      <p class="card-text" dangerouslySetInnerHTML={{ __html: item.Information }}></p>
+                    </div>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
