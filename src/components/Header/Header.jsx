@@ -23,7 +23,6 @@ const Header = () => {
 
   const navPdf = useSelector(state => state.pdfReducer.navPdf);
 
-  console.log(navPdf.Information)
   useEffect(() => {
     fetchData(!lang ? 'az/nav' : 'en/nav').then((data) => (
       dispatch(navPdfSliceAction.getNavPdf(data.Məlumat))
@@ -142,7 +141,7 @@ const Header = () => {
             </li>
 
           <label
-            for="toggle"
+            htmlFor="toggle"
             className="navbar-toggler"
             onClick={handleMenuToggle}
           >

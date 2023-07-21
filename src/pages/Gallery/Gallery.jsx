@@ -38,8 +38,8 @@ const Media = () => {
           </div>
           <div className="gallery-con">
             {
-              Object.values(galleryAll).map((item) =>
-                <a className="gallery-card" data-aos="zoom-in" data-aos-duration="700"
+              Object.values(galleryAll).map((item,index) =>
+                <a className="gallery-card" key={index} data-aos="zoom-in" data-aos-duration="700"
                   data-fancybox="gallery"
                   data-src={item?.Image}
                   data-caption={item.Content}
@@ -73,8 +73,9 @@ const Media = () => {
           </div>
           <div className="gallery-con">
 
-            {Object.values(citeAll).map((data) =>
+            {Object.values(citeAll).map((data,index) =>
               <a data-fancybox="gallery1"
+                  key={index}
                   data-src={data?.Image}
                   data-caption={data.Content_Az}
                   href="/"  className="gallery-card" data-aos="zoom-in" data-aos-duration="700">
