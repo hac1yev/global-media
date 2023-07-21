@@ -3,18 +3,6 @@ import Slider from "react-slick";
 import './Gallery.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-// import G1 from '../../assets/Home/gallery1.webp';
-// import G2 from '../../assets/Home/gallery2.webp';
-// import G3 from '../../assets/Home/gallery3.webp';
-// import G4 from '../../assets/Home/gallery4.webp';
-// import G5 from '../../assets/Home/gallery5.webp';
-// import G6 from '../../assets/Home/gallery6.webp';
-// import G7 from '../../assets/Home/gallery7.webp';
-// import G8 from '../../assets/Home/gallery8.webp';
-// import G9 from '../../assets/Home/gallery9.webp';
-// import G10 from '../../assets/Home/gallery10.webp';
-// import G11 from '../../assets/Home/gallery11.webp';
-// import G12 from '../../assets/Home/gallery12.webp';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchData } from '../../api/fetchData';
@@ -77,7 +65,8 @@ import { homeSliceAction } from '../../store/homeSlice';
 
 const Gallery = () => {
   const dispatch = useDispatch();
-  const highlight = useSelector(state => state.homeReducer.highlights);
+  const highlight1 = useSelector(state => state.homeReducer.highlights1);
+  const highlight2 = useSelector(state => state.homeReducer.highlights2);
   const lang = useSelector(state => state.langReducer.lang);
 
   const settings1 = {
@@ -151,7 +140,13 @@ const Gallery = () => {
 
   useEffect(() => {
     fetchData(!lang ? 'az/home' : 'en/home').then((data) => (
-      dispatch(homeSliceAction.getHighlight(data.Highlights))
+      dispatch(homeSliceAction.getHighlight1(data.Highlights1))
+    ))
+  }, [lang,dispatch]);
+
+  useEffect(() => {
+    fetchData(!lang ? 'az/home' : 'en/home').then((data) => (
+      dispatch(homeSliceAction.getHighlight2(data.Highlights2))
     ))
   }, [lang,dispatch]);
 
@@ -161,19 +156,19 @@ const Gallery = () => {
     <div className='gallery-section'>
       <div className='gallery-top'>
         <h3>{!lang ? 'Spikerlər' : 'Speakers'}</h3>
-        <Link to="/gallery" onClick={() => window.scrollTo(0, 0)} className='gallery-more'>
+        <Link to="/agenda-spiker" onClick={() => window.scrollTo(0, 0)} className='gallery-more'>
         {!lang ? 'Daha Çox' : 'More'}
         </Link>
       </div>
       <Slider {...settings1}>
-        {highlight.map((item) => (
+        {highlight1.map((item) => (
           <div className="gallery-slide-img" key={item.id}>
             <img src={item.Image} alt="gallery-img" />
           </div>
         ))}
       </Slider>
       <Slider {...settings2}>
-      {highlight.map((item) => (
+      {highlight2.map((item) => (
           <div className="gallery-slide-img" key={item.id}>
             <img src={item.Image} alt="gallery-img" />
           </div>
