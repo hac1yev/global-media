@@ -60,7 +60,7 @@
 }
 
 .static1 p {
-  font-family: 'CodecPro-Regular' !important;
+  font-family: 'CodecPro-Regular' !;
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
