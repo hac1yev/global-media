@@ -158,7 +158,7 @@ const NewsDetail = () => {
                 <h2 dangerouslySetInnerHTML={{ __html: newsDetail[0]?.Title }}></h2>
                 <p dangerouslySetInnerHTML={{ __html: newsDetail[0]?.Content }}>
                 </p> 
-                <ImageGallery className="news-image-gallery" items={sliderImages} />
+                <ImageGallery className="news-image-gallery" items={[...sliderImages]} />
                 {/* <div className='news-share-info'>
                     <span>Məlumatı paylaş</span>
                     <div className='news-social-icons'>
