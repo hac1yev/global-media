@@ -31,6 +31,12 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: all .5s ease-in-out;
+    filter: grayscale(100%);
+}
+
+.gallery-slide-img img:hover{
+    filter: initial;
 }
 
 .gallery-section .slick-dots,
