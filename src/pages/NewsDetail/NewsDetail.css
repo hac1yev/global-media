@@ -32,12 +32,13 @@
     transform: translateX(-8px);
 }
   
-
-.image-gallery-left-nav,
-.image-gallery-right-nav,
 .image-gallery-play-button,
 .image-gallery-fullscreen-button {
     display: none;
+}
+
+.image-gallery-svg {
+    width: 40px!important;
 }
 
 .image-gallery-wrapper .image-gallery-image {
@@ -183,6 +184,10 @@
 
     .image-gallery-wrapper .image-gallery-image {
         height: 400px!important;
+    }
+
+    .image-gallery-icon {
+        display: none;
     }
 }
 
