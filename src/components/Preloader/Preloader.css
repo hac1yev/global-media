@@ -74,7 +74,24 @@
     animation: ske-loading 1s linear infinite alternate;
 }
 
+.preloader-menu-bar {
+    display: none;
+}
+
+.menu-bar-skeleton {
+    animation: menu-loading 1s linear infinite alternate;
+}
+
 @keyframes ske-loading {
+    0% {
+        background-color: rgb(240,240,240);
+    }
+
+    100% {
+        background-color: rgb(250,250,250);
+    }
+}
+@keyframes menu-loading {
     0% {
         background-color: rgb(240,240,240);
     }
@@ -135,5 +152,36 @@
 
     100% {
         background-color: rgb(250,250,250);
+    }
+}
+
+@media screen and (max-width: 674.5px) {
+    .preloader-menu-bar {
+        display: block;
+        width: 35px;
+        height: 35px;
+        background-color: #f0f0f0;
+        position: absolute;
+        right: 2.5%;
+    }
+
+    .preloader-li1, 
+    .preloader-li2, 
+    .preloader-li3, 
+    .preloader-li4 {
+        display: none;
+    }
+
+    .preloader-li5 {
+        height: 23px;
+        width: 45px;
+        display: block;
+        position: absolute;
+        right: 20%;
+    }
+
+    .pre-logo {
+        width: 160.8px;
+        height: 70.43px;
     }
 }
