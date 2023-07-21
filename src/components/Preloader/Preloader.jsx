@@ -6,6 +6,7 @@ const Preloader = () => {
     <div className='preloader-section'>
         <div className='preloader-header container'>
             <div className='pre-logo logo-skeleton'></div>
+            <div className='preloader-menu-bar menu-bar-skeleton'></div>
             <div className='preloader-ul'>
                 <div className='preloader-li1 li1-skeleton'></div>
                 <div className='preloader-li2 li2-skeleton'></div>

@@ -25,6 +25,9 @@
   letter-spacing: 0.5px;
   width: 201px;
   height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .nav-item {
