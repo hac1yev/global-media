@@ -8,7 +8,7 @@ import { langSliceAction } from "../../store/langSlice";
 import { AiFillCaretRight } from 'react-icons/ai';
 import right from '../../assets/Home/right.png'
 import down from '../../assets/Home/down.png'
-import { HashLink } from "react-router-hash-link";
+// import { HashLink } from "react-router-hash-link";
 import { fetchData } from "../../api/fetchData";
 import { navPdfSliceAction } from "../../store/navPdf";
 
@@ -25,7 +25,7 @@ const Header = () => {
 
   useEffect(() => {
     fetchData(!lang ? 'az/nav' : 'en/nav').then((data) => (
-      dispatch(navPdfSliceAction.getNavPdf(data.Məlumat))
+      dispatch(navPdfSliceAction.getNavPdf(data))
     ))
   },[dispatch,lang])
 
@@ -193,14 +193,14 @@ const Header = () => {
               <span> {!lang ? 'Forumun materialları' : 'Forum materials'} </span>
                 {isMaterialHover && (
                   <div className="nav-forum-dropdown">
-                    <HashLink smooth to="/#form" onClick={handleCloseMenu}>
+                    <a href={navPdf[1]?.Information} target="_blank" rel="noreferrer" onClick={handleCloseMenu}>
                       <AiFillCaretRight className="arrow-right" />
                       {!lang ? 'Proqram' : 'Program'}
-                    </HashLink>
-                    <Link to={navPdf.Information} onClick={handleCloseMenu}>
+                    </a>
+                    <a href={navPdf[0]?.Information} target="_blank" rel="noreferrer" onClick={handleCloseMenu}>
                       <AiFillCaretRight className="arrow-right" />
                       {!lang ? 'Konsepsiya sənədi' : 'Concept paper'}
-                    </Link>
+                    </a>
                   </div>
                 )}
              </div>

@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialFormLocation = {
-    navPdf: {}
+    navPdf: []
 };
 
 const navPdfSlice = createSlice({
@@ -9,7 +9,7 @@ const navPdfSlice = createSlice({
     initialState: initialFormLocation,
     reducers: {
         getNavPdf(state, action) {
-            state.navPdf = { ...action.payload }
+            state.navPdf = [ ...action.payload ]
         }
     }
 });

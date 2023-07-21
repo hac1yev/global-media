@@ -38,7 +38,6 @@ const FAQ = () => {
       agenda_day2.push({...agendas[i]});
     }
   }
-  console.log(agenda_day1)
 
   return (
     <div className="faq-container row" >
