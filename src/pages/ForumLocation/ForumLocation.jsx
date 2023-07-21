@@ -22,7 +22,7 @@ const ForumLocation = () => {
     <>
       <div className="information-section location-sec">
         <div style={{ flex: "1" }}></div>
-        <div className="container-xl px-0">
+        <div className="container px-0">
           <div className="info-content loc-h3">
             <h3 className="text-center" data-aos="fade-down" data-aos-duration="700">
               {!lang ? 'Forum məkanı' : 'Forum location'}
@@ -34,7 +34,7 @@ const ForumLocation = () => {
             <div dangerouslySetInnerHTML={{__html: formLocationAll.Information }} />      
           </div>
         </div>
-        <div className="info-left-div-2" data-aos="zoom-in" data-aos-duration="700"></div>
+        <div style={{ flex: "1" }} className="info-left-div-2" data-aos="zoom-in" data-aos-duration="700"></div>
       </div>
       <div className="container mb-4">
         <div className="explore-cont" data-aos="fade-down" data-aos-duration="700">

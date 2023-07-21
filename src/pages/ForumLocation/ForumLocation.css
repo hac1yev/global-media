@@ -5,7 +5,9 @@
     max-height: 400px;
   }
 
-
+  .location-sec {
+    padding-top: 50px!important;
+  }
 
   .loc-h3{
     margin-bottom: 20px;
