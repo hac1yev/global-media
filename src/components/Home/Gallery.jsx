@@ -74,7 +74,7 @@ const Gallery = () => {
     infinite: true,
     speed: 500,
     autoplay: true,
-    slidesToShow: 4,
+    slidesToShow: 5,
     slidesToScroll: 1,
     responsive: [
       {
@@ -88,18 +88,18 @@ const Gallery = () => {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1,
           initialSlide: 1
         }
       },
-      // {
-      //   breakpoint: 480,
-      //   settings: {
-      //     slidesToShow: 1,
-      //     slidesToScroll: 1
-      //   }
-      // }
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
     ]
   };
 
@@ -108,7 +108,7 @@ const Gallery = () => {
     infinite: true,
     speed: 500,
     autoplay: true,
-    slidesToShow: 4,
+    slidesToShow: 5,
     slidesToScroll: 1,
     rtl: true,
     responsive: [
@@ -123,7 +123,7 @@ const Gallery = () => {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1,
           initialSlide: 1
         }

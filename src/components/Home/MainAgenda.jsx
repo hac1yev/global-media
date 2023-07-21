@@ -68,15 +68,15 @@ const FAQ = () => {
       </div>
       <div className="photo col-lg-6">
         <ul
-          class="nav nav-tabs"
+          className="nav nav-tabs"
           id="myTab"
           role="tablist"
           data-aos="fade-right"
           data-aos-duration="1000"
         >
-          <li class="nav-item" role="presentation">
+          <li className="nav-item" role="presentation">
             <button
-              class="nav-link active"
+              className="nav-link active"
               id="home-tab"
               data-bs-toggle="tab"
               data-bs-target="#home"
@@ -88,9 +88,9 @@ const FAQ = () => {
               {!lang ? 'Gün 1' : 'Day 1'}<p>22.07.2023</p>
             </button>
           </li>
-          <li class="nav-item" role="presentation">
+          <li className="nav-item" role="presentation">
             <button
-              class="nav-link"
+              className="nav-link"
               id="profile-tab"
               data-bs-toggle="tab"
               data-bs-target="#profile"
@@ -104,9 +104,9 @@ const FAQ = () => {
             </button>
           </li>
         </ul>
-        <div class="tab-content" id="myTabContent">
+        <div className="tab-content" id="myTabContent">
           <div
-            class="tab-pane fade show active"
+            className="tab-pane fade show active"
             id="home"
             role="tabpanel"
             aria-labelledby="home-tab"
@@ -116,8 +116,8 @@ const FAQ = () => {
               data-aos="fade-right"
               data-aos-duration="1000"
             >
-              {agenda_day1.map(item => (
-                <div>
+              {agenda_day1.map((item,index) => (
+                <div key={index}>
                   <p>{item.Start} - {item.Finish}</p>
                   <p>{item.Name}</p>
                 </div>
@@ -125,14 +125,14 @@ const FAQ = () => {
             </div>
           </div>
           <div
-            class="tab-pane fade"
+            className="tab-pane fade"
             id="profile"
             role="tabpanel"
             aria-labelledby="profile-tab"
           >
             <div className="tab-data1">
-              {agenda_day2.map((item) => (
-                <div>
+              {agenda_day2.map((item,index) => (
+                <div key={index}>
                   <p>{item.Start} - {item.Finish}</p>
                   <p>{item.Name}</p>
                 </div>
