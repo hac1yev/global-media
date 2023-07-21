@@ -18,24 +18,24 @@ const FAQ = () => {
     fetchData(!lang ? `az/home` : `en/home`).then((data) => (
       dispatch(homeSliceAction.getAgendaInfo(data.Agenda_Məlumat))
     ))
-  }, [dispatch,lang]);
+  }, [dispatch, lang]);
 
   useEffect(() => {
     fetchData(!lang ? `az/home` : `en/home`).then((data) => (
       dispatch(homeSliceAction.getAgendas(data.Agendas))
     ))
-  }, [dispatch,lang]);
+  }, [dispatch, lang]);
 
   const handleClose = () => {
     window.scrollTo(0, 0);
   };
-  
 
-  for(let i=0;i<agendas.length;i++){
-    if(agendas[i]?.DayId === 1){
-      agenda_day1.push({...agendas[i]});
-    }else{
-      agenda_day2.push({...agendas[i]});
+
+  for (let i = 0; i < agendas.length; i++) {
+    if (agendas[i]?.DayId === 1) {
+      agenda_day1.push({ ...agendas[i] });
+    } else {
+      agenda_day2.push({ ...agendas[i] });
     }
   }
   console.log(agenda_day1)
@@ -46,7 +46,7 @@ const FAQ = () => {
         <div data-aos="zoom-in" data-aos-duration="700">
           <h1>{!lang ? 'Proqram' : 'Agenda'}</h1>
           <p dangerouslySetInnerHTML={{ __html: agenda_info.Information }}>
-           
+
           </p>
           <div className="session-div">
             <span className="anime-drop">→</span>{" "}
@@ -77,6 +77,20 @@ const FAQ = () => {
           <li className="nav-item" role="presentation">
             <button
               className="nav-link active"
+              id="main-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#main"
+              type="button"
+              role="tab"
+              aria-controls="main"
+              aria-selected="true"
+            >
+              {!lang ? 'Gün 1' : 'Day 1'}<p>21.07.2023</p>
+            </button>
+          </li>
+          <li className="nav-item" role="presentation">
+            <button
+              className="nav-link"
               id="home-tab"
               data-bs-toggle="tab"
               data-bs-target="#home"
@@ -85,7 +99,7 @@ const FAQ = () => {
               aria-controls="home"
               aria-selected="true"
             >
-              {!lang ? 'Gün 1' : 'Day 1'}<p>22.07.2023</p>
+              {!lang ? 'Gün 2' : 'Day 2'}<p>22.07.2023</p>
             </button>
           </li>
           <li className="nav-item" role="presentation">
@@ -99,7 +113,7 @@ const FAQ = () => {
               aria-controls="profile"
               aria-selected="false"
             >
-              {!lang ? 'Gün 2' : 'Day 2'}<br />
+              {!lang ? 'Gün 3' : 'Day 3'}<br />
               <p>23.07.2023</p>
             </button>
           </li>
@@ -107,6 +121,27 @@ const FAQ = () => {
         <div className="tab-content" id="myTabContent">
           <div
             className="tab-pane fade show active"
+            id="main"
+            role="tabpanel"
+            aria-labelledby="main-tab"
+          >
+            <div
+              className="tab-data1"
+              data-aos="fade-right"
+              data-aos-duration="1000"
+            >
+
+              <div>
+                <p>15:30</p>
+                {!lang ? <p>Azərbaycan Respublikasının Prezidenti cənab İlham Əliyevin
+                  Şuşa Qlobal Media Forumunda nitqi və Forum iştirakçıları ilə görüşü</p> : <p>Keynote address and the meeting of the President of the Republic of Azerbaijan H.E. Mr. Ilham Aliyev with the participants
+                    of the Shusha Global Media Forum</p>}
+              </div>
+
+            </div>
+          </div>
+          <div
+            className="tab-pane fade"
             id="home"
             role="tabpanel"
             aria-labelledby="home-tab"
@@ -116,7 +151,7 @@ const FAQ = () => {
               data-aos="fade-right"
               data-aos-duration="1000"
             >
-              {agenda_day1.map((item,index) => (
+              {agenda_day1.map((item, index) => (
                 <div key={index}>
                   <p>{item.Start} - {item.Finish}</p>
                   <p>{item.Name}</p>
@@ -131,7 +166,7 @@ const FAQ = () => {
             aria-labelledby="profile-tab"
           >
             <div className="tab-data1">
-              {agenda_day2.map((item,index) => (
+              {agenda_day2.map((item, index) => (
                 <div key={index}>
                   <p>{item.Start} - {item.Finish}</p>
                   <p>{item.Name}</p>
