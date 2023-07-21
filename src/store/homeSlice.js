@@ -6,7 +6,8 @@ const initialHomeState = {
     banners: {},
     videos: [],
     map: {},
-    highlights: [],
+    highlights1: [],
+    highlights2: [],
     agendas: [],
     agenda_info: {},
     statics: []
@@ -31,8 +32,11 @@ const homeSlice = createSlice({
         getMap(state, action) {
             state.map = {...action.payload}
         },
-        getHighlight(state, action) {
-            state.highlights = [...action.payload]
+        getHighlight1(state, action) {
+            state.highlights1 = [...action.payload]
+        },
+        getHighlight2(state, action) {
+            state.highlights2 = [...action.payload]
         },
         // getAgendas(state, action) {
         //     state.highlight = [...action.payload]
