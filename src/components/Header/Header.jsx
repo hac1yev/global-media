@@ -193,11 +193,11 @@ const Header = () => {
               <span> {!lang ? 'Forumun materialları' : 'Forum materials'} </span>
                 {isMaterialHover && (
                   <div className="nav-forum-dropdown">
-                    <a href={navPdf[1]?.Information} target="_blank" rel="noreferrer" onClick={handleCloseMenu}>
+                    <a href={navPdf[1]?.Information} target="_blank" download rel="noreferrer" onClick={handleCloseMenu}>
                       <AiFillCaretRight className="arrow-right" />
                       {!lang ? 'Proqram' : 'Program'}
                     </a>
-                    <a href={navPdf[0]?.Information} target="_blank" rel="noreferrer" onClick={handleCloseMenu}>
+                    <a href={navPdf[0]?.Information} target="_blank" download rel="noreferrer" onClick={handleCloseMenu}>
                       <AiFillCaretRight className="arrow-right" />
                       {!lang ? 'Konsepsiya sənədi' : 'Concept paper'}
                     </a>
