@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch,useSelector } from 'react-redux';
-import { fetchData } from '../../api/fetchData';
+import { fetchData1 } from '../../api/fetchData';
 import { navPdfSliceAction } from '../../store/navPdf';
 import './Conseption.css'
 
@@ -10,7 +10,7 @@ const Concept = () => {
     const lang = useSelector(state => state.langReducer.lang);
 
     useEffect(() => {
-        fetchData(!lang ? 'az/nav' : 'en/nav').then((data) => (
+        fetchData1(!lang ? 'az/nav' : 'en/nav').then((data) => (
           dispatch(navPdfSliceAction.getConceptPdf(data))
         ))
       },[dispatch,lang])
