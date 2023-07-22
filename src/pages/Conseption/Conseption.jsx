@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch,useSelector } from 'react-redux';
 import { fetchData } from '../../api/fetchData';
 import { navPdfSliceAction } from '../../store/navPdf';
-import { Document, Page,pdfjs } from 'react-pdf';
+import { Document,pdfjs } from 'react-pdf';
 import './Conseption.css'
 
 const Concept = () => {
