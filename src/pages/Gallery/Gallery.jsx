@@ -19,10 +19,6 @@ const Media = () => {
     ));
   }, [dispatch, lang]);
 
-  // console.log(galleryAll)
-
-  console.log(citeAll)
-
 
   useEffect(() => {
     fetchData(!lang ? 'az/media' : 'en/media').then((data) => (
@@ -46,13 +42,13 @@ const Media = () => {
                 <a className="gallery-card" key={index} data-aos="zoom-in" data-aos-duration="700"
                   data-fancybox="gallery"
                   data-src={item?.Image}
-                  data-caption={item.Title}
+                  data-caption={item.Content}
                   href="/" >
                   <div className="gallery-img">
                     <img src={item?.Image} alt="" />
                     <p className="time-p">22-07-2022</p>
                   </div>
-                  <p className="gallery-info" dangerouslySetInnerHTML={{ __html: item.Title }} />
+                  <p className="gallery-info" dangerouslySetInnerHTML={{ __html: item.Content }} />
                 </a>
               )
             }
