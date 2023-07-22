@@ -132,15 +132,7 @@ const NewsDetail = () => {
     });
   },[lang,newsId,dispatch]);
 
-  // newsDetail[1].map(item => {
-  //   // console.log(item.Name)
-  //   let newImgs = item.Name.slice(0,4) + 's' + item.Name.slice(4)
-  //   console.log(newImgs)
-  // })
-
-  // var txt2 = program.slice(0, 4) + "s" + program.slice(4);
-
-
+  // console.log(newsDetail);
   sliderImages.push({
     original: newsDetail[0]?.Image,
     thumbnail: newsDetail[0]?.Image
