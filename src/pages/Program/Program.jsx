@@ -16,7 +16,7 @@ const Program = () => {
       },[dispatch,lang])
 
   return (
-    <iframe title='Program' src={program} className='program-pdf' frameborder="0"></iframe>
+    <embed title='Program' src={program} className='program-pdf' frameborder="0"></embed>
   );
 };
 
