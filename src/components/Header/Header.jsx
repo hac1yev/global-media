@@ -181,7 +181,7 @@ const Header = () => {
             >
              <div>
               <span> {!lang ? 'Forumun materialları' : 'Forum materials'} </span>
-                {isMaterialHover && (
+                 {isMaterialHover && (
                   <div className="nav-forum-dropdown">
                     <Link to="/program" onClick={handleCloseMenu}>
                       <AiFillCaretRight className="arrow-right" />
