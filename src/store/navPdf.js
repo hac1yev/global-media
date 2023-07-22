@@ -1,16 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialFormLocation = {
-    navPdf: []
+    program: '',
+    concept: ''
 };
 
 const navPdfSlice = createSlice({
     name: 'navPdfSlice',
     initialState: initialFormLocation,
     reducers: {
-        getNavPdf(state, action) {
-            state.navPdf = [ ...action.payload ]
-        }
+        getProgramPdf(state, action) {
+            state.program = action.payload[1].Information
+        },
+        getConceptPdf(state, action) {
+            state.concept = action.payload[0].Information
+        },
     }
 });
 

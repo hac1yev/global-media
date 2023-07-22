@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Header.css";
 import logo from "../../assets/Home/gmf_logo_az.svg";
 import logo_en from '../../assets/Home/gmf_logo_en.svg';
@@ -8,13 +8,6 @@ import { langSliceAction } from "../../store/langSlice";
 import { AiFillCaretRight } from 'react-icons/ai';
 import right from '../../assets/Home/right.png'
 import down from '../../assets/Home/down.png'
-// import { HashLink } from "react-router-hash-link";
-import { fetchData } from "../../api/fetchData";
-import { navPdfSliceAction } from "../../store/navPdf";
-import agEng from '../../assets/Home/ag-eng.pdf'
-import agAz from '../../assets/Home/ag-az.pdf'
-import conAz from '../../assets/Home/con-az.pdf'
-import conEng from '../../assets/Home/con-eng.pdf'
 
 const Header = () => {
   const [isForumHover, setIsForumHover] = useState(false);
@@ -25,13 +18,6 @@ const Header = () => {
   const lang = useSelector((state) => state.langReducer.lang);
   const dispatch = useDispatch();
 
-  // const navPdf = useSelector(state => state.pdfReducer.navPdf);
-
-  useEffect(() => {
-    fetchData(!lang ? 'az/nav' : 'en/nav').then((data) => (
-      dispatch(navPdfSliceAction.getNavPdf(data))
-    ))
-  },[dispatch,lang])
 
   const handleHoverForum = () => {
     setIsForumHover(true);
@@ -195,29 +181,16 @@ const Header = () => {
             >
              <div>
               <span> {!lang ? 'Forumun materialları' : 'Forum materials'} </span>
-                {/* {isMaterialHover && (
-                  <div className="nav-forum-dropdown">
-                    <a href={navPdf[1]?.Information} target="_blank" download rel="noreferrer" onClick={handleCloseMenu}>
-                      <AiFillCaretRight className="arrow-right" />
-                      {!lang ? 'Proqram' : 'Program'}
-                    </a>
-                    <a href={navPdf[0]?.Information} target="_blank" download rel="noreferrer" onClick={handleCloseMenu}>
-                      <AiFillCaretRight className="arrow-right" />
-                      {!lang ? 'Konsepsiya sənədi' : 'Concept paper'}
-                    </a>
-                  </div>
-                )} */}
-
                  {isMaterialHover && (
                   <div className="nav-forum-dropdown">
-                    <a href={!lang ? agAz : agEng} target="_blank" download rel="noreferrer" onClick={handleCloseMenu}>
+                    <Link to="/program" onClick={handleCloseMenu}>
                       <AiFillCaretRight className="arrow-right" />
                       {!lang ? 'Proqram' : 'Program'}
-                    </a>
-                    <a href={!lang ? conAz : conEng} target="_blank" download rel="noreferrer" onClick={handleCloseMenu}>
+                    </Link>
+                    <Link to="/consept" onClick={handleCloseMenu}>
                       <AiFillCaretRight className="arrow-right" />
                       {!lang ? 'Konsepsiya sənədi' : 'Concept paper'}
-                    </a>
+                    </Link>
                   </div>
                 )}
              </div>
