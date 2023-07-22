@@ -11,6 +11,8 @@ import NewsDetail from '../src/pages/NewsDetail/NewsDetail.jsx';
 import Gallery from '../src/pages/Gallery/Gallery.jsx';
 import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy.jsx';
 import Preloader from './components/Preloader/Preloader.jsx';
+import Program from './pages/Program/Program.jsx';
+import Conseption from './pages/Conseption/Conseption.jsx';
 
 function App() {
   const {pathname} = useLocation();
@@ -39,6 +41,8 @@ function App() {
             <Route path='/news' element={<News />} />
             <Route path='/news/:newsId' element={<NewsDetail />} />
             <Route path='/privacy' element={<PrivacyPolicy />} />
+            <Route path='/program' element={<Program />} />
+            <Route path='/consept' element={<Conseption />} />
           </Routes>
         <Footer />
       </>
