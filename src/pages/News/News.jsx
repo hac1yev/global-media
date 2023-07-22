@@ -61,6 +61,8 @@ useEffect(() => {
     ))
 }, [dispatch,lang]);
 
+console.log(news)
+
 
 
 return (

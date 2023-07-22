@@ -20,6 +20,10 @@ const Media = () => {
   }, [dispatch, lang]);
 
 
+
+
+
+
   useEffect(() => {
     fetchData(!lang ? 'az/media' : 'en/media').then((data) => (
       dispatch(gallerySliceSction.getAllCite(data.Sitatlar))
@@ -42,13 +46,13 @@ const Media = () => {
                 <a className="gallery-card" key={index} data-aos="zoom-in" data-aos-duration="700"
                   data-fancybox="gallery"
                   data-src={item?.Image}
-                  data-caption={item.Content}
+                  data-caption={item.Title}
                   href="/" >
                   <div className="gallery-img">
                     <img src={item?.Image} alt="" />
                     <p className="time-p">22-07-2022</p>
                   </div>
-                  <p className="gallery-info" dangerouslySetInnerHTML={{ __html: item.Content }} />
+                  <p className="gallery-info" dangerouslySetInnerHTML={{ __html: item.Title }} />
                 </a>
               )
             }
