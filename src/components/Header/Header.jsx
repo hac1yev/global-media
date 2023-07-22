@@ -11,6 +11,10 @@ import down from '../../assets/Home/down.png'
 // import { HashLink } from "react-router-hash-link";
 import { fetchData } from "../../api/fetchData";
 import { navPdfSliceAction } from "../../store/navPdf";
+import agEng from '../../assets/Home/ag-eng.pdf'
+import agAz from '../../assets/Home/ag-az.pdf'
+import conAz from '../../assets/Home/con-az.pdf'
+import conEng from '../../assets/Home/con-eng.pdf'
 
 const Header = () => {
   const [isForumHover, setIsForumHover] = useState(false);
@@ -21,7 +25,7 @@ const Header = () => {
   const lang = useSelector((state) => state.langReducer.lang);
   const dispatch = useDispatch();
 
-  const navPdf = useSelector(state => state.pdfReducer.navPdf);
+  // const navPdf = useSelector(state => state.pdfReducer.navPdf);
 
   useEffect(() => {
     fetchData(!lang ? 'az/nav' : 'en/nav').then((data) => (
@@ -191,13 +195,26 @@ const Header = () => {
             >
              <div>
               <span> {!lang ? 'Forumun materialları' : 'Forum materials'} </span>
-                {isMaterialHover && (
+                {/* {isMaterialHover && (
                   <div className="nav-forum-dropdown">
                     <a href={navPdf[1]?.Information} target="_blank" download rel="noreferrer" onClick={handleCloseMenu}>
                       <AiFillCaretRight className="arrow-right" />
                       {!lang ? 'Proqram' : 'Program'}
                     </a>
                     <a href={navPdf[0]?.Information} target="_blank" download rel="noreferrer" onClick={handleCloseMenu}>
+                      <AiFillCaretRight className="arrow-right" />
+                      {!lang ? 'Konsepsiya sənədi' : 'Concept paper'}
+                    </a>
+                  </div>
+                )} */}
+
+                 {isMaterialHover && (
+                  <div className="nav-forum-dropdown">
+                    <a href={!lang ? agAz : agEng} target="_blank" download rel="noreferrer" onClick={handleCloseMenu}>
+                      <AiFillCaretRight className="arrow-right" />
+                      {!lang ? 'Proqram' : 'Program'}
+                    </a>
+                    <a href={!lang ? conAz : conEng} target="_blank" download rel="noreferrer" onClick={handleCloseMenu}>
                       <AiFillCaretRight className="arrow-right" />
                       {!lang ? 'Konsepsiya sənədi' : 'Concept paper'}
                     </a>
