@@ -61,7 +61,7 @@ useEffect(() => {
     ))
 }, [dispatch,lang]);
 
-console.log('News' , news)
+
 
 return (
     <div className="media-section latest-section">
