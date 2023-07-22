@@ -61,7 +61,7 @@ useEffect(() => {
     ))
 }, [dispatch,lang]);
 
-console.log(news)
+console.log('News' , news)
 
 return (
     <div className="media-section latest-section">
@@ -79,7 +79,7 @@ return (
              <img src={item.Image} alt={item.Content_Az} />
              <p className="time-p">{item.Time_converted}</p>
             </div>
-            <p className="gallery-info" dangerouslySetInnerHTML={{ __html: item.Content_Az }}>
+            <p className="gallery-info" dangerouslySetInnerHTML={{ __html: item.Title }}>
             </p>
          </Link>
         ))}
