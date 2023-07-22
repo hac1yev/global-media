@@ -16,7 +16,7 @@ const Concept = () => {
       },[dispatch,lang])
 
   return (
-    <iframe title='Concept' src={concept} className='concept-pdf' frameborder="0"></iframe>
+    <embed title='Concept' src={concept} className='concept-pdf' frameborder="0"></embed>
   );
 };
 
