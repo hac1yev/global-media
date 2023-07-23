@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Header.css";
 import logo from "../../assets/Home/gmf_logo_az.svg";
 import logo_en from '../../assets/Home/gmf_logo_en.svg';
@@ -8,6 +8,8 @@ import { langSliceAction } from "../../store/langSlice";
 import { AiFillCaretRight } from 'react-icons/ai';
 import right from '../../assets/Home/right.png'
 import down from '../../assets/Home/down.png'
+import { fetchData } from "../../api/fetchData";
+import { navPdfSliceAction } from "../../store/navPdf";
 
 const Header = () => {
   const [isForumHover, setIsForumHover] = useState(false);
@@ -104,6 +106,23 @@ const Header = () => {
     setIsDropOpen(false);
   };
 
+  const konsept = useSelector(state => state.pdfReducer.concept);
+  const proqram = useSelector(state => state.pdfReducer.program);
+
+  useEffect(() => {
+    fetchData(!lang ? 'az/nav' : 'en/nav').then((data) => (
+      dispatch(navPdfSliceAction.getConceptPdf(data))
+    ))
+  },[dispatch,lang])
+
+
+  useEffect(() => {
+    fetchData(!lang ? 'az/nav' : 'en/nav').then((data) => (
+      dispatch(navPdfSliceAction.getProgramPdf(data))
+    ))
+  },[dispatch,lang])
+
+
   return (
     <div className="header-wrapper">
       <header className="container">
@@ -183,14 +202,14 @@ const Header = () => {
               <span> {!lang ? 'Forumun materialları' : 'Forum materials'} </span>
                  {isMaterialHover && (
                   <div className="nav-forum-dropdown">
-                    <Link to="/program" onClick={handleCloseMenu}>
+                    <a href={proqram} onClick={handleCloseMenu}>
                       <AiFillCaretRight className="arrow-right" />
                       {!lang ? 'Proqram' : 'Program'}
-                    </Link>
-                    <Link to="/consept" onClick={handleCloseMenu}>
+                    </a>
+                    <a href={konsept} onClick={handleCloseMenu}>
                       <AiFillCaretRight className="arrow-right" />
                       {!lang ? 'Konsepsiya sənədi' : 'Concept paper'}
-                    </Link>
+                    </a>
                   </div>
                 )}
              </div>
