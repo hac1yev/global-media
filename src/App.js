@@ -13,6 +13,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy.jsx';
 import Preloader from './components/Preloader/Preloader.jsx';
 import Program from './pages/Program/Program.jsx';
 import Conseption from './pages/Conseption/Conseption.jsx';
+import GalleryInner from './pages/GalleryInner/GalleryInner.jsx';
 
 function App() {
   const {pathname} = useLocation();
@@ -38,6 +39,7 @@ function App() {
             <Route path='/forum-location' element={<ForumLocation />} />
             <Route path='/about-forum' element={<AboutForum />} />
             <Route path='/gallery' element={<Gallery />} />
+            <Route path='/gallery/:galleryId' element={<GalleryInner />} />
             <Route path='/news' element={<News />} />
             <Route path='/news/:newsId' element={<NewsDetail />} />
             <Route path='/privacy' element={<PrivacyPolicy />} />

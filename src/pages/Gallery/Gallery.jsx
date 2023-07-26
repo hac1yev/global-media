@@ -3,6 +3,7 @@ import '../../pages/Media/Media.css'
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "../../api/fetchData";
 import { gallerySliceSction } from "../../store/gallerySlice";
+import { Link } from "react-router-dom";
 
 const Media = () => {
 
@@ -18,11 +19,6 @@ const Media = () => {
       dispatch(gallerySliceSction.getAllGallery(data.Galery))
     ));
   }, [dispatch, lang]);
-
-
-
-
-
 
   useEffect(() => {
     fetchData(!lang ? 'az/media' : 'en/media').then((data) => (
@@ -42,18 +38,18 @@ const Media = () => {
           </div>
           <div className="gallery-con">
             {
-              Object.values(galleryAll).map((item,index) =>
-                <a className="gallery-card" key={index} data-aos="zoom-in" data-aos-duration="700"
+              Object.values(galleryAll).map((item) =>
+                <Link className="gallery-card" key={item.id} data-aos="zoom-in" data-aos-duration="700"
                   data-fancybox="gallery"
                   data-src={item?.Image}
                   data-caption={item.Title}
-                  href="/" >
+                  to={`/gallery/${item.Id}`} >
                   <div className="gallery-img">
                     <img src={item?.Image} alt="" />
                     <p className="time-p">22-07-2022</p>
                   </div>
                   <p className="gallery-info" dangerouslySetInnerHTML={{ __html: item.Title }} />
-                </a>
+                </Link>
               )
             }
           </div>
@@ -77,17 +73,19 @@ const Media = () => {
           </div>
           <div className="gallery-con">
 
-            {Object.values(citeAll).map((data,index) =>
-              <a data-fancybox="gallery1"
-                  key={index}
-                  data-src={data?.Image}
-                  data-caption={data.Content_Az}
-                  href="/"  className="gallery-card" data-aos="zoom-in" data-aos-duration="700">
+            {Object.values(citeAll).map((data) =>
+              <Link
+                key={data.Id}
+                data-src={data?.Image}
+                data-caption={data.Content_Az}
+                className="gallery-card" data-aos="zoom-in" data-aos-duration="700"
+                to="/"  
+              >
               <div className="gallery-img">
                 <img src={data.Image} alt="" />
               </div>
               <p className="gallery-info" dangerouslySetInnerHTML={{__html: data.Content_Az}} />
-            </a>
+            </Link>
             )}
 
           </div>
