@@ -1,15 +1,24 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import '../../pages/Media/Media.css'
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "../../api/fetchData";
 import { gallerySliceAction } from "../../store/gallerySlice";
 import { Link } from "react-router-dom";
 
+
+
 const Media = () => {
+  const imagePerRow = 4;
 
   const galleryAll = useSelector((state) => state.galleryReducer.allGallery);
   const citeAll = useSelector((state) => state.galleryReducer.allCite);
   const lang = useSelector((state) => state.langReducer.lang);
+
+  const [next, setNext] = useState(imagePerRow);
+  const handleMoreImage = () => {
+      setNext(next + imagePerRow);
+    };
+
 
 
   const dispatch = useDispatch();
@@ -42,7 +51,7 @@ const Media = () => {
           </div>
           <div className="gallery-con">
             {
-              Object.values(galleryAll).map((item) =>
+              Object.values(galleryAll).slice(0, next)?.map((item) =>
                 <Link className="gallery-card" key={item.id} data-aos="zoom-in" data-aos-duration="700"
                   data-fancybox="gallery"
                   data-src={item?.Image}
@@ -61,9 +70,12 @@ const Media = () => {
           </div>
           <hr />
           <div className="gallery-more-div">
-            <button className="gallery-more">
+
+            {next < Object.keys(galleryAll).length && (
+              <button onClick={handleMoreImage} className="gallery-more">
               {!lang ? 'Daha Çox' : 'More'}
             </button>
+            )}
           </div>
         </div>
         <div className="media-right-div"></div>
