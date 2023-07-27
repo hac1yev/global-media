@@ -5,6 +5,14 @@
     max-height: none!important;
 }
 
+.gallery-inner-h3 {
+    color: #22333B;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 35px; 
+}
+
 @media screen and (max-width: 992px) {
     .image-gallery-image {
         height: 500px!important;
@@ -14,6 +22,11 @@
 @media screen and (max-width: 768px) {
     .image-gallery-wrapper .image-gallery-image {
         height: 400px!important;
+    }
+
+    .gallery-inner-h3 {
+        font-size: 28px;
+        line-height: 28px;
     }
 }
 

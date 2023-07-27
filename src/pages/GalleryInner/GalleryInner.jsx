@@ -8,12 +8,15 @@ import { useParams } from 'react-router-dom';
 import { gallerySliceAction } from '../../store/gallerySlice';
 
 const GalleryInner = () => {
-    const lang = useSelector(state => state.langReducer.lang);
     const galleryInner = useSelector(state => state.galleryReducer.galleryInner);
+    const galleryInnerText = useSelector(state => state.galleryReducer.galleryInnerText);
     const dispatch = useDispatch();
     const { galleryId } = useParams();
     let sliderImages = [];
 
+    const innerDesc = galleryInnerText.slice(0,20)
+
+    console.log(innerDesc)
 
     useEffect(() => {
       fetchData(`media/${galleryId}`).then((data) => (
@@ -37,8 +40,8 @@ const GalleryInner = () => {
         <div>
             <div className="container">
                 <div className="row">
-                    <div className="col-12 my-3 ps-2">
-                        <h3>{!lang ? 'Qalereya' : 'Gallery'}</h3>
+                  <div className='col-12 my-3'>
+                      <h3 className='gallery-inner-h3' dangerouslySetInnerHTML={{ __html: galleryInnerText }}></h3>
                     </div>
                     <div className="col-12">
                         <ReactImageGallery className="news-image-gallery" items={[...sliderImages]} />

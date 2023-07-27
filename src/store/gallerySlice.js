@@ -3,7 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialGallery = {
     allGallery: {},
     allCite: {},
-    galleryInner: []
+    galleryInner: [],
+    galleryInnerText: ''
 };
 
 const gallerySlice = createSlice({
@@ -18,7 +19,10 @@ const gallerySlice = createSlice({
         },
         getGalleryInner(state,action) {
             state.galleryInner = [...action.payload]
-        }
+        },
+        getGalleryInnerText(state,action) {
+            state.galleryInnerText = action.payload
+        },
     }
 });
 
