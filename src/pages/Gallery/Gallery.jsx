@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import '../../pages/Media/Media.css'
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "../../api/fetchData";
-import { gallerySliceSction } from "../../store/gallerySlice";
+import { gallerySliceAction } from "../../store/gallerySlice";
 import { Link } from "react-router-dom";
 
 const Media = () => {
@@ -16,13 +16,13 @@ const Media = () => {
 
   useEffect(() => {
     fetchData(!lang ? 'az/media' : 'en/media').then((data) => (
-      dispatch(gallerySliceSction.getAllGallery(data.Galery))
+      dispatch(gallerySliceAction.getAllGallery(data.Galery))
     ));
   }, [dispatch, lang]);
 
   useEffect(() => {
     fetchData(!lang ? 'az/media' : 'en/media').then((data) => (
-      dispatch(gallerySliceSction.getAllCite(data.Sitatlar))
+      dispatch(gallerySliceAction.getAllCite(data.Sitatlar))
     ));
   }, [dispatch, lang]);
 

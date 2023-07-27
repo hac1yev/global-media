@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialGallery = {
     allGallery: {},
-    allCite: {}
+    allCite: {},
+    galleryInner: []
 };
 
 const gallerySlice = createSlice({
@@ -15,8 +16,11 @@ const gallerySlice = createSlice({
         getAllCite(state, action) {
             state.allCite = { ...action.payload }
         },
+        getGalleryInner(state,action) {
+            state.galleryInner = [...action.payload]
+        }
     }
 });
 
 export default gallerySlice;
-export const gallerySliceSction = gallerySlice.actions;
+export const gallerySliceAction = gallerySlice.actions;

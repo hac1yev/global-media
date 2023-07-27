@@ -13,6 +13,7 @@ const FAQ = () => {
   const dispatch = useDispatch();
   let agenda_day1 = [];
   let agenda_day2 = [];
+  let agenda_day3 = [];
 
   useEffect(() => {
     fetchData(!lang ? `az/home` : `en/home`).then((data) => (
@@ -32,10 +33,12 @@ const FAQ = () => {
 
 
   for (let i = 0; i < agendas.length; i++) {
-    if (agendas[i]?.DayId === 1) {
+    if (agendas[i]?.DayId === 3) {
       agenda_day1.push({ ...agendas[i] });
-    } else {
+    }else if (agendas[i]?.DayId === 1) {
       agenda_day2.push({ ...agendas[i] });
+    } else {
+      agenda_day3.push({ ...agendas[i] });
     }
   }
 
@@ -129,14 +132,12 @@ const FAQ = () => {
               data-aos="fade-right"
               data-aos-duration="1000"
             >
-
-              <div>
-                <p>15:30</p>
-                {!lang ? <p>Azərbaycan Respublikasının Prezidenti cənab İlham Əliyevin
-                  Şuşa Qlobal Media Forumunda nitqi və Forum iştirakçıları ilə görüşü</p> : <p>Keynote address and the meeting of the President of the Republic of Azerbaijan H.E. Mr. Ilham Aliyev with the participants
-                    of the Shusha Global Media Forum</p>}
-              </div>
-
+              {agenda_day1.map((item, index) => (
+                <div key={index}>
+                  <p>{item.Start}</p>
+                  <p>{item.Name}</p>
+                </div>
+              ))}
             </div>
           </div>
           <div
@@ -150,7 +151,7 @@ const FAQ = () => {
               data-aos="fade-right"
               data-aos-duration="1000"
             >
-              {agenda_day1.map((item, index) => (
+              {agenda_day2.map((item, index) => (
                 <div key={index}>
                   <p>{item.Start} - {item.Finish}</p>
                   <p>{item.Name}</p>
@@ -165,7 +166,7 @@ const FAQ = () => {
             aria-labelledby="profile-tab"
           >
             <div className="tab-data1">
-              {agenda_day2.map((item, index) => (
+              {agenda_day3.map((item, index) => (
                 <div key={index}>
                   <p>{item.Start} - {item.Finish}</p>
                   <p>{item.Name}</p>
