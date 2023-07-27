@@ -47,7 +47,7 @@ const Footer = () => {
               <span>{!lang ? 'Bizi İzləyin' : 'Follow Us'}</span>
               <div className="footer-sosial-icons">
                 <a
-                  href="https://www.facebook.com/"
+                  href="https://www.facebook.com/mediaforum2023/"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -55,13 +55,13 @@ const Footer = () => {
                     style={{ marginRight: "16px", width: "12px", height: "20px" }}
                   />
                 </a>
-                <a href="https://twitter.com/" target="_blank" rel="noreferrer">
+                <a href="https://twitter.com/GMFShusha2023" target="_blank" rel="noreferrer">
                   <FaTwitter
                     style={{ marginRight: "11px", width: "20px", height: "20px" }}
                   />
                 </a>
                 <a
-                  href="https://www.instagram.com/"
+                  href="https://www.instagram.com/globalmediaforum/"
                   target="_blank"
                   rel="noreferrer"
                 >
