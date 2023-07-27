@@ -21,7 +21,6 @@ const NewsDetail = () => {
     });
   },[lang,newsId,dispatch]);
 
-  // console.log(newsDetail);
   sliderImages.push({
     original: newsDetail[0]?.Image,
     thumbnail: newsDetail[0]?.Image
