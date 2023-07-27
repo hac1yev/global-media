@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 // import newsCard from "../../assets/News/thumb.jpg";
 import { Link } from "react-router-dom";
 import '../../pages/Media/Media.css';
@@ -7,49 +7,19 @@ import { fetchData } from '../../api/fetchData';
 import { newsSliceAction } from "../../store/newsSlice";
 
 
-// const newsData = [
-// {
-//     id: 'n1',
-//     img: newsCard,
-//     title: 'Şuşada Beynəlxalq Media Forumun açılış mərasimi keçirilib',
-//     time: '22-07-2022',
-// },
-// {
-//     id: 'n2',
-//     img: newsCard,
-//     title: 'Şuşada Beynəlxalq Media Forumun açılış mərasimi keçirilib',
-//     time: '22-07-2022',
-// },
-// {
-//     id: 'n3',
-//     img: newsCard,
-//     title: 'Şuşada Beynəlxalq Media Forumun açılış mərasimi keçirilib',
-//     time: '22-07-2022',
-// },
-// {
-//     id: 'n4',
-//     img: newsCard,
-//     title: 'Şuşada Beynəlxalq Media Forumun açılış mərasimi keçirilib',
-//     time: '22-07-2022',
-// },
-// {
-//     id: 'n5',
-//     img: newsCard,
-//     title: 'Şuşada Beynəlxalq Media Forumun açılış mərasimi keçirilib',
-//     time: '22-07-2022',
-// },
-// {
-//     id: 'n6',
-//     img: newsCard,
-//     title: 'Şuşada Beynəlxalq Media Forumun açılış mərasimi keçirilib',
-//     time: '22-07-2022',
-// },
-// ];
-
 const News = () => {
+
+   const newsPerRow = 6;
+
   const lang = useSelector(state => state.langReducer.lang);
   const news = useSelector(state => state.newsReducer.news);
   const dispatch = useDispatch();
+
+  const [next, setNext] = useState(newsPerRow);
+
+  const handleMoreNews = () => {
+   setNext(next + newsPerRow);
+ };
 
 const handleClick = () => {
     window.scrollTo(0,0);    
@@ -61,7 +31,7 @@ useEffect(() => {
     ))
 }, [dispatch,lang]);
 
-console.log(news)
+
 
 
 
@@ -75,7 +45,7 @@ return (
         <h3 className='mb-3'>{!lang ? 'Xəbərlər' : 'News'}</h3>
      </div>
      <div className="gallery-con">
-        {news.map((item,i) => (
+        {news.slice(0, next)?.map((item,i) => (
          <Link onClick={handleClick} to={`/news/${item.Id}`} key={i} className="gallery-card" data-aos="zoom-in" data-aos-duration="700">
             <div className="gallery-img">
              <img src={item.Image} alt={item.Content_Az} />
@@ -88,9 +58,13 @@ return (
      </div>
      <hr />
      <div className='gallery-more-div'>
-        <button className="gallery-more">
-         {!lang ? 'Daha Çox' : 'More'}
-        </button>
+     
+            {next < news?.length && (
+              <button onClick={handleMoreNews} className="gallery-more">
+              {!lang ? 'Daha Çox' : 'More'}
+            </button>
+            )}
+
      </div>
     </div>
     <div className="media-right-div"></div>

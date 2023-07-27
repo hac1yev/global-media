@@ -8,15 +8,25 @@ import { Link } from "react-router-dom";
 
 
 const Media = () => {
-  const imagePerRow = 4;
+  const imagePerRow = 6;
+  const citePerRow = 6;
 
   const galleryAll = useSelector((state) => state.galleryReducer.allGallery);
   const citeAll = useSelector((state) => state.galleryReducer.allCite);
   const lang = useSelector((state) => state.langReducer.lang);
 
   const [next, setNext] = useState(imagePerRow);
+  const [next2, setNext2] = useState(citePerRow);
+
+  console.log(next2)
+  
   const handleMoreImage = () => {
       setNext(next + imagePerRow);
+    };
+
+
+    const handleMoreCite = () => {
+      setNext2(next2 + citePerRow);
     };
 
 
@@ -91,7 +101,7 @@ const Media = () => {
           </div>
           <div className="gallery-con">
 
-            {Object.values(citeAll).map((data) =>
+            {Object.values(citeAll).slice(0, next2).map((data) =>
               <Link
                 key={data.Id}
                 data-src={data?.Image}
@@ -109,9 +119,11 @@ const Media = () => {
           </div>
           <hr />
           <div className='gallery-more-div mb-3'>
-            <button className="gallery-more">
+          {next2 < Object.keys(citeAll).length && (
+              <button onClick={handleMoreCite} className="gallery-more">
               {!lang ? 'Daha Çox' : 'More'}
             </button>
+            )}
           </div>
         </div>
         <div className="media-right-div"></div>
