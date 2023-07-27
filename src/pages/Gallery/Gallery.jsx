@@ -26,6 +26,10 @@ const Media = () => {
     ));
   }, [dispatch, lang]);
 
+  const handleLinkTitle = (title) => {
+    dispatch(gallerySliceAction.getGalleryInnerText(title));
+  };
+
   return (
     <>
       <div className="media-section">
@@ -43,12 +47,14 @@ const Media = () => {
                   data-fancybox="gallery"
                   data-src={item?.Image}
                   data-caption={item.Title}
-                  to={`/gallery/${item.Id}`} >
+                  to={`/gallery/${item.Id}`} 
+                  onClick={handleLinkTitle.bind(null,item.Content)}
+                >
                   <div className="gallery-img">
                     <img src={item?.Image} alt="" />
                     <p className="time-p">22-07-2022</p>
                   </div>
-                  <p className="gallery-info" dangerouslySetInnerHTML={{ __html: item.Title }} />
+                  <p className="gallery-info" dangerouslySetInnerHTML={{ __html: item.Content }} />
                 </Link>
               )
             }
