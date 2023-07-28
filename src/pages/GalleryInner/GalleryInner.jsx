@@ -25,8 +25,8 @@ const GalleryInner = () => {
     }, [dispatch,galleryId]);
 
     sliderImages.push({
-      original: galleryInner[0]?.Image,
-      thumbnail: galleryInner[0]?.Image
+      original: galleryInner[0],
+      thumbnail: galleryInner[0]
     })
   
     for(let i=0;i<galleryInner[1]?.length;i++){
@@ -35,6 +35,8 @@ const GalleryInner = () => {
         thumbnail: galleryInner[1][i].Name
       })
     }
+
+    console.log(galleryInner[0]);
 
     return (
         <div>
